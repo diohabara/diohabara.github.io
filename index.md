@@ -1,3 +1,3 @@
 hello world
 
-- [book](book)
+- [pcbook](pcbook)
