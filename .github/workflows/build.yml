@@ -12,7 +12,7 @@ jobs:
       uses: diohabara/dioharaba.github.io@master
       env:
         PAGES_BRANCH: build-test-1
-        BUILD_DIR: .
+        # BUILD_DIR:
         TOKEN: ${{ secrets.TOKEN }}
   build-2:
     name: Build with BUILD_FLAGS
@@ -23,7 +23,7 @@ jobs:
       uses: diohabara/dioharaba.github.io@master
       env:
         PAGES_BRANCH: build-test-2
-        BUILD_DIR: .
+        # BUILD_DIR:
         BUILD_FLAGS: --drafts
         TOKEN: ${{ secrets.TOKEN }}
 © 2020 GitHub, Inc.
