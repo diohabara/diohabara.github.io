@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Build with the latest action rev
-      uses: shalzz/zola-deploy-action@master
+      uses: diohabara/dioharaba.github.io@master
       env:
         PAGES_BRANCH: build-test-1
         BUILD_DIR: .
@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Build with the latest action rev
-      uses: shalzz/zola-deploy-action@master
+      uses: diohabara/dioharaba.github.io@master
       env:
         PAGES_BRANCH: build-test-2
         BUILD_DIR: .
