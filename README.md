@@ -9,4 +9,12 @@ yarn run deploy
 
 ## how to write posts
 
-- write something in `content/posts/{{ post }}.md
+Suppose you are in `blog`
+
+- write a post in `content/posts/{{ post }}.md`
+  - e.g., `readme.md`
+- write a page in `content/pages/{{ page }}.md`
+  - e.g., `about.md`
+- add media in `static/media/{{ media }}.{png,jpg}`
+  - e.g., `image-0.jpg`
+
