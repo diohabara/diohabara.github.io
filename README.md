@@ -1,5 +1,11 @@
 # io
 
+## watch
+
+```sh
+gatsby develop
+```
+
 ## deploy
 
 ```sh
