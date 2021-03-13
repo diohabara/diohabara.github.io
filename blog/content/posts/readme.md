@@ -7,8 +7,8 @@ slug: "readme"
 category: "personal"
 description: "月並みですが、情報社会に対する自己防衛のために情報のプール選びをはじめました。"
 tags:
-	- "readme"
-socialImage: "media/pika_suneteru.jpg"
+- "readme"
+socialImage: "/media/pika_suneteru.jpg"
 ---
 
 ## 次回予告

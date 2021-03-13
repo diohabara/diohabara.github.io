@@ -1,5 +1,9 @@
 ---
 title: "About me"
 template: "page"
-socialImage: "/media/image-2.jpg"
+socialImage: "/media/photo.png"
 ---
+
+See [here](https://github.com/diohabara)
+
+![pikachu](/media/photo.png)
