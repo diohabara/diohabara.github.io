@@ -3,6 +3,7 @@
 ## watch
 
 ```sh
+cd blog
 gatsby develop
 ```
 
@@ -23,4 +24,8 @@ Suppose you are in `blog`
   - e.g., `about.md`
 - add media in `static/media/{{ media }}.{png,jpg}`
   - e.g., `image-0.jpg`
+
+## TODO
+
+- enable RSS
 
