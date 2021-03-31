@@ -1,7 +1,7 @@
 ---
 title: What 読書量 is to 読書体験 is what 労働量 is to 労働体験
 template: "post"
-date: "2021-03-27"
+date: "2021-03-31"
 draft: false
 slug: "blog"
 category: "personal"
