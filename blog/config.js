@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = {
   url: 'https://diohabara.github.io',
@@ -8,7 +8,7 @@ module.exports = {
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-134331234-2',
+  googleAnalyticsId: 'UA-134331243-7',
   useKatex: true,
   menu: [
     {
