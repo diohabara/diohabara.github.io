@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Potsu Potsu]]></title><description><![CDATA[日本語で書きます]]></description><link>https://diohabara.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 20 May 2021 01:39:42 GMT</lastBuildDate><item><title><![CDATA[自作PCを組み立てて、 Ubuntu 21.04 をセットアップした]]></title><description><![CDATA[研究室に配属され、研究室に転がっていたPCを使っていたある日]]></description><link>https://diohabara.github.io/posts/new_pc</link><guid isPermaLink="false">https://diohabara.github.io/posts/new_pc</guid><pubDate>Thu, 20 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;新しいパソコンがほしい&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E6%96%B0%E3%81%97%E3%81%84%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%8C%E3%81%BB%E3%81%97%E3%81%84&quot; aria-label=&quot;新しいパソコンがほしい permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;新しいパソコンがほしい&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Potsu Potsu]]></title><description><![CDATA[日本語で書きます]]></description><link>https://diohabara.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 20 May 2021 09:05:13 GMT</lastBuildDate><item><title><![CDATA[自作PCを組み立てて、 Ubuntu 21.04 をセットアップした]]></title><description><![CDATA[研究室に配属され、研究室に転がっていたPCを使っていたある日]]></description><link>https://diohabara.github.io/posts/new_pc</link><guid isPermaLink="false">https://diohabara.github.io/posts/new_pc</guid><pubDate>Thu, 20 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;新しいパソコンがほしい&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E6%96%B0%E3%81%97%E3%81%84%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%8C%E3%81%BB%E3%81%97%E3%81%84&quot; aria-label=&quot;新しいパソコンがほしい permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;新しいパソコンがほしい&lt;/h2&gt;
 &lt;p&gt;4月になり、大学では新学期が始まりました。大学4年生になると、私の大学では研究室に配属されます。&lt;/p&gt;
 &lt;p&gt;私の研究室ではデジタル回路に関する研究をすることになっているので、&lt;em&gt;Verilog&lt;/em&gt;が書けるように(結局必要はなさそうですが)&lt;em&gt;Ubuntu&lt;/em&gt;を入れた&lt;em&gt;PC&lt;/em&gt;を用意することにしました。研究室から事前にもらった&lt;em&gt;PC&lt;/em&gt;もあるのですが、スペックが低すぎるなどの問題があり使おうとはなりませんでした。そして、&lt;em&gt;GPU&lt;/em&gt;だけ借用はしましたが基本的には自分で&lt;em&gt;PC&lt;/em&gt;パーツを購入して組み立てました。&lt;/p&gt;
 &lt;h2 id=&quot;構成&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E6%A7%8B%E6%88%90&quot; aria-label=&quot;構成 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;構成&lt;/h2&gt;
@@ -22,6 +22,67 @@
 &lt;h3 id=&quot;その2err4-httpsdlbintraycometherdebian-stable-release-403-forbidden&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E3%81%9D%E3%81%AE2err4-httpsdlbintraycometherdebian-stable-release-403-forbidden&quot; aria-label=&quot;その2err4 httpsdlbintraycometherdebian stable release 403 forbidden permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;その2…Err:4 &lt;a href=&quot;https://dl.bintray.com/ether/debian&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dl.bintray.com/ether/debian&lt;/a&gt; stable Release 403 Forbidden&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Bootable USB&lt;/em&gt;は&lt;em&gt;macOS&lt;/em&gt;で作成しました。&lt;a href=&quot;https://www.balena.io/etcher/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Etcher&lt;/a&gt;というソフトを&lt;a href=&quot;https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#1-overview&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;公式の指示&lt;/a&gt;に従って使いました。このソフト自体はすんなり使えたのですが、この&lt;em&gt;USB&lt;/em&gt;から&lt;em&gt;OS&lt;/em&gt;をインストールすると表題のようなエラーが出て、&lt;code class=&quot;language-text&quot;&gt;sudo apt update&lt;/code&gt;が上手くできませんでした。&lt;/p&gt;
 &lt;p&gt;色々ググり、最終的に&lt;a href=&quot;https://askubuntu.com/questions/1213220/err4-https-dl-bintray-com-etcher-debian-stable-release-403-forbidden&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;このページ&lt;/a&gt;に書かれている通りに&lt;code class=&quot;language-text&quot;&gt;/etc/apt/source.list.d&lt;/code&gt;というディレクトリ内にある&lt;code class=&quot;language-text&quot;&gt;etcher&lt;/code&gt;に関連したファイルを削除したところ正常に動くようになりました。&lt;/p&gt;
+&lt;h3 id=&quot;追記-やっぱりubuntu-2004を使っています&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E8%BF%BD%E8%A8%98-%E3%82%84%E3%81%A3%E3%81%B1%E3%82%8Aubuntu-2004%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99&quot; aria-label=&quot;追記 やっぱりubuntu 2004を使っています permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;追記 やっぱり&lt;em&gt;Ubuntu 20.04&lt;/em&gt;を使っています&lt;/h3&gt;
+&lt;p&gt;住めば都？なんかそういうデータでもあるんですか？&lt;/p&gt;
+&lt;p&gt;そういうデータが見つかりませんでした。やはり、ビルド等でエラーが出てくることが多く、面倒なので&lt;em&gt;Ubuntu 20.04&lt;/em&gt;を使うことにしました。そのためには、ネットワークを介さずに&lt;code class=&quot;language-text&quot;&gt;build-essential&lt;/code&gt;をインストールし、有線LANのドライバーをインストールする必要があります。&lt;/p&gt;
+&lt;p&gt;必要なものは&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;USB&lt;/em&gt;ドライブ2つ(&lt;em&gt;bootable USB&lt;/em&gt;ドライブと&lt;code class=&quot;language-text&quot;&gt;.deb&lt;/code&gt;ファイルとドライバーを入れる&lt;em&gt;USB&lt;/em&gt;ドライブ)&lt;/li&gt;
+&lt;li&gt;ネットワークに繋ぐことのできる&lt;em&gt;Ubuntu 20.04&lt;/em&gt;機(仮想マシンを使えば良いです)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;まず、&lt;code class=&quot;language-text&quot;&gt;build-essential&lt;/code&gt;のダウンロードです。最初に&lt;em&gt;Ubuntu 20.04&lt;/em&gt;の入った&lt;em&gt;PC&lt;/em&gt;を用意します。私は&lt;em&gt;Parallels&lt;/em&gt;という仮想化ソフトを使いました。ここに入れた&lt;em&gt;Ubuntu 20.04&lt;/em&gt;を使い、&lt;code class=&quot;language-text&quot;&gt;build-essential&lt;/code&gt;を依存しているパッケージごとダウンロードします。ちなみに、&lt;a href=&quot;https://superuser.com/questions/1112525/ignore-apt-get-download-errors&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;これ&lt;/a&gt;を参照しました。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;cd &amp;lt;path-to-your-usb-drive&amp;gt;
+mkdir packages &amp;amp;&amp;amp; cd packages
+sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y
+sudo apt install apt-rdepends
+sudo bash ./getdepends.sh build-essential&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;以下は&lt;code class=&quot;language-text&quot;&gt;getdepends.sh&lt;/code&gt;の中身です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;#!/bin/bash
+export MAXPARAMETERS=255
+
+function array_contains_find_index() {
+  local n=$#
+  local i=0
+  local value=${!n}
+
+  for (( i=1; i &amp;lt; n; i++ )) {
+    if [ &amp;quot;${!i}&amp;quot; == &amp;quot;${value}&amp;quot; ]; then
+      echo &amp;quot;REMOVING $i: ${!i} = ${value}&amp;quot;
+      return $i
+    fi
+  }
+  return $MAXPARAMETERS
+}
+
+LIST=( $( apt-rdepends $1 | grep -v &amp;quot;^ &amp;quot; ) )
+echo ${LIST[*]}
+read -n1 -r -p &amp;quot;... Packages that will be downloaded (Continue or CTRL+C) ...&amp;quot;
+
+RESULTS=( $( apt-get download ${LIST[*]} |&amp;amp; cut -d&amp;#39; &amp;#39; -f 8 ) )
+LISTLEN=${#LIST[@]}
+
+while [ ${#RESULTS[@]} -gt 0 ]; do
+  for (( i=0; i &amp;lt; $LISTLEN; i++ )); do
+    array_contains_find_index ${RESULTS[@]} ${LIST[$i]}
+    ret=$?
+
+    if (( $ret != $MAXPARAMETERS )); then
+	    unset LIST[$i]
+    fi
+  done
+
+  FULLRESULTS=$( apt-get download ${LIST[*]} 2&amp;gt;&amp;amp;1  )
+  RESULTS=( $( echo $FULLRESULTS |&amp;amp; cut -d&amp;#39; &amp;#39; -f 11 | sed -r &amp;quot;s/&amp;#39;(.*?):(.*$)/\1/g&amp;quot; ) )
+done
+
+apt-get download ${LIST[*]}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;保存先の&lt;em&gt;USB&lt;/em&gt;ドライブに&lt;code class=&quot;language-text&quot;&gt;packages&lt;/code&gt;というディレクトリを作り、そこに依存ファイルごと&lt;code class=&quot;language-text&quot;&gt;build-essential&lt;/code&gt;に関連した&lt;code class=&quot;language-text&quot;&gt;.deb&lt;/code&gt;ファイルをダウンロードして入れておきます。&lt;/p&gt;
+&lt;p&gt;そして、新しく&lt;em&gt;PC&lt;/em&gt;に&lt;em&gt;Ubuntu 20.04&lt;/em&gt;をインストールし、そこに&lt;em&gt;USB&lt;/em&gt;ドライブを刺し、この&lt;em&gt;USB&lt;/em&gt;ドライブのディレクトリ直下ですべてのパッケージをインストールします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo dpkg -i *.deb&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;こうするとドライバーをインストールするのに必要な&lt;code class=&quot;language-text&quot;&gt;make&lt;/code&gt;と&lt;code class=&quot;language-text&quot;&gt;gcc&lt;/code&gt;はインストールされたので、&lt;em&gt;REALTEK&lt;/em&gt;のドライバーを&lt;a href=&quot;https://www.realtek.com/ja/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;このサイト&lt;/a&gt;からダウンロードします。&lt;em&gt;2.5G Ethernet LINUX driver r8125 for kernel up to 5.6&lt;/em&gt;というやつです。&lt;/p&gt;
+&lt;p&gt;そして、これも&lt;em&gt;USB&lt;/em&gt;ドライブに入れ&lt;code class=&quot;language-text&quot;&gt;README&lt;/code&gt;に従ってインストールします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo bash ./autorun.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで、必要なドライバーはインストールされ無事ネットワークに繋がりました。&lt;/p&gt;
 &lt;h2 id=&quot;良かったこと&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8&quot; aria-label=&quot;良かったこと permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;良かったこと&lt;/h2&gt;
 &lt;p&gt;いやー、&lt;em&gt;Ryzen&lt;/em&gt;は本当に早いです。コンパイルが爆速になりました。まぁ、前の&lt;em&gt;PC&lt;/em&gt;の&lt;em&gt;CPU&lt;/em&gt;が&lt;em&gt;Core i7 3700&lt;/em&gt;だったり、メモリが&lt;em&gt;DDR3&lt;/em&gt;というちょっと古い型だったということで比較対象に依る部分もあるでしょう。いずれにせよ快適で、このスペックで当分困らないことでしょう。&lt;em&gt;AMD&lt;/em&gt;はソケットがそこまで頻繁に変わっていないという点も(間違っているかも)少し安心ですね。&lt;/p&gt;
 &lt;h2 id=&quot;やりたいこと&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E3%82%84%E3%82%8A%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8&quot; aria-label=&quot;やりたいこと permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;やりたいこと&lt;/h2&gt;

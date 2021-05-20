@@ -83,6 +83,67 @@
 <h3 id="その2err4-httpsdlbintraycometherdebian-stable-release-403-forbidden" style="position:relative;"><a href="#%E3%81%9D%E3%81%AE2err4-httpsdlbintraycometherdebian-stable-release-403-forbidden" aria-label="その2err4 httpsdlbintraycometherdebian stable release 403 forbidden permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>その2…Err:4 <a href="https://dl.bintray.com/ether/debian" target="_blank" rel="nofollow noopener noreferrer">https://dl.bintray.com/ether/debian</a> stable Release 403 Forbidden</h3>
 <p><em>Bootable USB</em>は<em>macOS</em>で作成しました。<a href="https://www.balena.io/etcher/" target="_blank" rel="nofollow noopener noreferrer">Etcher</a>というソフトを<a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#1-overview" target="_blank" rel="nofollow noopener noreferrer">公式の指示</a>に従って使いました。このソフト自体はすんなり使えたのですが、この<em>USB</em>から<em>OS</em>をインストールすると表題のようなエラーが出て、<code class="language-text">sudo apt update</code>が上手くできませんでした。</p>
 <p>色々ググり、最終的に<a href="https://askubuntu.com/questions/1213220/err4-https-dl-bintray-com-etcher-debian-stable-release-403-forbidden" target="_blank" rel="nofollow noopener noreferrer">このページ</a>に書かれている通りに<code class="language-text">/etc/apt/source.list.d</code>というディレクトリ内にある<code class="language-text">etcher</code>に関連したファイルを削除したところ正常に動くようになりました。</p>
+<h3 id="追記-やっぱりubuntu-2004を使っています" style="position:relative;"><a href="#%E8%BF%BD%E8%A8%98-%E3%82%84%E3%81%A3%E3%81%B1%E3%82%8Aubuntu-2004%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99" aria-label="追記 やっぱりubuntu 2004を使っています permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>追記 やっぱり<em>Ubuntu 20.04</em>を使っています</h3>
+<p>住めば都？なんかそういうデータでもあるんですか？</p>
+<p>そういうデータが見つかりませんでした。やはり、ビルド等でエラーが出てくることが多く、面倒なので<em>Ubuntu 20.04</em>を使うことにしました。そのためには、ネットワークを介さずに<code class="language-text">build-essential</code>をインストールし、有線LANのドライバーをインストールする必要があります。</p>
+<p>必要なものは</p>
+<ul>
+<li><em>USB</em>ドライブ2つ(<em>bootable USB</em>ドライブと<code class="language-text">.deb</code>ファイルとドライバーを入れる<em>USB</em>ドライブ)</li>
+<li>ネットワークに繋ぐことのできる<em>Ubuntu 20.04</em>機(仮想マシンを使えば良いです)</li>
+</ul>
+<p>まず、<code class="language-text">build-essential</code>のダウンロードです。最初に<em>Ubuntu 20.04</em>の入った<em>PC</em>を用意します。私は<em>Parallels</em>という仮想化ソフトを使いました。ここに入れた<em>Ubuntu 20.04</em>を使い、<code class="language-text">build-essential</code>を依存しているパッケージごとダウンロードします。ちなみに、<a href="https://superuser.com/questions/1112525/ignore-apt-get-download-errors" target="_blank" rel="nofollow noopener noreferrer">これ</a>を参照しました。</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">cd &lt;path-to-your-usb-drive&gt;
+mkdir packages &amp;&amp; cd packages
+sudo apt update &amp;&amp; sudo apt upgrade -y
+sudo apt install apt-rdepends
+sudo bash ./getdepends.sh build-essential</code></pre></div>
+<p>以下は<code class="language-text">getdepends.sh</code>の中身です。</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">#!/bin/bash
+export MAXPARAMETERS=255
+
+function array_contains_find_index() {
+  local n=$#
+  local i=0
+  local value=${!n}
+
+  for (( i=1; i &lt; n; i++ )) {
+    if [ &quot;${!i}&quot; == &quot;${value}&quot; ]; then
+      echo &quot;REMOVING $i: ${!i} = ${value}&quot;
+      return $i
+    fi
+  }
+  return $MAXPARAMETERS
+}
+
+LIST=( $( apt-rdepends $1 | grep -v &quot;^ &quot; ) )
+echo ${LIST[*]}
+read -n1 -r -p &quot;... Packages that will be downloaded (Continue or CTRL+C) ...&quot;
+
+RESULTS=( $( apt-get download ${LIST[*]} |&amp; cut -d&#39; &#39; -f 8 ) )
+LISTLEN=${#LIST[@]}
+
+while [ ${#RESULTS[@]} -gt 0 ]; do
+  for (( i=0; i &lt; $LISTLEN; i++ )); do
+    array_contains_find_index ${RESULTS[@]} ${LIST[$i]}
+    ret=$?
+
+    if (( $ret != $MAXPARAMETERS )); then
+	    unset LIST[$i]
+    fi
+  done
+
+  FULLRESULTS=$( apt-get download ${LIST[*]} 2&gt;&amp;1  )
+  RESULTS=( $( echo $FULLRESULTS |&amp; cut -d&#39; &#39; -f 11 | sed -r &quot;s/&#39;(.*?):(.*$)/\1/g&quot; ) )
+done
+
+apt-get download ${LIST[*]}</code></pre></div>
+<p>保存先の<em>USB</em>ドライブに<code class="language-text">packages</code>というディレクトリを作り、そこに依存ファイルごと<code class="language-text">build-essential</code>に関連した<code class="language-text">.deb</code>ファイルをダウンロードして入れておきます。</p>
+<p>そして、新しく<em>PC</em>に<em>Ubuntu 20.04</em>をインストールし、そこに<em>USB</em>ドライブを刺し、この<em>USB</em>ドライブのディレクトリ直下ですべてのパッケージをインストールします。</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">sudo dpkg -i *.deb</code></pre></div>
+<p>こうするとドライバーをインストールするのに必要な<code class="language-text">make</code>と<code class="language-text">gcc</code>はインストールされたので、<em>REALTEK</em>のドライバーを<a href="https://www.realtek.com/ja/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software" target="_blank" rel="nofollow noopener noreferrer">このサイト</a>からダウンロードします。<em>2.5G Ethernet LINUX driver r8125 for kernel up to 5.6</em>というやつです。</p>
+<p>そして、これも<em>USB</em>ドライブに入れ<code class="language-text">README</code>に従ってインストールします。</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">sudo bash ./autorun.sh</code></pre></div>
+<p>これで、必要なドライバーはインストールされ無事ネットワークに繋がりました。</p>
 <h2 id="良かったこと" style="position:relative;"><a href="#%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8" aria-label="良かったこと permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>良かったこと</h2>
 <p>いやー、<em>Ryzen</em>は本当に早いです。コンパイルが爆速になりました。まぁ、前の<em>PC</em>の<em>CPU</em>が<em>Core i7 3700</em>だったり、メモリが<em>DDR3</em>というちょっと古い型だったということで比較対象に依る部分もあるでしょう。いずれにせよ快適で、このスペックで当分困らないことでしょう。<em>AMD</em>はソケットがそこまで頻繁に変わっていないという点も(間違っているかも)少し安心ですね。</p>
 <h2 id="やりたいこと" style="position:relative;"><a href="#%E3%82%84%E3%82%8A%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8" aria-label="やりたいこと permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>やりたいこと</h2>
