@@ -3,9 +3,9 @@ title: gitのdefault branchの名前をmainに変えました
 template: "post"
 date: "2021-05-27"
 draft: false
-slug: "readme"
+slug: "git-branch"
 category: "tech"
-description: "名前を変えるというのも"
+description: "中身だけじゃなくて名前も大事です"
 tags:
 - "tech"
 - "git"
