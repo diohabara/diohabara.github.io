@@ -5,10 +5,13 @@
 <url> <loc>https://diohabara.github.io/posts/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/posts/new_pc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/posts/git-branch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://diohabara.github.io/posts/pakuri</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://diohabara.github.io/draft/new_pc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/posts/dotfiles</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/posts/readme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://diohabara.github.io/posts/pakuri</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://diohabara.github.io/posts/react_naitei_jitai</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://diohabara.github.io/tag/career</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/tag/dotfiles</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/tag/git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/tag/linux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -16,11 +19,12 @@
 <url> <loc>https://diohabara.github.io/tag/personal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/tag/readme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/tag/tech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://diohabara.github.io/tag/tech/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/tag/ubuntu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/tag/work</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://diohabara.github.io/category/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/category/personal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/category/tech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://diohabara.github.io/category/tech/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://diohabara.github.io/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>

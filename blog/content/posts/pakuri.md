@@ -4,7 +4,7 @@ template: "post"
 date: "2021-04-19"
 draft: false
 slug: "pakuri"
-category: "blog"
+category: "personal"
 description: "パクる"
 tags:
 - "personal"
