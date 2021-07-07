@@ -7,8 +7,8 @@ slug: "git-branch"
 category: "tech"
 description: "中身だけじゃなくて名前も大事です"
 tags:
-- "tech"
-- "git"
+  - "tech"
+  - "git"
 ---
 
 ## *GitHub*と`git`の*default branch*の名前が変わった
@@ -27,15 +27,15 @@ hint: Using 'master' as the name for the initial branch. This default branch nam
 hint: is subject to change. To configure the initial branch name to use in all
 hint: of your new repositories, which will suppress this warning, call:
 hint:
-hint: 	git config --global init.defaultBranch <name>
+hint: git config --global init.defaultBranch <name>
 hint:
 hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
 hint:
-hint: 	git branch -m <name>
+hint: git branch -m <name>
 ```
 
-ちなみに`git`のバージョンは以下の通りです(*macOS*)。
+ちなみに`git`のバージョンは以下の通りです(_macOS_)。
 
 ```sh
 ❯ git --version
@@ -46,11 +46,11 @@ git version 2.30.1 (Apple Git-130)
 
 ## *GitHub*と*git*の設定の変更方法
 
-### *GitHub*
+### _GitHub_
 
 [これ](https://docs.github.com/en/github/administering-a-repository/managing-branches-in-your-repository/changing-the-default-branch)を参考にしましょう。
 
-## *git*
+## _git_
 
 [これ](https://git-scm.com/docs/git-config)を参考にしましょう。詳しく言うとコマンドでぱぱっと設定するなら、
 
@@ -64,4 +64,3 @@ git config --global init.defaultBranch main
 [init]
     defaultBranch = "main"
 ```
-

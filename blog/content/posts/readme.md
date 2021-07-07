@@ -7,7 +7,7 @@ slug: "readme"
 category: "personal"
 description: "月並みですが、情報社会に対する自己防衛のために情報のプール選びをはじめました。"
 tags:
-- "readme"
+  - "readme"
 socialImage: "/media/pika_suneteru.jpg"
 ---
 
@@ -25,7 +25,7 @@ socialImage: "/media/pika_suneteru.jpg"
 
 の 3 本です！
 
-![free smile by pikachu](/media/pika_suneteru.jpg)
+![free_smile_by_pikachu](/media/pika_suneteru.jpg)
 
 ## ブログを始めてみた
 
