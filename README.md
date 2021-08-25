@@ -3,20 +3,20 @@
 ## watch
 
 ```sh
-cd blog
+cd docs/blog
 gatsby develop
 ```
 
 ## deploy
 
 ```sh
-cd blog
+cd docs/blog
 yarn run deploy
 ```
 
 ## how to write posts
 
-Suppose you are in `blog`
+Suppose you are in `docs/blog`
 
 - write a post in `content/posts/{{ post }}.md`
   - e.g., `readme.md`
@@ -28,4 +28,3 @@ Suppose you are in `blog`
 ## TODO
 
 - enable RSS
-
