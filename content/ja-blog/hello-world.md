@@ -1,9 +1,9 @@
 ---
-title: "Hello World"
+title: "はろーわーるど"
 date: 2022-05-07T03:48:57+09:00
 type: "post"
 draft: false
-tags: ["hello-world"]
+tags: ["はろーわーるど"]
 ---
 
 - [3行まとめ](#3行まとめ)
@@ -11,6 +11,7 @@ tags: ["hello-world"]
 - [参照](#参照)
 
 <!-- ここに変な画像 -->
+![pikachu](/images/avatar.jpg)
 
 ## 3行まとめ
 
