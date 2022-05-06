@@ -7,6 +7,11 @@ theme = 'gokarna'
 # Automatically generate robots.txt
 enableRobotsTXT = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   description = "MAKE THE WORLD FUN AGAIN"
   showPostsOnHomePage = "recent"
