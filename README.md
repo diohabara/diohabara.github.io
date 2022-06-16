@@ -1,5 +1,7 @@
 # blog
 
+[![GitHub Pages](https://github.com/diohabara/diohabara.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/diohabara/diohabara.github.io/actions/workflows/gh-pages.yml)
+
 My personal blog.
 
 ## deps
