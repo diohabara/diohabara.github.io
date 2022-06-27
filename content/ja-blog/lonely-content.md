@@ -32,5 +32,3 @@ Indeedで仕事ができない僕と一緒に働いてくださる同じチー�
 ## "P.S."
 
 インターンに行っていない残りの3日間は割と文化的な生活をしており、上記のように感傷に浸るのはインターンとして働く4日間のみです。
-
-<a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-normal" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
