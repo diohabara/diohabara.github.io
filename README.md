@@ -31,4 +31,3 @@ hugo new en-blog/<TITLE>.md
 ## TODO
 
 - [ ] enable OGP
-- [x] add share buttons
