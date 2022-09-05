@@ -15,6 +15,14 @@ share: true
 
 ## 3行まとめ
 
+1. a
+2. b
+3. c
+
 ## 謝辞
 
+thankyou
+
 ## 参照
+
+references
