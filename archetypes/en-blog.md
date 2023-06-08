@@ -10,8 +10,6 @@ tags: [""]
 - [Acknowledgement](#acknowledgement)
 - [References](#references)
 
-<!-- INSERT A WEIRD PICTURE -->
-
 ## In a nutshell
 
 ## Acknowledgement
