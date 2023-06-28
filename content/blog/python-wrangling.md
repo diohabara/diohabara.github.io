@@ -3,7 +3,7 @@ title: "picoCTF 2021: Python Wrangling"
 date: 2023-06-28T04:46:22-05:00
 draft: false
 type: "post"
-tags: ["CTF" "General Skills"]
+tags: ["CTF", "General Skills"]
 ---
 
 - [Solution](#solution)
