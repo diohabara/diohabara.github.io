@@ -1,0 +1,234 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>:root{--accent-color:#FF4D4D}</style>
+<title>picoCTF 2021: Nice netcat...</title>
+<meta name=description content="MAKE THE WORLD FUN AGAIN">
+<meta name=keywords content="blog,diohabara,hugo,CTF,General Skills">
+<meta property="og:url" content="https://diohabara.github.io/blog/nice-netcat/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="picoCTF 2021: Nice netcat...">
+<meta property="og:description" content="MAKE THE WORLD FUN AGAIN">
+<meta property="og:image" content="/images/avatar.jpg">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:title content="picoCTF 2021: Nice netcat...">
+<meta name=twitter:description content="MAKE THE WORLD FUN AGAIN">
+<meta property="twitter:domain" content="https://diohabara.github.io/blog/nice-netcat/">
+<meta property="twitter:url" content="https://diohabara.github.io/blog/nice-netcat/">
+<meta name=twitter:image content="/images/avatar.jpg">
+<link rel=canonical href=https://diohabara.github.io/blog/nice-netcat/>
+<link rel=stylesheet type=text/css href=https://diohabara.github.io/css/normalize.min.css media=print onload="this.media='all'">
+<link rel=stylesheet type=text/css href=https://diohabara.github.io/css/main.css>
+<link disabled id=dark-theme rel=stylesheet href=https://diohabara.github.io/css/dark.css>
+<script src=https://diohabara.github.io/js/svg-injector.min.js></script>
+<script src=https://diohabara.github.io/js/feather-icons.min.js></script>
+<script src=https://diohabara.github.io/js/main.js></script>
+</head>
+<body>
+<script type=text/javascript>setThemeByUserPref()</script><header class=header>
+<nav class=header-nav>
+<div class=avatar>
+<a href=https://diohabara.github.io>
+<img src=https://diohabara.github.io/images/avatar.jpg alt=avatar>
+</a>
+</div>
+<div class=nav-title>
+<a class=nav-brand href=https://diohabara.github.io>barabara diary</a>
+</div>
+<div class=nav-links>
+<div class=nav-link>
+<a href=https://diohabara.github.io/blog/><span data-feather=globe></span> blog </a>
+</div>
+<div class=nav-link>
+<a href=https://diohabara.github.io/tags/> Tags </a>
+</div>
+<div class=nav-link>
+<a href=https://github.com/diohabara/><span data-feather=github></span> </a>
+</div>
+<div class=nav-link>
+<a href=https://diohabara.github.io/index.xml><span data-feather=rss></span> </a>
+</div>
+<span class=nav-icons-divider></span>
+<div class="nav-link dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</div>
+<div class=nav-link id=hamburger-menu-toggle>
+<a>
+<span data-feather=menu></span>
+</a>
+</div>
+<ul class="nav-hamburger-list visibility-hidden">
+<li class=nav-item>
+<a href=https://diohabara.github.io/blog/><span data-feather=globe></span> blog </a>
+</li>
+<li class=nav-item>
+<a href=https://diohabara.github.io/tags/> Tags </a>
+</li>
+<li class=nav-item>
+<a href=https://github.com/diohabara/><span data-feather=github></span> </a>
+</li>
+<li class=nav-item>
+<a href=https://diohabara.github.io/index.xml><span data-feather=rss></span> </a>
+</li>
+<li class="nav-item dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<main id=content>
+<div class="post container">
+<div class=post-header-section>
+<h1>picoCTF 2021: Nice netcat...</h1>
+<small role=doc-subtitle></small>
+<p class=post-date>
+July 7, 2023
+</p>
+<ul class=post-tags>
+<li class=post-tag><a href=https://diohabara.github.io/tags/ctf>CTF</a></li>
+<li class=post-tag><a href=https://diohabara.github.io/tags/general-skills>General Skills</a></li>
+</ul>
+</div>
+<div class=post-content>
+<p>
+<ul>
+<li><a href=#solution>Solution</a></li>
+<li><a href=#acknowledgement>Acknowledgement</a></li>
+</ul>
+<h2 id=solution>Solution <a href=#solution>#</a></h2><p>When I execute the given command, I get this output:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ nc mercury.picoctf.net <span style=color:#ae81ff>21135</span>
+<span style=color:#ae81ff>112</span> 
+<span style=color:#ae81ff>105</span> 
+<span style=color:#ae81ff>99</span> 
+<span style=color:#ae81ff>111</span> 
+<span style=color:#ae81ff>67</span> 
+<span style=color:#ae81ff>84</span> 
+<span style=color:#ae81ff>70</span> 
+<span style=color:#ae81ff>123</span> 
+<span style=color:#ae81ff>103</span> 
+<span style=color:#ae81ff>48</span> 
+<span style=color:#ae81ff>48</span> 
+<span style=color:#ae81ff>100</span> 
+<span style=color:#ae81ff>95</span> 
+<span style=color:#ae81ff>107</span> 
+<span style=color:#ae81ff>49</span> 
+<span style=color:#ae81ff>116</span> 
+<span style=color:#ae81ff>116</span> 
+<span style=color:#ae81ff>121</span> 
+<span style=color:#ae81ff>33</span> 
+<span style=color:#ae81ff>95</span> 
+<span style=color:#ae81ff>110</span> 
+<span style=color:#ae81ff>49</span> 
+<span style=color:#ae81ff>99</span> 
+<span style=color:#ae81ff>51</span> 
+<span style=color:#ae81ff>95</span> 
+<span style=color:#ae81ff>107</span> 
+<span style=color:#ae81ff>49</span> 
+<span style=color:#ae81ff>116</span> 
+<span style=color:#ae81ff>116</span> 
+<span style=color:#ae81ff>121</span> 
+<span style=color:#ae81ff>33</span> 
+<span style=color:#ae81ff>95</span> 
+<span style=color:#ae81ff>97</span> 
+<span style=color:#ae81ff>102</span> 
+<span style=color:#ae81ff>100</span> 
+<span style=color:#ae81ff>53</span> 
+<span style=color:#ae81ff>102</span> 
+<span style=color:#ae81ff>100</span> 
+<span style=color:#ae81ff>97</span> 
+<span style=color:#ae81ff>52</span> 
+<span style=color:#ae81ff>125</span> 
+<span style=color:#ae81ff>10</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>This seems to be a list of ASCII codes. I can use a converter from <a href=https://onlineasciitools.com/convert-decimal-to-ascii>here</a> to convert them to ASCII characters. I get this output:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>picoCTF<span style=color:#f92672>{</span>g00d_k1tty!_n1c3_k1tty!_afd5fda4<span style=color:#f92672>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=acknowledgement>Acknowledgement <a href=#acknowledgement>#</a></h2><p>Thank you, CMU security and privacy experts, for creating this challenge.</p>
+</p>
+</div>
+</div>
+</main><footer class=footer>
+<span>&copy; 2023 </span>
+<span>
+Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a>
+</span>
+</footer>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.0.6/css/all.css>
+<link rel=stylesheet href=/css/custom.css>
+<section class="section sns_parent">
+<div class="container sns_section">
+<div class="sns_button twitter">
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&text=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=Tweet><i class="fab fa-twitter"></i></a>
+</div>
+<div class="sns_button hatena">
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&title=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=hatena><i class="fa fa-hatena"></i></i></a>
+</div>
+<div class="sns_button facebook">
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&t=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=Facebook><i class="fab fa-facebook"></i></a>
+</div>
+<div class="sns_button pocket">
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&title=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=pocket><i class="fab fa-get-pocket"></i></a>
+</div>
+</div>
+</section>
+</body>
+</html>
