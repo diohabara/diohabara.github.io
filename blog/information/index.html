@@ -1,0 +1,221 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>:root{--accent-color:#FF4D4D}</style>
+<title>picoCTF 2021: Information</title>
+<meta name=description content="MAKE THE WORLD FUN AGAIN">
+<meta name=keywords content="blog,diohabara,hugo,CTF,Forensics">
+<meta property="og:url" content="https://diohabara.github.io/blog/information/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="picoCTF 2021: Information">
+<meta property="og:description" content="MAKE THE WORLD FUN AGAIN">
+<meta property="og:image" content="/images/avatar.jpg">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:title content="picoCTF 2021: Information">
+<meta name=twitter:description content="MAKE THE WORLD FUN AGAIN">
+<meta property="twitter:domain" content="https://diohabara.github.io/blog/information/">
+<meta property="twitter:url" content="https://diohabara.github.io/blog/information/">
+<meta name=twitter:image content="/images/avatar.jpg">
+<link rel=canonical href=https://diohabara.github.io/blog/information/>
+<link rel=stylesheet type=text/css href=https://diohabara.github.io/css/normalize.min.css media=print onload="this.media='all'">
+<link rel=stylesheet type=text/css href=https://diohabara.github.io/css/main.css>
+<link disabled id=dark-theme rel=stylesheet href=https://diohabara.github.io/css/dark.css>
+<script src=https://diohabara.github.io/js/svg-injector.min.js></script>
+<script src=https://diohabara.github.io/js/feather-icons.min.js></script>
+<script src=https://diohabara.github.io/js/main.js></script>
+</head>
+<body>
+<script type=text/javascript>setThemeByUserPref()</script><header class=header>
+<nav class=header-nav>
+<div class=avatar>
+<a href=https://diohabara.github.io>
+<img src=https://diohabara.github.io/images/avatar.jpg alt=avatar>
+</a>
+</div>
+<div class=nav-title>
+<a class=nav-brand href=https://diohabara.github.io>barabara diary</a>
+</div>
+<div class=nav-links>
+<div class=nav-link>
+<a href=https://diohabara.github.io/blog/><span data-feather=globe></span> blog </a>
+</div>
+<div class=nav-link>
+<a href=https://diohabara.github.io/tags/> Tags </a>
+</div>
+<div class=nav-link>
+<a href=https://github.com/diohabara/><span data-feather=github></span> </a>
+</div>
+<div class=nav-link>
+<a href=https://diohabara.github.io/index.xml><span data-feather=rss></span> </a>
+</div>
+<span class=nav-icons-divider></span>
+<div class="nav-link dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</div>
+<div class=nav-link id=hamburger-menu-toggle>
+<a>
+<span data-feather=menu></span>
+</a>
+</div>
+<ul class="nav-hamburger-list visibility-hidden">
+<li class=nav-item>
+<a href=https://diohabara.github.io/blog/><span data-feather=globe></span> blog </a>
+</li>
+<li class=nav-item>
+<a href=https://diohabara.github.io/tags/> Tags </a>
+</li>
+<li class=nav-item>
+<a href=https://github.com/diohabara/><span data-feather=github></span> </a>
+</li>
+<li class=nav-item>
+<a href=https://diohabara.github.io/index.xml><span data-feather=rss></span> </a>
+</li>
+<li class="nav-item dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<main id=content>
+<div class="post container">
+<div class=post-header-section>
+<h1>picoCTF 2021: Information</h1>
+<small role=doc-subtitle></small>
+<p class=post-date>
+July 7, 2023
+</p>
+<ul class=post-tags>
+<li class=post-tag><a href=https://diohabara.github.io/tags/ctf>CTF</a></li>
+<li class=post-tag><a href=https://diohabara.github.io/tags/forensics>Forensics</a></li>
+</ul>
+</div>
+<div class=post-content>
+<p>
+<ul>
+<li><a href=#solution>Solution</a></li>
+<li><a href=#acknowledgement>Acknowledgement</a></li>
+</ul>
+<h2 id=solution>Solution <a href=#solution>#</a></h2><p>First, let&rsquo;s check the file type.</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ file resources/cat.jpg 
+resources/cat.jpg: JPEG image data, JFIF standard 1.02, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 2560x1598, components <span style=color:#ae81ff>3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Then, let&rsquo;s check the metadata.</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ exiftool resources/cat.jpg 
+ExifTool Version Number         : 12.55
+File Name                       : cat.jpg
+Directory                       : resources
+File Size                       : <span style=color:#ae81ff>878</span> kB
+File Modification Date/Time     : 2023:07:06 23:51:14-05:00
+File Access Date/Time           : 2023:07:06 23:56:06-05:00
+File Inode Change Date/Time     : 2023:07:06 23:51:14-05:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.02
+Resolution Unit                 : None
+X Resolution                    : <span style=color:#ae81ff>1</span>
+Y Resolution                    : <span style=color:#ae81ff>1</span>
+Current IPTC Digest             : 7a78f3d9cfb1ce42ab5a3aa30573d617
+Copyright Notice                : PicoCTF
+Application Record Version      : <span style=color:#ae81ff>4</span>
+XMP Toolkit                     : Image::ExifTool 10.80
+License                         : cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9
+Rights                          : PicoCTF
+Image Width                     : <span style=color:#ae81ff>2560</span>
+Image Height                    : <span style=color:#ae81ff>1598</span>
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : <span style=color:#ae81ff>8</span>
+Color Components                : <span style=color:#ae81ff>3</span>
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 <span style=color:#f92672>(</span><span style=color:#ae81ff>2</span> 2<span style=color:#f92672>)</span>
+Image Size                      : 2560x1598
+Megapixels                      : 4.1
+</code></pre></td></tr></table>
+</div>
+</div><p>The <code>License</code> field looks like base64. Let&rsquo;s decode it.</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ echo <span style=color:#e6db74>&#34;cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9&#34;</span> | base64 -d
+picoCTF<span style=color:#f92672>{</span>the_m3tadata_1s_modified<span style=color:#f92672>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=acknowledgement>Acknowledgement <a href=#acknowledgement>#</a></h2><p>Thank you, CMU security and privacy experts, for creating this challenge.</p>
+</p>
+</div>
+</div>
+</main><footer class=footer>
+<span>&copy; 2023 </span>
+<span>
+Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a>
+</span>
+</footer>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.0.6/css/all.css>
+<link rel=stylesheet href=/css/custom.css>
+<section class="section sns_parent">
+<div class="container sns_section">
+<div class="sns_button twitter">
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fdiohabara.github.io%2fblog%2finformation%2f&text=picoCTF%202021%3a%20Information" target=_blank title=Tweet><i class="fab fa-twitter"></i></a>
+</div>
+<div class="sns_button hatena">
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fdiohabara.github.io%2fblog%2finformation%2f&title=picoCTF%202021%3a%20Information" target=_blank title=hatena><i class="fa fa-hatena"></i></i></a>
+</div>
+<div class="sns_button facebook">
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdiohabara.github.io%2fblog%2finformation%2f&t=picoCTF%202021%3a%20Information" target=_blank title=Facebook><i class="fab fa-facebook"></i></a>
+</div>
+<div class="sns_button pocket">
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fdiohabara.github.io%2fblog%2finformation%2f&title=picoCTF%202021%3a%20Information" target=_blank title=pocket><i class="fab fa-get-pocket"></i></a>
+</div>
+</div>
+</section>
+</body>
+</html>
