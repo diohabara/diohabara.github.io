@@ -2,21 +2,21 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <style>:root{--accent-color:#FF4D4D}</style>
-<title>picoCTF 2021: Nice netcat...</title>
+<title>picoCTF 2021: Information</title>
 <meta name=description content="MAKE THE WORLD FUN AGAIN">
-<meta name=keywords content="blog,diohabara,hugo,CTF,General Skills">
-<meta property="og:url" content="https://diohabara.github.io/blog/nice-netcat/">
+<meta name=keywords content="blog,diohabara,hugo,CTF,Forensics">
+<meta property="og:url" content="https://diohabara.github.io/blog/picoctf2021-information/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="picoCTF 2021: Nice netcat...">
+<meta property="og:title" content="picoCTF 2021: Information">
 <meta property="og:description" content="MAKE THE WORLD FUN AGAIN">
 <meta property="og:image" content="/images/avatar.jpg">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:title content="picoCTF 2021: Nice netcat...">
+<meta name=twitter:title content="picoCTF 2021: Information">
 <meta name=twitter:description content="MAKE THE WORLD FUN AGAIN">
-<meta property="twitter:domain" content="https://diohabara.github.io/blog/nice-netcat/">
-<meta property="twitter:url" content="https://diohabara.github.io/blog/nice-netcat/">
+<meta property="twitter:domain" content="https://diohabara.github.io/blog/picoctf2021-information/">
+<meta property="twitter:url" content="https://diohabara.github.io/blog/picoctf2021-information/">
 <meta name=twitter:image content="/images/avatar.jpg">
-<link rel=canonical href=https://diohabara.github.io/blog/nice-netcat/>
+<link rel=canonical href=https://diohabara.github.io/blog/picoctf2021-information/>
 <link rel=stylesheet type=text/css href=https://diohabara.github.io/css/normalize.min.css media=print onload="this.media='all'">
 <link rel=stylesheet type=text/css href=https://diohabara.github.io/css/main.css>
 <link disabled id=dark-theme rel=stylesheet href=https://diohabara.github.io/css/dark.css>
@@ -84,14 +84,14 @@
 <main id=content>
 <div class="post container">
 <div class=post-header-section>
-<h1>picoCTF 2021: Nice netcat...</h1>
+<h1>picoCTF 2021: Information</h1>
 <small role=doc-subtitle></small>
 <p class=post-date>
 July 7, 2023
 </p>
 <ul class=post-tags>
 <li class=post-tag><a href=https://diohabara.github.io/tags/ctf>CTF</a></li>
-<li class=post-tag><a href=https://diohabara.github.io/tags/general-skills>General Skills</a></li>
+<li class=post-tag><a href=https://diohabara.github.io/tags/forensics>Forensics</a></li>
 </ul>
 </div>
 <div class=post-content>
@@ -100,7 +100,18 @@ July 7, 2023
 <li><a href=#solution>Solution</a></li>
 <li><a href=#acknowledgement>Acknowledgement</a></li>
 </ul>
-<h2 id=solution>Solution <a href=#solution>#</a></h2><p>When I execute the given command, I get this output:</p>
+<h2 id=solution>Solution <a href=#solution>#</a></h2><p>First, let&rsquo;s check the file type.</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ file resources/cat.jpg 
+resources/cat.jpg: JPEG image data, JFIF standard 1.02, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 2560x1598, components <span style=color:#ae81ff>3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Then, let&rsquo;s check the metadata.</p>
 <div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
 <pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
@@ -133,73 +144,49 @@ July 7, 2023
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ nc mercury.picoctf.net <span style=color:#ae81ff>21135</span>
-<span style=color:#ae81ff>112</span> 
-<span style=color:#ae81ff>105</span> 
-<span style=color:#ae81ff>99</span> 
-<span style=color:#ae81ff>111</span> 
-<span style=color:#ae81ff>67</span> 
-<span style=color:#ae81ff>84</span> 
-<span style=color:#ae81ff>70</span> 
-<span style=color:#ae81ff>123</span> 
-<span style=color:#ae81ff>103</span> 
-<span style=color:#ae81ff>48</span> 
-<span style=color:#ae81ff>48</span> 
-<span style=color:#ae81ff>100</span> 
-<span style=color:#ae81ff>95</span> 
-<span style=color:#ae81ff>107</span> 
-<span style=color:#ae81ff>49</span> 
-<span style=color:#ae81ff>116</span> 
-<span style=color:#ae81ff>116</span> 
-<span style=color:#ae81ff>121</span> 
-<span style=color:#ae81ff>33</span> 
-<span style=color:#ae81ff>95</span> 
-<span style=color:#ae81ff>110</span> 
-<span style=color:#ae81ff>49</span> 
-<span style=color:#ae81ff>99</span> 
-<span style=color:#ae81ff>51</span> 
-<span style=color:#ae81ff>95</span> 
-<span style=color:#ae81ff>107</span> 
-<span style=color:#ae81ff>49</span> 
-<span style=color:#ae81ff>116</span> 
-<span style=color:#ae81ff>116</span> 
-<span style=color:#ae81ff>121</span> 
-<span style=color:#ae81ff>33</span> 
-<span style=color:#ae81ff>95</span> 
-<span style=color:#ae81ff>97</span> 
-<span style=color:#ae81ff>102</span> 
-<span style=color:#ae81ff>100</span> 
-<span style=color:#ae81ff>53</span> 
-<span style=color:#ae81ff>102</span> 
-<span style=color:#ae81ff>100</span> 
-<span style=color:#ae81ff>97</span> 
-<span style=color:#ae81ff>52</span> 
-<span style=color:#ae81ff>125</span> 
-<span style=color:#ae81ff>10</span> 
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ exiftool resources/cat.jpg 
+ExifTool Version Number         : 12.55
+File Name                       : cat.jpg
+Directory                       : resources
+File Size                       : <span style=color:#ae81ff>878</span> kB
+File Modification Date/Time     : 2023:07:06 23:51:14-05:00
+File Access Date/Time           : 2023:07:06 23:56:06-05:00
+File Inode Change Date/Time     : 2023:07:06 23:51:14-05:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.02
+Resolution Unit                 : None
+X Resolution                    : <span style=color:#ae81ff>1</span>
+Y Resolution                    : <span style=color:#ae81ff>1</span>
+Current IPTC Digest             : 7a78f3d9cfb1ce42ab5a3aa30573d617
+Copyright Notice                : PicoCTF
+Application Record Version      : <span style=color:#ae81ff>4</span>
+XMP Toolkit                     : Image::ExifTool 10.80
+License                         : cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9
+Rights                          : PicoCTF
+Image Width                     : <span style=color:#ae81ff>2560</span>
+Image Height                    : <span style=color:#ae81ff>1598</span>
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : <span style=color:#ae81ff>8</span>
+Color Components                : <span style=color:#ae81ff>3</span>
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 <span style=color:#f92672>(</span><span style=color:#ae81ff>2</span> 2<span style=color:#f92672>)</span>
+Image Size                      : 2560x1598
+Megapixels                      : 4.1
 </code></pre></td></tr></table>
 </div>
-</div><p>This seems to be a list of ASCII codes. I can use a converter from <a href=https://onlineasciitools.com/convert-decimal-to-ascii>here</a> to convert them to ASCII characters. I get this output:</p>
+</div><p>The <code>License</code> field looks like base64. Let&rsquo;s decode it.</p>
 <div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
 <pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>picoCTF<span style=color:#f92672>{</span>g00d_k1tty!_n1c3_k1tty!_afd5fda4<span style=color:#f92672>}</span>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ echo <span style=color:#e6db74>&#34;cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9&#34;</span> | base64 -d
+picoCTF<span style=color:#f92672>{</span>the_m3tadata_1s_modified<span style=color:#f92672>}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=acknowledgement>Acknowledgement <a href=#acknowledgement>#</a></h2><p>Thank you, CMU security and privacy experts, for creating this challenge.</p>
@@ -217,16 +204,16 @@ Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avi
 <section class="section sns_parent">
 <div class="container sns_section">
 <div class="sns_button twitter">
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&text=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=Tweet><i class="fab fa-twitter"></i></a>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-information%2f&text=picoCTF%202021%3a%20Information" target=_blank title=Tweet><i class="fab fa-twitter"></i></a>
 </div>
 <div class="sns_button hatena">
-<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&title=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=hatena><i class="fa fa-hatena"></i></i></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-information%2f&title=picoCTF%202021%3a%20Information" target=_blank title=hatena><i class="fa fa-hatena"></i></i></a>
 </div>
 <div class="sns_button facebook">
-<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&t=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=Facebook><i class="fab fa-facebook"></i></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-information%2f&t=picoCTF%202021%3a%20Information" target=_blank title=Facebook><i class="fab fa-facebook"></i></a>
 </div>
 <div class="sns_button pocket">
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fnice-netcat%2f&title=picoCTF%202021%3a%20Nice%20netcat..." target=_blank title=pocket><i class="fab fa-get-pocket"></i></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-information%2f&title=picoCTF%202021%3a%20Information" target=_blank title=pocket><i class="fab fa-get-pocket"></i></a>
 </div>
 </div>
 </section>

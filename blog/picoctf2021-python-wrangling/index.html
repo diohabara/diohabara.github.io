@@ -2,21 +2,21 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <style>:root{--accent-color:#FF4D4D}</style>
-<title>picoCTF 2021: Wave a Flag</title>
+<title>picoCTF 2021: Python Wrangling</title>
 <meta name=description content="MAKE THE WORLD FUN AGAIN">
 <meta name=keywords content="blog,diohabara,hugo,CTF,General Skills">
-<meta property="og:url" content="https://diohabara.github.io/blog/wave-a-flag/">
+<meta property="og:url" content="https://diohabara.github.io/blog/picoctf2021-python-wrangling/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="picoCTF 2021: Wave a Flag">
+<meta property="og:title" content="picoCTF 2021: Python Wrangling">
 <meta property="og:description" content="MAKE THE WORLD FUN AGAIN">
 <meta property="og:image" content="/images/avatar.jpg">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:title content="picoCTF 2021: Wave a Flag">
+<meta name=twitter:title content="picoCTF 2021: Python Wrangling">
 <meta name=twitter:description content="MAKE THE WORLD FUN AGAIN">
-<meta property="twitter:domain" content="https://diohabara.github.io/blog/wave-a-flag/">
-<meta property="twitter:url" content="https://diohabara.github.io/blog/wave-a-flag/">
+<meta property="twitter:domain" content="https://diohabara.github.io/blog/picoctf2021-python-wrangling/">
+<meta property="twitter:url" content="https://diohabara.github.io/blog/picoctf2021-python-wrangling/">
 <meta name=twitter:image content="/images/avatar.jpg">
-<link rel=canonical href=https://diohabara.github.io/blog/wave-a-flag/>
+<link rel=canonical href=https://diohabara.github.io/blog/picoctf2021-python-wrangling/>
 <link rel=stylesheet type=text/css href=https://diohabara.github.io/css/normalize.min.css media=print onload="this.media='all'">
 <link rel=stylesheet type=text/css href=https://diohabara.github.io/css/main.css>
 <link disabled id=dark-theme rel=stylesheet href=https://diohabara.github.io/css/dark.css>
@@ -84,7 +84,7 @@
 <main id=content>
 <div class="post container">
 <div class=post-header-section>
-<h1>picoCTF 2021: Wave a Flag</h1>
+<h1>picoCTF 2021: Python Wrangling</h1>
 <small role=doc-subtitle></small>
 <p class=post-date>
 June 28, 2023
@@ -100,29 +100,24 @@ June 28, 2023
 <li><a href=#solution>Solution</a></li>
 <li><a href=#acknowledgement>Acknowledgement</a></li>
 </ul>
-<h2 id=solution>Solution <a href=#solution>#</a></h2><p>You&rsquo;re given a file called <code>warm</code>. Run <code>file</code> on it and you&rsquo;ll find that it&rsquo;s an ELF file.</p>
+<h2 id=solution>Solution <a href=#solution>#</a></h2><p>You will be given the following files.</p>
+<ul>
+<li><code>ende.py</code></li>
+<li><code>flag.txt.en</code></li>
+<li><code>pw.txt</code></li>
+</ul>
+<p>The <code>ende.py</code> is a simple encryption/decryption script.</p>
 <div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
 <pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ file resources/warm
-resources/warm: ELF 64-bit LSB pie executable, x86-64, version <span style=color:#ae81ff>1</span> <span style=color:#f92672>(</span>SYSV<span style=color:#f92672>)</span>, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, <span style=color:#66d9ef>for</span> GNU/Linux 3.2.0, BuildID<span style=color:#f92672>[</span>sha1<span style=color:#f92672>]=</span>01b148cdedfc38125cac0d87e0537466d47927b1, with debug_info, not stripped
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ python scripts/ende.py
+Usage: scripts/ende.py <span style=color:#f92672>(</span>-e/-d<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>file<span style=color:#f92672>]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Run <code>./warm</code> and you&rsquo;ll get the following output.</p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ ./resources/warm
-Hello user! Pass me a -h to learn what I can <span style=color:#66d9ef>do</span>!
-</code></pre></td></tr></table>
-</div>
-</div><p>Run the following command to give it a right permission and run it again.</p>
+</div><p>The <code>flag.txt.en</code> is an encrypted flag. I used the string in <code>pw.txt</code> as a password.</p>
 <div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
 <pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
@@ -130,9 +125,9 @@ Hello user! Pass me a -h to learn what I can <span style=color:#66d9ef>do</span>
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ chmod +x resources/warm
-$ ./resources/warm
-Oh, help? I actually don<span style=color:#960050;background-color:#1e0010>&#39;</span>t <span style=color:#66d9ef>do</span> much, but I <span style=color:#66d9ef>do</span> have this flag here: picoCTF<span style=color:#f92672>{</span>b1scu1ts_4nd_gr4vy_f0668f62<span style=color:#f92672>}</span>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ python scripts/ende.py -d scripts/flag.txt.en
+Please enter the password:ac9bd0ffac9bd0ffac9bd0ffac9bd0ff
+picoCTF<span style=color:#f92672>{</span>4p0110_1n_7h3_h0us3_ac9bd0ff<span style=color:#f92672>}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=acknowledgement>Acknowledgement <a href=#acknowledgement>#</a></h2><p>Thank you, CMU security and privacy experts, for creating this challenge.</p>
@@ -150,16 +145,16 @@ Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avi
 <section class="section sns_parent">
 <div class="container sns_section">
 <div class="sns_button twitter">
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fwave-a-flag%2f&text=picoCTF%202021%3a%20Wave%20a%20Flag" target=_blank title=Tweet><i class="fab fa-twitter"></i></a>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-python-wrangling%2f&text=picoCTF%202021%3a%20Python%20Wrangling" target=_blank title=Tweet><i class="fab fa-twitter"></i></a>
 </div>
 <div class="sns_button hatena">
-<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fdiohabara.github.io%2fblog%2fwave-a-flag%2f&title=picoCTF%202021%3a%20Wave%20a%20Flag" target=_blank title=hatena><i class="fa fa-hatena"></i></i></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-python-wrangling%2f&title=picoCTF%202021%3a%20Python%20Wrangling" target=_blank title=hatena><i class="fa fa-hatena"></i></i></a>
 </div>
 <div class="sns_button facebook">
-<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdiohabara.github.io%2fblog%2fwave-a-flag%2f&t=picoCTF%202021%3a%20Wave%20a%20Flag" target=_blank title=Facebook><i class="fab fa-facebook"></i></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-python-wrangling%2f&t=picoCTF%202021%3a%20Python%20Wrangling" target=_blank title=Facebook><i class="fab fa-facebook"></i></a>
 </div>
 <div class="sns_button pocket">
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fwave-a-flag%2f&title=picoCTF%202021%3a%20Wave%20a%20Flag" target=_blank title=pocket><i class="fab fa-get-pocket"></i></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fdiohabara.github.io%2fblog%2fpicoctf2021-python-wrangling%2f&title=picoCTF%202021%3a%20Python%20Wrangling" target=_blank title=pocket><i class="fab fa-get-pocket"></i></a>
 </div>
 </div>
 </section>
