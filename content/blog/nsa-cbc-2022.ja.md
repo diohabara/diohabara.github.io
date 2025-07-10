@@ -7,7 +7,7 @@ tags: ["ctf", "nsa cbc", "japanese"]
 share: true
 ---
 
-- [3 行まとめ](#3行まとめ)
+- [3 行まとめ](#3-行まとめ)
 - [NSA Codebreaker Challenge とは？](#nsa-codebreaker-challenge-とは)
 - [なぜ参加をしたのか？](#なぜ参加をしたのか)
 - [解けた問題の簡単な解説](#解けた問題の簡単な解説)
