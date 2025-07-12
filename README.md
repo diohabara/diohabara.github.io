@@ -6,7 +6,7 @@ My personal blog.
 
 ## deps
 
-- `hugo`
+- `hugo` (latest version - automatically updated in CI)
 
 ## watch
 
@@ -18,6 +18,22 @@ hugo server
 
 ```shell
 hugo new blog/<TITLE>.md
+```
+
+## Theme Management
+
+This blog uses the [Gokarna](https://github.com/526avijitgupta/gokarna) theme as a Git submodule.
+
+### Initialize theme after cloning
+
+```shell
+git submodule update --init --recursive
+```
+
+### Update theme to latest version
+
+```shell
+git submodule update --remote themes/gokarna
 ```
 
 ## TODO
