@@ -3,7 +3,8 @@ title: "現在の年収をポイ活だけで得ようとしたらいくらあっ
 date: 2025-07-10T00:00:00+09:00
 draft: false
 type: "post"
-tags: ["career"]
+tags: ["career", "japanese"]
+language: "ja"
 ---
 
 - [TL;DR](#tldr)

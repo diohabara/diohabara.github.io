@@ -4,6 +4,7 @@ date: 2023-06-28T04:59:58-05:00
 draft: false
 type: "post"
 tags: ["CTF", "General Skills"]
+language: "en"
 ---
 
 - [Solution](#solution)

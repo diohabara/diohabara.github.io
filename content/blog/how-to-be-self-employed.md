@@ -3,7 +3,8 @@ title: "起業しました(個人事業主になっただけ)"
 date: 2025-05-30T00:00:00+09:00
 draft: false
 type: "post"
-tags: ["career", "self-employment"]
+tags: ["career", "self-employment", "japanese"]
+language: "ja"
 ---
 
 - [個人事業主とは？](#個人事業主とは)

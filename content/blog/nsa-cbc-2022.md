@@ -5,6 +5,7 @@ draft: false
 type: "post"
 tags: ["ctf", "nsa cbc", "japanese"]
 share: true
+language: "ja"
 ---
 
 - [3 行まとめ](#3-行まとめ)

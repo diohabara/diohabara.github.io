@@ -3,7 +3,8 @@ title: "UTDでのTA体験記"
 date: 2024-05-26T16:03:22+09:00
 draft: false
 type: "post"
-tags: ["UTD", "TA"]
+tags: ["UTD", "TA", "japanese"]
+language: "ja"
 ---
 
 <!-- TOC -->

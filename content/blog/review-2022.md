@@ -5,6 +5,7 @@ draft: false
 type: "post"
 tags: ["review", "japanese"]
 share: true
+language: "ja"
 ---
 
 - [3 行まとめ](#3行まとめ)

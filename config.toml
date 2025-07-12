@@ -1,6 +1,5 @@
 baseURL = 'https://diohabara.github.io'
-defaultContentLanguage = "en"
-languageCode = 'en'
+languageCode = 'ja'
 theme = 'gokarna'
 title = 'barabara diary'
 
@@ -33,7 +32,11 @@ description = "MAKE THE WORLD FUN AGAIN"
 showPostsOnHomePage = "recent"
 # Keywords relevant for SEO
 metaKeywords = ["blog", "diohabara", "hugo"]
+# Default OGP image
+images = ["/images/avatar.jpg"]
 
+
+# Menu configuration for English
 [menu]
 # feather-icons でアイコン設定可能: https://feathericons.com/
 [[menu.main]]

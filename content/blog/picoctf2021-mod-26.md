@@ -4,6 +4,7 @@ date: 2023-06-28T00:21:24-05:00
 draft: false
 type: "post"
 tags: ["CTF", "Cryptography"]
+language: "en"
 ---
 
 - [Solution](#solution)

@@ -5,6 +5,7 @@ draft: false
 type: "post"
 tags: ["utd", "study-abroad", "usa", "japanese"]
 share: true
+language: "ja"
 ---
 
 - [3 行まとめ](#3-行まとめ)

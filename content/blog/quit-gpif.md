@@ -3,7 +3,8 @@ title: "新卒で入って8ヶ月でGPIFやめますた"
 date: 2025-02-04T01:51:56+09:00
 draft: false
 type: "post"
-tags: ["gpif", "quit", "job"]
+tags: ["gpif", "quit", "job", "japanese"]
+language: "ja"
 ---
 
 - [想定読者](#想定読者)

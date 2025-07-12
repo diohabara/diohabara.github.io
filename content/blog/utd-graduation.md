@@ -3,7 +3,8 @@ title: "University of Texas at Dallas CS修士卒業時の感想"
 date: 2024-05-26T15:28:56+09:00
 draft: false
 type: "post"
-tags: ["UTD"]
+tags: ["UTD", "japanese"]
+language: "ja"
 ---
 
 <!-- TOC -->
