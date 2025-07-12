@@ -1,6 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nsa cbc on barabara diary</title><link>https://diohabara.github.io/tags/nsa-cbc/</link><description>Recent content in nsa cbc on barabara diary</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Dec 2022 01:16:36 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/nsa-cbc/index.xml" rel="self" type="application/rss+xml"/><item><title>CTF初心者がNSA Codebreakerに参加した感想</title><link>https://diohabara.github.io/blog/nsa-cbc-2022.ja/</link><pubDate>Tue, 27 Dec 2022 01:16:36 +0900</pubDate><guid>https://diohabara.github.io/blog/nsa-cbc-2022.ja/</guid><description>3 行まとめ NSA Codebreaker Challenge とは？ なぜ参加をしたのか？ 解けた問題の簡単な解説 Task 0 Task A1 Task A2 Task B1 Task B2 Task 5 Task 6 総括 謝辞 3 行まとめ # NSA はアメリカの大学(院)生を対象に CTF コンテストを開いている 大学院の授業の一環で参加した 今回自分が解いた問題を簡単に解説 NSA Codebreaker Challenge とは？ #アメリカと聞いたら何を思い浮かべるでしょうか？やはり NSA、CIA、FBI のような諜報機関ですよね。その中でも NSA は大規模な個人情報収集をしているとスノーデンが暴露したことで有名ですね。そんなゲキヤバストーカー集団 NSA が開いた CTF コンテストに CTF 初心者であるワテクシ＝漏れが参加した記録です。
-???「&amp;ldquo;NSA Codebreaker Challenge&amp;quot;よ&amp;hellip;これは名前。」
-URL: https://nsa-codebreaker.org/home
-このコンテストは学生にセキュリティ関連の問題を解く機会とされています。同時に学生が 10 問中 9 問以上解くと NSA から採用の連絡が来ることも告げられており、採用活動の一環でもあるようです。
-以下はその原文です。
-The NSA Codebreaker Challenge provides students with a hands-on opportunity to develop their reverse-engineering / low-level code analysis skills while working on a realistic problem set centered around the NSA&amp;rsquo;s mission.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nsa Cbc on barabara diary</title><link>https://diohabara.github.io/tags/nsa-cbc/</link><description>Recent content in Nsa Cbc on barabara diary</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 27 Dec 2022 01:16:36 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/nsa-cbc/index.xml" rel="self" type="application/rss+xml"/><item><title>CTF初心者がNSA Codebreakerに参加した感想</title><link>https://diohabara.github.io/blog/nsa-cbc-2022.ja/</link><pubDate>Tue, 27 Dec 2022 01:16:36 +0900</pubDate><guid>https://diohabara.github.io/blog/nsa-cbc-2022.ja/</guid><description>&lt;ul>
+&lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#nsa-codebreaker-challenge-%E3%81%A8%E3%81%AF">NSA Codebreaker Challenge とは？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E3%81%AA%E3%81%9C%E5%8F%82%E5%8A%A0%E3%82%92%E3%81%97%E3%81%9F%E3%81%AE%E3%81%8B">なぜ参加をしたのか？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%A7%A3%E3%81%91%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%A7%A3%E8%AA%AC">解けた問題の簡単な解説&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#task-0">Task 0&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#task-a1">Task A1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#task-a2">Task A2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#task-b1">Task B1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#task-b2">Task B2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#task-5">Task 5&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#task-6">Task 6&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%B7%8F%E6%8B%AC">総括&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E8%AC%9D%E8%BE%9E">謝辞&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;img src="https://diohabara.github.io/images/badgea1.png" alt="badge" />
+
+&lt;/p>
+&lt;h2 id="3-行まとめ">3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>NSA はアメリカの大学(院)生を対象に CTF コンテストを開いている&lt;/li>
+&lt;li>大学院の授業の一環で参加した&lt;/li>
+&lt;li>今回自分が解いた問題を簡単に解説&lt;/li>
+&lt;/ol>
+&lt;h2 id="nsa-codebreaker-challenge-とは">NSA Codebreaker Challenge とは？ &lt;a href="#nsa-codebreaker-challenge-%e3%81%a8%e3%81%af">#&lt;/a>&lt;/h2>&lt;p>アメリカと聞いたら何を思い浮かべるでしょうか？やはり NSA、CIA、FBI のような諜報機関ですよね。その中でも NSA は大規模な個人情報収集をしているとスノーデンが暴露したことで有名ですね。そんなゲキヤバストーカー集団 NSA が開いた CTF コンテストに CTF 初心者であるワテクシ＝漏れが参加した記録です。&lt;/p>
+&lt;p>???「&amp;ldquo;NSA Codebreaker Challenge&amp;quot;よ&amp;hellip;これは名前。」&lt;/p>
+&lt;p>URL: &lt;a href="https://nsa-codebreaker.org/home">https://nsa-codebreaker.org/home&lt;/a>&lt;/p>
+&lt;p>このコンテストは学生にセキュリティ関連の問題を解く機会とされています。同時に学生が 10 問中 9 問以上解くと NSA から採用の連絡が来ることも告げられており、採用活動の一環でもあるようです。&lt;/p>
+&lt;p>以下はその原文です。&lt;/p>
+&lt;blockquote>
+&lt;p>The NSA Codebreaker Challenge provides students with a hands-on opportunity to develop their reverse-engineering / low-level code analysis skills while working on a realistic problem set centered around the NSA&amp;rsquo;s mission.
+While the challenge is intended for students, professors are encouraged to participate as well. Furthermore, the site was designed to make it easy for those professors interested in incorporating the challenge into their courses to do so (see the additional FAQ entries below.)&lt;/p></description></item></channel></rss>

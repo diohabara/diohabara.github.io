@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reverse Engineering on barabara diary</title><link>https://diohabara.github.io/tags/reverse-engineering/</link><description>Recent content in Reverse Engineering on barabara diary</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 09 Aug 2023 14:11:01 -0500</lastBuildDate><atom:link href="https://diohabara.github.io/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml"/><item><title>picoCTF 2021: Transformation</title><link>https://diohabara.github.io/blog/picoctf2021-transformation/</link><pubDate>Wed, 09 Aug 2023 14:11:01 -0500</pubDate><guid>https://diohabara.github.io/blog/picoctf2021-transformation/</guid><description>Solution Acknowledgement References Solution #You will be given the following file, enc.
-1 2 $ bat resources/enc -p 灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸彤㔲挶戹㍽ The problem description says
-1 2 I wonder what this really is... &amp;#39;&amp;#39;.join([chr((ord(flag[i]) &amp;lt;&amp;lt; 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)]) The enc file should contain the encrypted flag. The flag is encrypted by the following algorithm.
-1 2 def encrypt(flag): return &amp;#34;&amp;#34;.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reverse Engineering on barabara diary</title><link>https://diohabara.github.io/tags/reverse-engineering/</link><description>Recent content in Reverse Engineering on barabara diary</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 09 Aug 2023 14:11:01 -0500</lastBuildDate><atom:link href="https://diohabara.github.io/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml"/><item><title>picoCTF 2021: Transformation</title><link>https://diohabara.github.io/blog/picoctf2021-transformation/</link><pubDate>Wed, 09 Aug 2023 14:11:01 -0500</pubDate><guid>https://diohabara.github.io/blog/picoctf2021-transformation/</guid><description>&lt;ul>
+&lt;li>&lt;a href="#solution">Solution&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#acknowledgement">Acknowledgement&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#references">References&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="solution">Solution &lt;a href="#solution">#&lt;/a>&lt;/h2>&lt;p>You will be given the following file, &lt;code>enc&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ bat resources/enc -p
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸彤㔲挶戹㍽
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The problem description says&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>I wonder what this really is...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#39;&amp;#39;.join([chr((ord(flag[i]) &lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&amp;lt; &lt;span style="color:#f92672">8&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">+&lt;/span> &lt;span style="color:#a6e22e">ord&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>&lt;span style="color:#a6e22e">flag&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">[&lt;/span>&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">+&lt;/span> &lt;span style="color:#a6e22e">1&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">]))&lt;/span> &lt;span style="color:#a6e22e">for&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#a6e22e">in&lt;/span> &lt;span style="color:#a6e22e">range&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>&lt;span style="color:#a6e22e">0&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span> &lt;span style="color:#a6e22e">len&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>&lt;span style="color:#a6e22e">flag&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">),&lt;/span> &lt;span style="color:#a6e22e">2&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The &lt;code>enc&lt;/code> file should contain the encrypted flag. The flag is encrypted by the following algorithm.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">encrypt&lt;/span>(flag):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join([chr((ord(flag[i]) &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> ord(flag[i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>])) &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">0&lt;/span>, len(flag), &lt;span style="color:#ae81ff">2&lt;/span>)])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Thus, we need to decrypt the flag. The following script decrypts the flag.&lt;/p></description></item></channel></rss>

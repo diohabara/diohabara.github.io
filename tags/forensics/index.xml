@@ -1,3 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Forensics on barabara diary</title><link>https://diohabara.github.io/tags/forensics/</link><description>Recent content in Forensics on barabara diary</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Jul 2023 00:27:57 -0500</lastBuildDate><atom:link href="https://diohabara.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml"/><item><title>picoCTF 2021: Information</title><link>https://diohabara.github.io/blog/picoctf2021-information/</link><pubDate>Fri, 07 Jul 2023 00:27:57 -0500</pubDate><guid>https://diohabara.github.io/blog/picoctf2021-information/</guid><description>Solution Acknowledgement Solution #First, let&amp;rsquo;s check the file type.
-1 2 $ file resources/cat.jpg resources/cat.jpg: JPEG image data, JFIF standard 1.02, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 2560x1598, components 3 Then, let&amp;rsquo;s check the metadata.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 $ exiftool resources/cat.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Forensics on barabara diary</title><link>https://diohabara.github.io/tags/forensics/</link><description>Recent content in Forensics on barabara diary</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 07 Jul 2023 00:27:57 -0500</lastBuildDate><atom:link href="https://diohabara.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml"/><item><title>picoCTF 2021: Information</title><link>https://diohabara.github.io/blog/picoctf2021-information/</link><pubDate>Fri, 07 Jul 2023 00:27:57 -0500</pubDate><guid>https://diohabara.github.io/blog/picoctf2021-information/</guid><description>&lt;ul>
+&lt;li>&lt;a href="#solution">Solution&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#acknowledgement">Acknowledgement&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="solution">Solution &lt;a href="#solution">#&lt;/a>&lt;/h2>&lt;p>First, let&amp;rsquo;s check the file type.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ file resources/cat.jpg 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>resources/cat.jpg: JPEG image data, JFIF standard 1.02, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 2560x1598, components &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Then, let&amp;rsquo;s check the metadata.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ exiftool resources/cat.jpg 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ExifTool Version Number : 12.55
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Name : cat.jpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Directory : resources
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Size : &lt;span style="color:#ae81ff">878&lt;/span> kB
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Modification Date/Time : 2023:07:06 23:51:14-05:00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Access Date/Time : 2023:07:06 23:56:06-05:00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Inode Change Date/Time : 2023:07:06 23:51:14-05:00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Permissions : -rw-r--r--
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Type : JPEG
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File Type Extension : jpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MIME Type : image/jpeg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>JFIF Version : 1.02
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Resolution Unit : None
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>X Resolution : &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Y Resolution : &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Current IPTC Digest : 7a78f3d9cfb1ce42ab5a3aa30573d617
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copyright Notice : PicoCTF
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Application Record Version : &lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>XMP Toolkit : Image::ExifTool 10.80
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>License : cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Rights : PicoCTF
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Image Width : &lt;span style="color:#ae81ff">2560&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Image Height : &lt;span style="color:#ae81ff">1598&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Encoding Process : Baseline DCT, Huffman coding
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Bits Per Sample : &lt;span style="color:#ae81ff">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Color Components : &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Y Cb Cr Sub Sampling : YCbCr4:2:0 &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> 2&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Image Size : 2560x1598
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Megapixels : 4.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The &lt;code>License&lt;/code> field looks like base64. Let&amp;rsquo;s decode it.&lt;/p></description></item></channel></rss>

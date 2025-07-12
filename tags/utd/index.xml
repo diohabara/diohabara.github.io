@@ -1,7 +1,218 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>utd on barabara diary</title><link>https://diohabara.github.io/tags/utd/</link><description>Recent content in utd on barabara diary</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 May 2024 16:03:22 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/utd/index.xml" rel="self" type="application/rss+xml"/><item><title>UTDでのTA体験記</title><link>https://diohabara.github.io/blog/utd-ta/</link><pubDate>Sun, 26 May 2024 16:03:22 +0900</pubDate><guid>https://diohabara.github.io/blog/utd-ta/</guid><description> TA とは UTD で TA をした授業とその感想 TA とは #TA とは Teaching Assistant の略で、UTD の CS では TA を 2 つの講義分すると 1 学期に大体月に $2,000 行かないくらいのお金もらえた。他の学科だともう少し少なく、ビジネス系の場合は PhD 限定で $3000 もらえるらしい。
-先に TA 全体の感想を言うと先生によって全然準備に必要な時間が違う。お金がもらえるのは嬉しいが、正直なにかのスキルが身につくわけではない。
-UTD で TA をした授業とその感想 # 2023 Spring CS 4301 Cyber Attacks and Defense Laboratory 指導教員の学部生向けの講義 オフィスアワーで毎週 2 時間くらい学部生の質問を答えるのだが、授業を受けていないしマニュアルもないので毎回 0 から説明をする必要があり辛い わからないやつは講義を受けた研究室の他の学生に聞いていた CS 6348 Data and Applications Security これは基本的にオフィスアワーに学生が来ないので課題の採点くらいしかやることがなかった 2023 Fall CS 4348 Operating System Concept 課題の採点 オフィスアワーは来ない 学生が多すぎて量は大変だが、採点は適当で良い そもそも問題ごとの採点基準などはなく、教科書をコピペした模範解答と課題全体の点数が配られるだけなので、毎年やるならもう少し採点しやすくしておけよと思ってしまった 学生がかわいそう 2024 Spring CS 4337 Programming Language Paradigms 課題の採点 オフィスアワーは来ない 多さと適当さは先学期の授業とほぼ同じ 課題がプログラミングなのに PDF で提出とか言うおかしなことを要求している教授。それに対してメールをしたが考慮するとだけで、なんとなく大学の教授のレベルの低さがわかってもらえる CS 6371 Advanced Programming Languages これは自分の好きな教授の授業でオフィスアワーと課題の採点 他の課題はフィードバックは俺の善意からしていたが、この教授はフィードバックについてもやり方まで含めて指導していた また、採点基準や採点方法まで細かく指導しており、まともな教授かどうか知りたい場合はまず TA に対してどのような指示をしているのかを聞くのが良いと思った。研究実績もあるので、この先生の場合はたまたまではないと思う 生徒の書いたプログラムがすべてのテストをパスするまでコードを改善して、修正に応じて減点するなどなかなか TA としては大変だったがかなり勉強になる良い経験だった。</description></item><item><title>University of Texas at Dallas CS修士卒業時の感想</title><link>https://diohabara.github.io/blog/utd-graduation/</link><pubDate>Sun, 26 May 2024 15:28:56 +0900</pubDate><guid>https://diohabara.github.io/blog/utd-graduation/</guid><description>対象読者 タイムライン 修士の授業について 立地・キャンパス周辺について 安全性 娯楽 スーパー 日本人 学生・教授 UTD に入学をしようか考えている人へ 対象読者 # University of Texas at Dallas(以下 UTD)に出願しようと思っている日本人 アメリカの非トップ州立校 CS 修士がどんなものかの一例を知りたい人 一方対象ではないのは
-交換留学などで UTD に来るかもしれない人 タイムライン # 1 学期目: 車がないと何もない大学だと発見する。サマーインターンを探しつつ研究室に入る。なんかあまり面白そうなところに行けなさそうだな〜と思ったので途中から研究に専念することにする。ちなみにセキュリティ系の研究室。 2 学期目: 研究室の教授に誘われて PhD にコンバート。ただあまり良い環境ではないと思っていたので、途中で UT Dallas ではなく別の大学で PhD を取りたいとは思っていた。 夏休み: 研究をしていた。プライベートで色々ありここらへんから完全に日本に帰りたくなる。夏暑すぎる。 3 学期目: 指導教員がネチネチ夏の成果に言ってくる&amp;amp;授業を取るなと言ってくる。これがアカハラかな〜と思ったのでやめる。日本の会社の内定をもらう。残りの期間は何にもやる気がなかった。 4 学期目: 研究をやらなくて良くなったので時間に余裕ができ精神的に安定する。時間管理もなぜかやめてからの方がうまくできるようになる。卒業。 修士の授業について #以下の授業を取った。
-1 学期目 Discrete Structures 離散数学の内容。学部で離散数学の講義を受けていなかったので必須だった。集合論から基礎的なグラフアルゴリズムについて学んだ。 System Security and Binary Analysis 元指導教員の科目。CTF スタイルで講義で色々な脆弱性をついて隠された文字列を取得し、バイナリレベルの脆弱性について学んだ。 Advanced Computer Networks ネットワーク。学部でやるものよりも抽象度が高く、ISP や BGP のアルゴリズムなどについて学んだ。 2 学期目 Compiler Construction コンパイラの基礎的なアルゴリズムについて学んだ。 Advanced Programming Languages 型理論や論理型言語について学んだ。この先生の講義は大好きだったので次の学期にも取った。 (研究用科目) 3 学期目 Design and Analysis of Computer Algorithms 基本的なアルゴリズムについて学んだ。 Language-based Security プログラミング言語の機能を使ってセキュリティを担保する最新研究について論文を読みながら Coq を使って自分でも現実のプログラムの性質を保証するというもの。かなり面白くてこの研究室だったら PhD をやれると思う。 Statistical Methods for Data Science 統計の基礎的な内容について学んだ。 4 学期目 Statistical Methods in AI and Machine Learning グラフィカルモデルについて学んだ。 Computational Logic 古典的論理や非古典的論理など様々な論理について学ぶと同時にそれらを用いたプログラミング言語を使った課題を行った。 Advanced Operating Systems 名前詐欺で分散システムについて勉強した。 全体としてレベルは正直低いと思う。大学の学部で習うような内容を扱うような授業もある。一方、専門的な授業はかなりレベルが高く満足できた。自分の大学はセキュリティが強みの大学なので、セキュリティに関連した授業は全体的に受講生も含めて質が高かった。大体仲が良い友だちはこの種の講義で作った。簡単な講義を取るほぼない。 友人談だが、3 科目の場合 1 難 1 普通 1 易が良いらしい。僕が過去に戻るのなら、最初の学期は学業以外に対応する必要があるので 1 普通 2 易にしていて、それ以外は自分の好きな科目を取っていたと思う。</description></item><item><title>UTDでの最初の1ヶ月</title><link>https://diohabara.github.io/blog/1st-month-at-utd.ja/</link><pubDate>Thu, 06 Oct 2022 13:07:27 -0500</pubDate><guid>https://diohabara.github.io/blog/1st-month-at-utd.ja/</guid><description>3 行まとめ 簡単に振り返る留学生活 授業 住まい 食事 金 進路 まとめ 謝辞 参照 ボッチのメタファー＝テキサス州旗 3 行まとめ # University of Texas at Dallas(通称&amp;quot;UTD&amp;quot;)で 8 月から勉強している 金・就活・学業が辛い 人生は”出逢い”や ❗ 簡単に振り返る留学生活 #授業 #前回の記事で書いたように Indeed でのインターン後に米国の大学院(University of Texas at Dallas)で Master Student として Computer Science を勉強しています。
-今学期履修しているのは以下の 3 講義です。各学生は Track というものを選び(途中で変更可能)、それによって必修が変わります。
-Discrete Structures 離散数学 Track に関わらず必修 Advanced Computer Networks ネットワーク 自分の Track の必修 System Security and Binary Analysis バイナリ解析 選択科目 &amp;ldquo;Discrete Structures&amp;quot;は学部レベルの講義なのでそこまで大変ではないです。やっている内容もそこまで高度でないので、教授の採点基準が厳しいという噂だけが不安です。&amp;ldquo;Advanced Computer Networks&amp;quot;も同じ教授で A が 2 割しか出ないのですよね。 &amp;ldquo;Discrete Structures&amp;quot;と&amp;quot;Advanced Computer Networks&amp;quot;はレポートと試験がそれぞれ 3 回あり、どちらもレポートと試験の初回が終わりました。前者は自分ではよくできたと思っているのですが、後者はかなりまずい感触でした(5 割行っているかな？) だから、今後は先取りをして疑問を Office Hour で解消していこうと思っています。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UTD on barabara diary</title><link>https://diohabara.github.io/tags/utd/</link><description>Recent content in UTD on barabara diary</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 26 May 2024 16:03:22 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/utd/index.xml" rel="self" type="application/rss+xml"/><item><title>UTDでのTA体験記</title><link>https://diohabara.github.io/blog/utd-ta/</link><pubDate>Sun, 26 May 2024 16:03:22 +0900</pubDate><guid>https://diohabara.github.io/blog/utd-ta/</guid><description>&lt;!-- TOC -->
+&lt;ul>
+&lt;li>&lt;a href="#ta-%E3%81%A8%E3%81%AF">TA とは&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#utd-%E3%81%A7-ta-%E3%82%92%E3%81%97%E3%81%9F%E6%8E%88%E6%A5%AD%E3%81%A8%E3%81%9D%E3%81%AE%E6%84%9F%E6%83%B3">UTD で TA をした授業とその感想&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;!-- /TOC -->
+&lt;h2 id="ta-とは">TA とは &lt;a href="#ta-%e3%81%a8%e3%81%af">#&lt;/a>&lt;/h2>&lt;p>TA とは Teaching Assistant の略で、UTD の CS では TA を 2 つの講義分すると 1 学期に大体月に $2,000 行かないくらいのお金もらえた。他の学科だともう少し少なく、ビジネス系の場合は PhD 限定で $3000 もらえるらしい。&lt;/p>
+&lt;p>先に TA 全体の感想を言うと先生によって全然準備に必要な時間が違う。お金がもらえるのは嬉しいが、正直なにかのスキルが身につくわけではない。&lt;/p>
+&lt;h2 id="utd-で-ta-をした授業とその感想">UTD で TA をした授業とその感想 &lt;a href="#utd-%e3%81%a7-ta-%e3%82%92%e3%81%97%e3%81%9f%e6%8e%88%e6%a5%ad%e3%81%a8%e3%81%9d%e3%81%ae%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>2023 Spring
+&lt;ul>
+&lt;li>CS 4301 Cyber Attacks and Defense Laboratory
+&lt;ul>
+&lt;li>指導教員の学部生向けの講義&lt;/li>
+&lt;li>オフィスアワーで毎週 2 時間くらい学部生の質問を答えるのだが、授業を受けていないしマニュアルもないので毎回 0 から説明をする必要があり辛い&lt;/li>
+&lt;li>わからないやつは講義を受けた研究室の他の学生に聞いていた&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>CS 6348 Data and Applications Security
+&lt;ul>
+&lt;li>これは基本的にオフィスアワーに学生が来ないので課題の採点くらいしかやることがなかった&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>2023 Fall
+&lt;ul>
+&lt;li>CS 4348 Operating System Concept
+&lt;ul>
+&lt;li>課題の採点&lt;/li>
+&lt;li>オフィスアワーは来ない&lt;/li>
+&lt;li>学生が多すぎて量は大変だが、採点は適当で良い&lt;/li>
+&lt;li>そもそも問題ごとの採点基準などはなく、教科書をコピペした模範解答と課題全体の点数が配られるだけなので、毎年やるならもう少し採点しやすくしておけよと思ってしまった&lt;/li>
+&lt;li>学生がかわいそう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>2024 Spring
+&lt;ul>
+&lt;li>CS 4337 Programming Language Paradigms
+&lt;ul>
+&lt;li>課題の採点&lt;/li>
+&lt;li>オフィスアワーは来ない&lt;/li>
+&lt;li>多さと適当さは先学期の授業とほぼ同じ&lt;/li>
+&lt;li>課題がプログラミングなのに PDF で提出とか言うおかしなことを要求している教授。それに対してメールをしたが考慮するとだけで、なんとなく大学の教授のレベルの低さがわかってもらえる&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>CS 6371 Advanced Programming Languages
+&lt;ul>
+&lt;li>これは自分の好きな教授の授業でオフィスアワーと課題の採点&lt;/li>
+&lt;li>他の課題はフィードバックは俺の善意からしていたが、この教授はフィードバックについてもやり方まで含めて指導していた&lt;/li>
+&lt;li>また、採点基準や採点方法まで細かく指導しており、まともな教授かどうか知りたい場合はまず TA に対してどのような指示をしているのかを聞くのが良いと思った。研究実績もあるので、この先生の場合はたまたまではないと思う&lt;/li>
+&lt;li>生徒の書いたプログラムがすべてのテストをパスするまでコードを改善して、修正に応じて減点するなどなかなか TA としては大変だったがかなり勉強になる良い経験だった。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>University of Texas at Dallas CS修士卒業時の感想</title><link>https://diohabara.github.io/blog/utd-graduation/</link><pubDate>Sun, 26 May 2024 15:28:56 +0900</pubDate><guid>https://diohabara.github.io/blog/utd-graduation/</guid><description>&lt;!-- TOC -->
+&lt;ul>
+&lt;li>&lt;a href="#%E5%AF%BE%E8%B1%A1%E8%AA%AD%E8%80%85">対象読者&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%A9%E3%82%A4%E3%83%B3">タイムライン&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E4%BF%AE%E5%A3%AB%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">修士の授業について&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%AB%8B%E5%9C%B0%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%E5%91%A8%E8%BE%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">立地・キャンパス周辺について&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%AE%89%E5%85%A8%E6%80%A7">安全性&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%A8%AF%E6%A5%BD">娯楽&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC">スーパー&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%97%A5%E6%9C%AC%E4%BA%BA">日本人&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%AD%A6%E7%94%9F%E6%95%99%E6%8E%88">学生・教授&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#utd-%E3%81%AB%E5%85%A5%E5%AD%A6%E3%82%92%E3%81%97%E3%82%88%E3%81%86%E3%81%8B%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%81%B8">UTD に入学をしようか考えている人へ&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;!-- /TOC -->
+&lt;h2 id="対象読者">対象読者 &lt;a href="#%e5%af%be%e8%b1%a1%e8%aa%ad%e8%80%85">#&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>University of Texas at Dallas(以下 UTD)に出願しようと思っている日本人&lt;/li>
+&lt;li>アメリカの&lt;strong>非&lt;/strong>トップ州立校 CS 修士がどんなものかの一例を知りたい人&lt;/li>
+&lt;/ul>
+&lt;p>一方対象ではないのは&lt;/p>
+&lt;ul>
+&lt;li>交換留学などで UTD に来るかもしれない人&lt;/li>
+&lt;/ul>
+&lt;h2 id="タイムライン">タイムライン &lt;a href="#%e3%82%bf%e3%82%a4%e3%83%a0%e3%83%a9%e3%82%a4%e3%83%b3">#&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>1 学期目: 車がないと何もない大学だと発見する。サマーインターンを探しつつ研究室に入る。なんかあまり面白そうなところに行けなさそうだな〜と思ったので途中から研究に専念することにする。ちなみにセキュリティ系の研究室。&lt;/li>
+&lt;li>2 学期目: 研究室の教授に誘われて PhD にコンバート。ただあまり良い環境ではないと思っていたので、途中で UT Dallas ではなく別の大学で PhD を取りたいとは思っていた。&lt;/li>
+&lt;li>夏休み: 研究をしていた。プライベートで色々ありここらへんから完全に日本に帰りたくなる。夏暑すぎる。&lt;/li>
+&lt;li>3 学期目: 指導教員がネチネチ夏の成果に言ってくる&amp;amp;授業を取るなと言ってくる。これがアカハラかな〜と思ったのでやめる。日本の会社の内定をもらう。残りの期間は何にもやる気がなかった。&lt;/li>
+&lt;li>4 学期目: 研究をやらなくて良くなったので時間に余裕ができ精神的に安定する。時間管理もなぜかやめてからの方がうまくできるようになる。卒業。&lt;/li>
+&lt;/ul>
+&lt;h2 id="修士の授業について">修士の授業について &lt;a href="#%e4%bf%ae%e5%a3%ab%e3%81%ae%e6%8e%88%e6%a5%ad%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6">#&lt;/a>&lt;/h2>&lt;p>以下の授業を取った。&lt;/p>
+&lt;ul>
+&lt;li>1 学期目
+&lt;ul>
+&lt;li>Discrete Structures
+&lt;ul>
+&lt;li>離散数学の内容。学部で離散数学の講義を受けていなかったので必須だった。集合論から基礎的なグラフアルゴリズムについて学んだ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>System Security and Binary Analysis
+&lt;ul>
+&lt;li>元指導教員の科目。CTF スタイルで講義で色々な脆弱性をついて隠された文字列を取得し、バイナリレベルの脆弱性について学んだ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Advanced Computer Networks
+&lt;ul>
+&lt;li>ネットワーク。学部でやるものよりも抽象度が高く、ISP や BGP のアルゴリズムなどについて学んだ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>2 学期目
+&lt;ul>
+&lt;li>Compiler Construction
+&lt;ul>
+&lt;li>コンパイラの基礎的なアルゴリズムについて学んだ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Advanced Programming Languages
+&lt;ul>
+&lt;li>型理論や論理型言語について学んだ。この先生の講義は大好きだったので次の学期にも取った。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>(研究用科目)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>3 学期目
+&lt;ul>
+&lt;li>Design and Analysis of Computer Algorithms
+&lt;ul>
+&lt;li>基本的なアルゴリズムについて学んだ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Language-based Security
+&lt;ul>
+&lt;li>プログラミング言語の機能を使ってセキュリティを担保する最新研究について論文を読みながら Coq を使って自分でも現実のプログラムの性質を保証するというもの。かなり面白くてこの研究室だったら PhD をやれると思う。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Statistical Methods for Data Science
+&lt;ul>
+&lt;li>統計の基礎的な内容について学んだ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>4 学期目
+&lt;ul>
+&lt;li>Statistical Methods in AI and Machine Learning
+&lt;ul>
+&lt;li>グラフィカルモデルについて学んだ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Computational Logic
+&lt;ul>
+&lt;li>古典的論理や非古典的論理など様々な論理について学ぶと同時にそれらを用いたプログラミング言語を使った課題を行った。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Advanced Operating Systems
+&lt;ul>
+&lt;li>名前詐欺で分散システムについて勉強した。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>全体としてレベルは正直低いと思う。大学の学部で習うような内容を扱うような授業もある。一方、専門的な授業はかなりレベルが高く満足できた。自分の大学はセキュリティが強みの大学なので、セキュリティに関連した授業は全体的に受講生も含めて質が高かった。大体仲が良い友だちはこの種の講義で作った。簡単な講義を取るほぼない。
+友人談だが、3 科目の場合 1 難 1 普通 1 易が良いらしい。僕が過去に戻るのなら、最初の学期は学業以外に対応する必要があるので 1 普通 2 易にしていて、それ以外は自分の好きな科目を取っていたと思う。&lt;/p></description></item><item><title>UTDでの最初の1ヶ月</title><link>https://diohabara.github.io/blog/1st-month-at-utd.ja/</link><pubDate>Thu, 06 Oct 2022 13:07:27 -0500</pubDate><guid>https://diohabara.github.io/blog/1st-month-at-utd.ja/</guid><description>&lt;ul>
+&lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%B0%A1%E5%8D%98%E3%81%AB%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%E7%95%99%E5%AD%A6%E7%94%9F%E6%B4%BB">&lt;del>簡単に&lt;/del>振り返る留学生活&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E6%8E%88%E6%A5%AD">授業&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E4%BD%8F%E3%81%BE%E3%81%84">住まい&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%A3%9F%E4%BA%8B">食事&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%87%91">金&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%80%B2%E8%B7%AF">進路&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%AC%9D%E8%BE%9E">謝辞&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%8F%82%E7%85%A7">参照&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure>
+ &lt;img src="https://diohabara.github.io/images/lone_star_state.svg" alt="lone_star_state" />
+ &lt;figcaption>ボッチのメタファー＝テキサス州旗&lt;/figcaption>
+&lt;/figure>
+
+&lt;/p>
+&lt;h2 id="3-行まとめ">3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>University of Texas at Dallas(通称&amp;quot;UTD&amp;quot;)で 8 月から勉強している&lt;/li>
+&lt;li>金・就活・学業が辛い&lt;/li>
+&lt;li>人生は”出逢い”や ❗&lt;/li>
+&lt;/ol>
+&lt;h2 id="簡単に振り返る留学生活">&lt;del>簡単に&lt;/del>振り返る留学生活 &lt;a href="#%e7%b0%a1%e5%8d%98%e3%81%ab%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8b%e7%95%99%e5%ad%a6%e7%94%9f%e6%b4%bb">#&lt;/a>&lt;/h2>&lt;h3 id="授業">授業 &lt;a href="#%e6%8e%88%e6%a5%ad">#&lt;/a>&lt;/h3>&lt;p>&lt;a href="https://diohabara.github.io/ja-blog/intern-at-indeed-japan/">前回の記事&lt;/a>で書いたように Indeed でのインターン後に米国の大学院(University of Texas at Dallas)で Master Student として Computer Science を勉強しています。&lt;/p>
+&lt;p>今学期履修しているのは以下の 3 講義です。各学生は Track というものを選び(途中で変更可能)、それによって必修が変わります。&lt;/p>
+&lt;ul>
+&lt;li>Discrete Structures
+&lt;ul>
+&lt;li>離散数学&lt;/li>
+&lt;li>Track に関わらず必修&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Advanced Computer Networks
+&lt;ul>
+&lt;li>ネットワーク&lt;/li>
+&lt;li>自分の Track の必修&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>System Security and Binary Analysis
+&lt;ul>
+&lt;li>バイナリ解析&lt;/li>
+&lt;li>選択科目&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&amp;ldquo;Discrete Structures&amp;quot;は学部レベルの講義なのでそこまで大変ではないです。やっている内容もそこまで高度でないので、教授の採点基準が厳しいという噂だけが不安です。&amp;ldquo;Advanced Computer Networks&amp;quot;も同じ教授で A が 2 割しか出ないのですよね。
+&amp;ldquo;Discrete Structures&amp;quot;と&amp;quot;Advanced Computer Networks&amp;quot;はレポートと試験がそれぞれ 3 回あり、どちらもレポートと試験の初回が終わりました。前者は自分ではよくできたと思っているのですが、後者はかなりまずい感触でした(5 割行っているかな？)
+だから、今後は先取りをして疑問を Office Hour で解消していこうと思っています。&lt;/p></description></item></channel></rss>
