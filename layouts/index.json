@@ -1,0 +1,12 @@
+{{- $index := slice -}}
+{{- range where .Site.RegularPages "Type" "post" -}}
+    {{- $index = $index | append (dict 
+        "title" .Title 
+        "content" (.Plain | truncate 500)
+        "url" .RelPermalink
+        "date" .Date
+        "tags" .Params.tags
+        "language" (.Params.language | default "ja")
+    ) -}}
+{{- end -}}
+{{- $index | jsonify -}}

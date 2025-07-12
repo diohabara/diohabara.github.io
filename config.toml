@@ -6,6 +6,10 @@ title = 'barabara diary'
 # Automatically generate robots.txt
 enableRobotsTXT = true
 
+# Output formats
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [markup]
 # ref: https://gohugo.io/getting-started/configuration-markup/#highlight
 [markup.goldmark]
@@ -26,6 +30,14 @@ noHl = false
 style = 'monokai'
 tabWidth = 4
 
+# Image processing configuration
+[imaging]
+quality = 85
+resampleFilter = "lanczos"
+# Enable WebP format
+[imaging.exif]
+includeFields = ""
+
 [params]
 avatarURL = "/images/avatar.jpg"
 description = "MAKE THE WORLD FUN AGAIN"
@@ -34,7 +46,12 @@ showPostsOnHomePage = "recent"
 metaKeywords = ["blog", "diohabara", "hugo"]
 # Default OGP image
 images = ["/images/avatar.jpg"]
-
+# Author info for SEO
+author = "diohabara"
+# Twitter username (without @)
+twitterUsername = "diohabara"
+# Enable custom CSS
+customcss = true
 
 # Menu configuration for English
 [menu]
@@ -68,7 +85,14 @@ url = "https://github.com/diohabara/"
 weight = 4
 
 [[menu.main]]
+identifier = "search"
+name = "Search"
+pre = "<span data-feather='search'></span>"
+url = "/search/"
+weight = 5
+
+[[menu.main]]
 identifier = "rss"
 pre = "<span data-feather='rss'></span>"
 url = "/index.xml"
-weight = 5
+weight = 6

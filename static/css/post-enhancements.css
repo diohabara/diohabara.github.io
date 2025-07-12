@@ -1,0 +1,126 @@
+/* Post enhancements */
+
+/* Reading time */
+.reading-time {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Post navigation */
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0 40px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.post-navigation a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    padding: 15px 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    max-width: 45%;
+}
+
+.post-navigation a:hover {
+    background-color: #f5f5f5;
+    transform: translateX(5px);
+}
+
+.nav-prev a:hover {
+    transform: translateX(-5px);
+}
+
+.post-navigation .nav-text {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.post-navigation .nav-title {
+    display: block;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Related posts */
+.related-posts {
+    margin-top: 60px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.related-posts h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.related-posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.related-posts li {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.related-posts a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.related-posts a:hover {
+    color: #4a90e2;
+    text-decoration: underline;
+}
+
+.related-date {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* Dark mode */
+body.dark .post-navigation {
+    border-top-color: #444;
+}
+
+body.dark .post-navigation a {
+    border-color: #444;
+}
+
+body.dark .post-navigation a:hover {
+    background-color: #2a2a2a;
+}
+
+body.dark .related-posts {
+    background-color: #2a2a2a;
+}
+
+body.dark .reading-time,
+body.dark .post-navigation .nav-text,
+body.dark .related-date {
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .post-navigation {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .post-navigation a {
+        max-width: 100%;
+    }
+}
