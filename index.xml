@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>barabara diary</title><link>https://diohabara.github.io/</link><description>Recent content on barabara diary</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>現在の年収をポイ活だけで得ようとしたらいくらあっても時間が足りないのでポイ活に最低賃金を設けろ</title><link>https://diohabara.github.io/blog/kaishain-is-boring/</link><pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate><guid>https://diohabara.github.io/blog/kaishain-is-boring/</guid><description>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>barabara diary</title><link>https://diohabara.github.io/</link><description>Recent content on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>現在の年収をポイ活だけで得ようとしたらいくらあっても時間が足りないのでポイ活に最低賃金を設けろ</title><link>https://diohabara.github.io/blog/kaishain-is-boring/</link><pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate><guid>https://diohabara.github.io/blog/kaishain-is-boring/</guid><description>&lt;ul>
 &lt;li>&lt;a href="#tldr">TL;DR&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E4%BD%95%E3%81%A7%E3%82%82%E6%99%82%E7%B5%A6%E3%81%A7%E6%8F%9B%E7%AE%97%E3%81%99%E3%82%8B%E3%81%AE%E3%82%92%E3%82%84%E3%82%81%E3%82%8D">何でも時給で換算するのをやめろ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E4%BD%BF%E3%81%88%E3%82%82%E3%81%97%E3%81%AA%E3%81%84%E5%A1%B5%E3%81%BF%E3%81%9F%E3%81%84%E3%81%AA%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%92%E9%9B%86%E3%82%81%E3%81%A6%E3%82%82%E6%9C%80%E4%B8%8A%E5%B7%9D%E3%81%AF%E6%B5%81%E3%82%8C%E3%81%AA%E3%81%84">使えもしない塵みたいなポイントを集めても最上川は流れない&lt;/a>&lt;/li>
@@ -595,7 +595,7 @@ Apply ROT13 to it and you&amp;rsquo;ll get the flag.&lt;/p>
 &lt;li>&lt;a href="#acknowledgement">Acknowledgement&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="solution">Solution &lt;a href="#solution">#&lt;/a>&lt;/h2>&lt;p>Download the attached file and run &lt;code>cat&lt;/code> on it. You&amp;rsquo;ll find the flag.&lt;/p>
-&lt;h2 id="acknowledgement">Acknowledgement &lt;a href="#acknowledgement">#&lt;/a>&lt;/h2>&lt;p>Thank you, CMU security and privacy experts, for creating this challenge.&lt;/p></description></item><item><title>2022年ふりかえり</title><link>https://diohabara.github.io/blog/review-2022.ja/</link><pubDate>Sun, 01 Jan 2023 14:13:22 +0900</pubDate><guid>https://diohabara.github.io/blog/review-2022.ja/</guid><description>&lt;ul>
+&lt;h2 id="acknowledgement">Acknowledgement &lt;a href="#acknowledgement">#&lt;/a>&lt;/h2>&lt;p>Thank you, CMU security and privacy experts, for creating this challenge.&lt;/p></description></item><item><title>2022年ふりかえり</title><link>https://diohabara.github.io/blog/review-2022/</link><pubDate>Sun, 01 Jan 2023 14:13:22 +0900</pubDate><guid>https://diohabara.github.io/blog/review-2022/</guid><description>&lt;ul>
 &lt;li>&lt;a href="#3%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E5%A4%A7%E5%8D%92%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F">大卒になった&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E6%97%A5%E6%9C%AC%E3%81%A7%E5%83%8D%E3%81%8F%E6%B0%97%E3%81%8C%E5%A4%B1%E3%81%9B%E3%81%9F">日本で働く気が失せた&lt;/a>&lt;/li>
@@ -654,7 +654,7 @@ Apply ROT13 to it and you&amp;rsquo;ll get the flag.&lt;/p>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="謝辞">謝辞 &lt;a href="#%e8%ac%9d%e8%be%9e">#&lt;/a>&lt;/h2>&lt;p>全人類に感謝&lt;/p></description></item><item><title>CTF初心者がNSA Codebreakerに参加した感想</title><link>https://diohabara.github.io/blog/nsa-cbc-2022.ja/</link><pubDate>Tue, 27 Dec 2022 01:16:36 +0900</pubDate><guid>https://diohabara.github.io/blog/nsa-cbc-2022.ja/</guid><description>&lt;ul>
+&lt;h2 id="謝辞">謝辞 &lt;a href="#%e8%ac%9d%e8%be%9e">#&lt;/a>&lt;/h2>&lt;p>全人類に感謝&lt;/p></description></item><item><title>CTF初心者がNSA Codebreakerに参加した感想</title><link>https://diohabara.github.io/blog/nsa-cbc-2022/</link><pubDate>Tue, 27 Dec 2022 01:16:36 +0900</pubDate><guid>https://diohabara.github.io/blog/nsa-cbc-2022/</guid><description>&lt;ul>
 &lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#nsa-codebreaker-challenge-%E3%81%A8%E3%81%AF">NSA Codebreaker Challenge とは？&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E3%81%AA%E3%81%9C%E5%8F%82%E5%8A%A0%E3%82%92%E3%81%97%E3%81%9F%E3%81%AE%E3%81%8B">なぜ参加をしたのか？&lt;/a>&lt;/li>
@@ -688,7 +688,7 @@ Apply ROT13 to it and you&amp;rsquo;ll get the flag.&lt;/p>
 &lt;p>以下はその原文です。&lt;/p>
 &lt;blockquote>
 &lt;p>The NSA Codebreaker Challenge provides students with a hands-on opportunity to develop their reverse-engineering / low-level code analysis skills while working on a realistic problem set centered around the NSA&amp;rsquo;s mission.
-While the challenge is intended for students, professors are encouraged to participate as well. Furthermore, the site was designed to make it easy for those professors interested in incorporating the challenge into their courses to do so (see the additional FAQ entries below.)&lt;/p></description></item><item><title>UTDでの最初の1ヶ月</title><link>https://diohabara.github.io/blog/1st-month-at-utd.ja/</link><pubDate>Thu, 06 Oct 2022 13:07:27 -0500</pubDate><guid>https://diohabara.github.io/blog/1st-month-at-utd.ja/</guid><description>&lt;ul>
+While the challenge is intended for students, professors are encouraged to participate as well. Furthermore, the site was designed to make it easy for those professors interested in incorporating the challenge into their courses to do so (see the additional FAQ entries below.)&lt;/p></description></item><item><title>UTDでの最初の1ヶ月</title><link>https://diohabara.github.io/blog/1st-month-at-utd/</link><pubDate>Thu, 06 Oct 2022 13:07:27 -0500</pubDate><guid>https://diohabara.github.io/blog/1st-month-at-utd/</guid><description>&lt;ul>
 &lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E7%B0%A1%E5%8D%98%E3%81%AB%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%E7%95%99%E5%AD%A6%E7%94%9F%E6%B4%BB">&lt;del>簡単に&lt;/del>振り返る留学生活&lt;/a>
 &lt;ul>
@@ -739,7 +739,7 @@ While the challenge is intended for students, professors are encouraged to parti
 &lt;/ul>
 &lt;p>&amp;ldquo;Discrete Structures&amp;quot;は学部レベルの講義なのでそこまで大変ではないです。やっている内容もそこまで高度でないので、教授の採点基準が厳しいという噂だけが不安です。&amp;ldquo;Advanced Computer Networks&amp;quot;も同じ教授で A が 2 割しか出ないのですよね。
 &amp;ldquo;Discrete Structures&amp;quot;と&amp;quot;Advanced Computer Networks&amp;quot;はレポートと試験がそれぞれ 3 回あり、どちらもレポートと試験の初回が終わりました。前者は自分ではよくできたと思っているのですが、後者はかなりまずい感触でした(5 割行っているかな？)
-だから、今後は先取りをして疑問を Office Hour で解消していこうと思っています。&lt;/p></description></item><item><title>Indeed Japanでインターンしてきた</title><link>https://diohabara.github.io/blog/intern-at-indeed-japan.ja/</link><pubDate>Mon, 22 Aug 2022 11:30:47 -0500</pubDate><guid>https://diohabara.github.io/blog/intern-at-indeed-japan.ja/</guid><description>&lt;ul>
+だから、今後は先取りをして疑問を Office Hour で解消していこうと思っています。&lt;/p></description></item><item><title>Indeed Japanでインターンしてきた</title><link>https://diohabara.github.io/blog/intern-at-indeed-japan/</link><pubDate>Mon, 22 Aug 2022 11:30:47 -0500</pubDate><guid>https://diohabara.github.io/blog/intern-at-indeed-japan/</guid><description>&lt;ul>
 &lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AE-1-%E6%97%A5">インターンの 1 日&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E7%A4%BE%E4%BC%9A%E4%BA%BA%E7%96%91%E4%BC%BC%E4%BD%93%E9%A8%93">社会人疑似体験&lt;/a>&lt;/li>
@@ -761,7 +761,7 @@ While the challenge is intended for students, professors are encouraged to parti
 &lt;p>チームはスクラムを導入しており、Sprint、メンターとの 1on1 が午前には入っていた。その他会議も最初は入っていたが、徐々にインターンは参加しなくても良いのでは？ということで参加せずに開発に集中することになった。この柔軟性の高さには感心した。今までのインターンと比べてもトップレベルで働きやすい環境だったと思う。&lt;/p>
 &lt;p>&lt;del>そんな感じで昼ごはんを食べ血糖値がバク上がりしインスリンがドバドバ出て爆睡していたら、知らない間に就業時間が終わっている。&lt;/del> 午後は会議少なめでコーディングや技術調査を中心に過ごした。社員だと午後も会議があるらしいので、インターン生はかなり開発メインでやらせてもらっていたと思う。生産的な 1 日を過ごせるようにチームが頑張っているんだなとは思いながら過ごしていた。&lt;/p>
 &lt;h2 id="社会人疑似体験">社会人疑似体験 &lt;a href="#%e7%a4%be%e4%bc%9a%e4%ba%ba%e7%96%91%e4%bc%bc%e4%bd%93%e9%a8%93">#&lt;/a>&lt;/h2>&lt;p>日本のベンチャーのインターンだと具体的な課題に関して、その課題を管理するチケットが発行され、それをこなす「業務委託(？)」みたいな働き方が多いと思う。特にマネジメントが崩壊している会社は(体験談)。一方、Indeed のインターンはそういう小間使いみたいな体験にならないように工夫していた。&lt;/p>
-&lt;p>最初に抽象度が高い課題が与えられ、その後マネージャーやメンターと一緒にその課題を解決するために(僕が主となって)Design Doc を書いて議論をする。そして、Design Doc に合わせて具体的な課題を設定し、いくつかチケットを発行しこなしていった。&lt;/p></description></item><item><title>はてな退職エントリー(バイト)</title><link>https://diohabara.github.io/blog/quit-hatena-part-time.ja/</link><pubDate>Tue, 19 Jul 2022 23:26:35 +0900</pubDate><guid>https://diohabara.github.io/blog/quit-hatena-part-time.ja/</guid><description>&lt;ul>
+&lt;p>最初に抽象度が高い課題が与えられ、その後マネージャーやメンターと一緒にその課題を解決するために(僕が主となって)Design Doc を書いて議論をする。そして、Design Doc に合わせて具体的な課題を設定し、いくつかチケットを発行しこなしていった。&lt;/p></description></item><item><title>はてな退職エントリー(バイト)</title><link>https://diohabara.github.io/blog/quit-hatena-part-time/</link><pubDate>Tue, 19 Jul 2022 23:26:35 +0900</pubDate><guid>https://diohabara.github.io/blog/quit-hatena-part-time/</guid><description>&lt;ul>
 &lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E9%80%80%E8%81%B7">退職？&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E3%81%AF%E3%81%A6%E3%81%AA%E3%81%A7%E3%81%AF%E4%BD%95%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%81%8B">はてなでは何をしていたのか&lt;/a>
@@ -828,4 +828,4 @@ While the challenge is intended for students, professors are encouraged to parti
  &lt;td>GPIF, Sony Interactive Entertainment (SIE)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;/table></description></item><item><title>ブログ</title><link>https://diohabara.github.io/blog/_index.ja/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://diohabara.github.io/blog/_index.ja/</guid><description/></item></channel></rss>
