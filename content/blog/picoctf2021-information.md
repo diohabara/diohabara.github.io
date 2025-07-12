@@ -4,6 +4,7 @@ date: 2023-07-07T00:27:57-05:00
 draft: false
 type: "post"
 tags: ["CTF", "Forensics"]
+language: "en"
 ---
 
 - [Solution](#solution)

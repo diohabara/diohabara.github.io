@@ -4,6 +4,7 @@ date: 2023-08-09T14:11:01-05:00
 draft: false
 type: "post"
 tags: ["CTF", "Reverse Engineering"]
+language: "en"
 ---
 
 - [Solution](#solution)
