@@ -1,3 +1,13 @@
+/* Header fix - prevent overlap */
+main#content {
+  padding-top: 20px;
+}
+
+/* Avatar fix for homepage */
+.home-content .avatar {
+  margin-top: 40px;
+}
+
 /* Content spacing improvements */
 .container {
   padding: 0 20px;
