@@ -1,0 +1,27 @@
+/* Dark mode ONLY - no effect on light mode */
+body.dark .related-posts {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark .related-posts h3 {
+    color: #ffffff !important;
+}
+
+body.dark .related-posts li {
+    color: #e0e0e0 !important;
+}
+
+body.dark .related-posts a {
+    color: #64b5f6 !important;
+}
+
+body.dark .related-posts a:hover {
+    color: #90caf9 !important;
+    text-decoration: underline !important;
+}
+
+body.dark .related-posts .related-date {
+    color: #888 !important;
+}
