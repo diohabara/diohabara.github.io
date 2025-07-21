@@ -1,2 +1,4 @@
 draft
 public
+.env
+.env.local

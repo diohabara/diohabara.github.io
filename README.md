@@ -61,6 +61,43 @@ git submodule update --remote themes/gokarna
 
 新しい記事を作成する際は、front matterに`language: "ja"`または`language: "en"`を指定してください。
 
+## Google Analytics
+
+このブログはGoogle Analyticsを環境変数で管理しています。
+
+### ローカル開発環境
+
+1. `.env.example`を`.env`にコピー:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. `.env`を編集してGoogle AnalyticsのMeasurement IDを設定:
+
+   ```
+   HUGO_SERVICES_GOOGLEANALYTICS_ID=G-XXXXXXXXXX
+   ```
+
+3. 環境変数を読み込んでHugoを実行:
+
+   ```bash
+   source .env && hugo serve
+   ```
+
+### 本番環境（GitHub Pages）
+
+Google Analytics IDはGitHub Secretとして設定されています：
+
+- Secret名: `GOOGLE_ANALYTICS_ID`
+- 使用場所: `.github/workflows/gh-pages.yml`
+
+IDを更新する場合:
+
+```bash
+gh secret set GOOGLE_ANALYTICS_ID --body "G-YOUR-NEW-ID"
+```
+
 ## TODO
 
 - [x] enable OGP (already implemented in Gokarna theme)
