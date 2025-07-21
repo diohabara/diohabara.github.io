@@ -53,6 +53,12 @@ twitterUsername = "diohabara"
 # Enable custom CSS
 customcss = true
 
+# Services configuration
+[services]
+[services.googleAnalytics]
+# ID will be set via environment variable HUGO_SERVICES_GOOGLEANALYTICS_ID
+id = ""
+
 # Menu configuration for English
 [menu]
 # feather-icons でアイコン設定可能: https://feathericons.com/
