@@ -1,21 +1,28 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: ""  # 記事のタイトルを入力 / Enter your article title (日本語OK)
 date: {{ .Date }}
 draft: true
 type: "post"
-tags: [""]
-language: "ja"  # 言語を指定 (ja または en)
-# OGP画像を指定する場合は以下のコメントを外してパスを設定
-# image: "/images/your-ogp-image.jpg"
-# description: "記事の説明文（OGPのdescriptionとして使用されます）"
+tags: [""]  # タグをカンマ区切りで追加 / Add tags (e.g. ["tech", "hugo"])
+language: "ja"  # 言語を指定 / Language: "ja" or "en"
 ---
 
-- [In a nutshell](#in-a-nutshell)
-- [Acknowledgement](#acknowledgement)
-- [References](#references)
+## TL;DR
 
-## In a nutshell
+<!-- 3行以内で記事の要点をまとめる / Summarize in 3 lines or less -->
 
-## Acknowledgement
+## Background
+
+<!-- なぜこの記事を書いたか、背景や動機 / Why you wrote this, background and motivation -->
+
+## Main
+
+<!-- メインコンテンツ、詳細な説明 / Main content and detailed explanation -->
+
+## Conclusion
+
+<!-- 結論、学んだこと、次のステップ / Conclusion, lessons learned, next steps -->
 
 ## References
+
+<!-- 参考リンク、関連記事 / Reference links and related articles -->
