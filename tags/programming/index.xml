@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on barabara diary</title><link>https://diohabara.github.io/tags/programming/</link><description>Recent content in Programming on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>2025年夏最新版 TOEFL対策にAIをフル活用する方法</title><link>https://diohabara.github.io/blog/ace-in-toefl/</link><pubDate>Sat, 26 Jul 2025 00:00:00 +0900</pubDate><guid>https://diohabara.github.io/blog/ace-in-toefl/</guid><description>&lt;h2 id="tldr">TL;DR &lt;a href="#tldr">#&lt;/a>&lt;/h2>&lt;!-- 3行以内で記事の要点をまとめる / Summarize in 3 lines or less -->
+&lt;ul>
+&lt;li>会社は辞めないが研究がしたくなったので TOEFL を受けた&lt;/li>
+&lt;li>AI をフル活用して対策をした&lt;/li>
+&lt;li>2025 年夏現在、無料で使えるサービスだと&lt;a href="https://aistudio.google.com/">Google AI Studio&lt;/a>がおすすめ&lt;/li>
+&lt;/ul>
+&lt;h2 id="background">Background &lt;a href="#background">#&lt;/a>&lt;/h2>&lt;!-- なぜこの記事を書いたか、背景や動機 / Why you wrote this, background and motivation -->
+&lt;p>以前は&lt;a href="./kaishain-is-boring.md">会社員に関する記事 1&lt;/a>と&lt;a href="./kaishain-is-exciting.md">記事 2&lt;/a>を軽いトーンで書いたが、今回は真剣に TOEFL 対策について共有したい。&lt;/p>
+&lt;p>仕事をするのに突然飽きた際に退職後に研究をするというオプションがほしいと思った。日本の大学ならば金さえ出せば誰でも研究ができる。ただし、院試さえ突破できればだが。最近の院試では TOEFL のスコアの提出が求められるので、TOEFL の対策をすることにした。&lt;/p>
+&lt;p>ただ、正直言って日本の大学院の入試(not 大学院教育)で求められる英語のレベルは低い。開示の点数などを勘案すると某大学の某研究科は英語ではなく専門と数学しか見ていないので TOEFL は 50 点台でも受かる人はいる。私の場合は留学をしていたのでおそらく適当に受けても受かる。ただ半分留学していた証明として 100 点という 1 つの目標を定めた。(「いや低くない？」というツッコミありがとうございます)&lt;/p>
+&lt;h2 id="最新の-toefl-動向">最新の TOEFL 動向 &lt;a href="#%e6%9c%80%e6%96%b0%e3%81%ae-toefl-%e5%8b%95%e5%90%91">#&lt;/a>&lt;/h2>&lt;!-- メインコンテンツ、詳細な説明 / Main content and detailed explanation -->
+&lt;p>まず TOEFL は純粋な英語力を測る試験ではなく、特定の形式で点数が取れるかを測る試験である。そのため、最近の傾向を把握することが重要だ。&lt;/p>
+&lt;h3 id="形式">形式 &lt;a href="#%e5%bd%a2%e5%bc%8f">#&lt;/a>&lt;/h3>&lt;p>直近では Duolingo など安価でオンラインで受けられる他の英語試験に対応するために TOEFL も大きく形式を変えた。&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>昔はダミー問題と呼ばれる、回答結果が得点に関わらない問題が紛れ込んでいたが、現在(2025-07-28)は異なりすべての問題が得点に影響を与える。&lt;/p>
+&lt;h4 id="2025-年現在の-toefl-ibt-形式">2025 年現在の TOEFL iBT 形式 &lt;a href="#2025-%e5%b9%b4%e7%8f%be%e5%9c%a8%e3%81%ae-toefl-ibt-%e5%bd%a2%e5%bc%8f">#&lt;/a>&lt;/h4>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>セクション&lt;/th>
+ &lt;th>問題数&lt;/th>
+ &lt;th>時間&lt;/th>
+ &lt;th>内容&lt;/th>
+ &lt;th>筆者の得点&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Reading&lt;/td>
+ &lt;td>20 問（2 パッセージ ×10 問）&lt;/td>
+ &lt;td>36 分&lt;/td>
+ &lt;td>学術的な長文読解&lt;/td>
+ &lt;td>30/30&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Listening&lt;/td>
+ &lt;td>28 問（対話 2 題、講義 3 題）&lt;/td>
+ &lt;td>41 分&lt;/td>
+ &lt;td>対話と講義の聴解&lt;/td>
+ &lt;td>27/30&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Speaking&lt;/td>
+ &lt;td>4 問&lt;/td>
+ &lt;td>16 分&lt;/td>
+ &lt;td>意見述べ、統合問題&lt;/td>
+ &lt;td>22/30&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Writing&lt;/td>
+ &lt;td>2 問&lt;/td>
+ &lt;td>29 分&lt;/td>
+ &lt;td>統合問題、アカデミック・ディスカッション&lt;/td>
+ &lt;td>21/30&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>合計&lt;/strong>&lt;/td>
+ &lt;td>&lt;strong>54 問&lt;/strong>&lt;/td>
+ &lt;td>&lt;strong>約 2 時間&lt;/strong>&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>&lt;strong>100/120&lt;/strong>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="各セクションの詳細">各セクションの詳細 &lt;a href="#%e5%90%84%e3%82%bb%e3%82%af%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e8%a9%b3%e7%b4%b0">#&lt;/a>&lt;/h4>&lt;p>&lt;strong>Reading（読解）&lt;/strong>&lt;br>
+長文を 2 つ読まされる。それぞれ同じ形式で 10 問ずつ、計 20 問。対策してわかったが、普段から英文を読んでいれば特別な対策は不要だった。&lt;/p></description></item></channel></rss>
