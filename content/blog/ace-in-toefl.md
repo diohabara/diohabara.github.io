@@ -19,7 +19,7 @@ language: "ja" # 言語を指定 / Language: "ja" or "en"
 
 <!-- なぜこの記事を書いたか、背景や動機 / Why you wrote this, background and motivation -->
 
-以前は[会社員に関する記事 1](./kaishain-is-boring.md)と[記事 2](./kaishain-is-exciting.md)を軽いトーンで書いたが、今回は真剣に TOEFL 対策について共有したい。
+以前は[会社員に関する記事 1](../kaishain-is-boring)と[記事 2](../kaishain-is-exciting)を軽いトーンで書いたが、今回は真剣に TOEFL 対策について共有したい。
 
 仕事をするのに突然飽きた際に退職後に研究をするというオプションがほしいと思った。日本の大学ならば金さえ出せば誰でも研究ができる。ただし、院試さえ突破できればだが。最近の院試では TOEFL のスコアの提出が求められるので、TOEFL の対策をすることにした。
 
