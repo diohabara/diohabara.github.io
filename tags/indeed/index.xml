@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Indeed on barabara diary</title><link>https://diohabara.github.io/tags/indeed/</link><description>Recent content in Indeed on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Mon, 22 Aug 2022 11:30:47 -0500</lastBuildDate><atom:link href="https://diohabara.github.io/tags/indeed/index.xml" rel="self" type="application/rss+xml"/><item><title>Indeed Japanでインターンしてきた</title><link>https://diohabara.github.io/blog/intern-at-indeed-japan/</link><pubDate>Mon, 22 Aug 2022 11:30:47 -0500</pubDate><guid>https://diohabara.github.io/blog/intern-at-indeed-japan/</guid><description>&lt;ul>
-&lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AE-1-%E6%97%A5">インターンの 1 日&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E7%A4%BE%E4%BC%9A%E4%BA%BA%E7%96%91%E4%BC%BC%E4%BD%93%E9%A8%93">社会人疑似体験&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E4%BA%BA%E7%94%9F%E3%81%AF%E5%86%92%E9%99%BA%E3%82%84-by-%E3%82%86%E3%81%9F%E3%81%BC%E3%82%93">「人生は冒険や！」 by ゆたぼん&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E7%B7%8F%E3%81%98%E3%81%A6">総じて&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E8%9B%87%E8%B6%B3">蛇足&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E8%AC%9D%E8%BE%9E">謝辞&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="3-行まとめ">3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Indeed でのインターンは昼飯が出てくるので良かった&lt;/li>
-&lt;li>インターンは上司 x チーム x テーマガチャ&lt;/li>
-&lt;li>英語はそこまで問題にはならない&lt;/li>
-&lt;/ul>
-&lt;h2 id="インターンの-1-日">インターンの 1 日 &lt;a href="#%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%b3%e3%81%ae-1-%e6%97%a5">#&lt;/a>&lt;/h2>&lt;p>題名の通り 6 月から 8 月は Indeed Japan でインターンをしていた。&lt;/p>
-&lt;p>最初に、インターンとして過ごした僕の 1 日(参考)をお話しようと思う。&lt;/p>
-&lt;p>僕はオフィスの方が捗るタイプなので自宅から働いたことはほぼなかった。そのため 1 日はオフィスから始まり、オフィスで終わると考えてもらって良い。オフィスは一応フリーアドレスなのだが、使う席は予約する必要がありそこが面倒だった。しかし、オフィスはきれいであり冷房も効いていて(諸事情で)冷蔵が使えない自宅と比較すると最高の労働環境だった。&lt;/p>
-&lt;p>恵比寿オフィスは自宅から徒歩 5 分の場所にあり、飲食物が常備されていて無料で飲み食いをすることができた。僕は朝オフィスに着いたら”in ゼリー”を飲み、メールを読んで仕事を始めていた。眠くなったらレッド・ブルーを飲んでいたし、チームの人はめちゃくちゃコーラを飲んでいた。昼ごはんも無料で食べられたので、会社に通勤していた日は夕飯のマック以外にお金を払う必要がなかった。。昼の食事が美味しいかどうかはメニューによるが、総じてまずくはないというのが正直な感想である。美味しいと記憶に残っているのはうなぎである。オフィスによって食器の素材が変わるのだが、恵比寿は紙でありご飯がへばりつくのが難儀だった。飲食が無料であるのを当然と思ってはいけないと思うが、少なくとも飲食が有料な会社は積極的に選ばないと思う。&lt;/p>
-&lt;p>仕事で使う PC は会社から支給された 16 インチ MacBook Pro で、確か CPU は M1 Max でメモリも 64GB と開発用には申し分なかった。また、VM も自由に建てることができ Ubuntu 環境で働くことも可能だった。ハードウェアスペックが律速となることはなく、この点は非常に快適だった。&lt;/p>
-&lt;p>チームはスクラムを導入しており、Sprint、メンターとの 1on1 が午前には入っていた。その他会議も最初は入っていたが、徐々にインターンは参加しなくても良いのでは？ということで参加せずに開発に集中することになった。この柔軟性の高さには感心した。今までのインターンと比べてもトップレベルで働きやすい環境だったと思う。&lt;/p>
-&lt;p>&lt;del>そんな感じで昼ごはんを食べ血糖値がバク上がりしインスリンがドバドバ出て爆睡していたら、知らない間に就業時間が終わっている。&lt;/del> 午後は会議少なめでコーディングや技術調査を中心に過ごした。社員だと午後も会議があるらしいので、インターン生はかなり開発メインでやらせてもらっていたと思う。生産的な 1 日を過ごせるようにチームが頑張っているんだなとは思いながら過ごしていた。&lt;/p>
-&lt;h2 id="社会人疑似体験">社会人疑似体験 &lt;a href="#%e7%a4%be%e4%bc%9a%e4%ba%ba%e7%96%91%e4%bc%bc%e4%bd%93%e9%a8%93">#&lt;/a>&lt;/h2>&lt;p>日本のベンチャーのインターンだと具体的な課題に関して、その課題を管理するチケットが発行され、それをこなす「業務委託(？)」みたいな働き方が多いと思う。特にマネジメントが崩壊している会社は(体験談)。一方、Indeed のインターンはそういう小間使いみたいな体験にならないように工夫していた。&lt;/p>
-&lt;p>最初に抽象度が高い課題が与えられ、その後マネージャーやメンターと一緒にその課題を解決するために(僕が主となって)Design Doc を書いて議論をする。そして、Design Doc に合わせて具体的な課題を設定し、いくつかチケットを発行しこなしていった。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Indeed on barabara diary</title><link>https://diohabara.github.io/tags/indeed/</link><description>Recent content in Indeed on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Mon, 22 Aug 2022 11:30:47 -0500</lastBuildDate><atom:link href="https://diohabara.github.io/tags/indeed/index.xml" rel="self" type="application/rss+xml"/><item><title>Indeed Japanでインターンしてきた</title><link>https://diohabara.github.io/blog/intern-at-indeed-japan/</link><pubDate>Mon, 22 Aug 2022 11:30:47 -0500</pubDate><guid>https://diohabara.github.io/blog/intern-at-indeed-japan/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81"&gt;3 行まとめ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AE-1-%E6%97%A5"&gt;インターンの 1 日&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E7%A4%BE%E4%BC%9A%E4%BA%BA%E7%96%91%E4%BC%BC%E4%BD%93%E9%A8%93"&gt;社会人疑似体験&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E4%BA%BA%E7%94%9F%E3%81%AF%E5%86%92%E9%99%BA%E3%82%84-by-%E3%82%86%E3%81%9F%E3%81%BC%E3%82%93"&gt;「人生は冒険や！」 by ゆたぼん&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E7%B7%8F%E3%81%98%E3%81%A6"&gt;総じて&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E8%9B%87%E8%B6%B3"&gt;蛇足&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E8%AC%9D%E8%BE%9E"&gt;謝辞&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-行まとめ"&gt;3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Indeed でのインターンは昼飯が出てくるので良かった&lt;/li&gt;
+&lt;li&gt;インターンは上司 x チーム x テーマガチャ&lt;/li&gt;
+&lt;li&gt;英語はそこまで問題にはならない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="インターンの-1-日"&gt;インターンの 1 日 &lt;a href="#%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%b3%e3%81%ae-1-%e6%97%a5"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;題名の通り 6 月から 8 月は Indeed Japan でインターンをしていた。&lt;/p&gt;
+&lt;p&gt;最初に、インターンとして過ごした僕の 1 日(参考)をお話しようと思う。&lt;/p&gt;
+&lt;p&gt;僕はオフィスの方が捗るタイプなので自宅から働いたことはほぼなかった。そのため 1 日はオフィスから始まり、オフィスで終わると考えてもらって良い。オフィスは一応フリーアドレスなのだが、使う席は予約する必要がありそこが面倒だった。しかし、オフィスはきれいであり冷房も効いていて(諸事情で)冷蔵庫が使えない自宅と比較すると最高の労働環境だった。&lt;/p&gt;
+&lt;p&gt;恵比寿オフィスは自宅から徒歩 5 分の場所にあり、飲食物が常備されていて無料で飲み食いをすることができた。僕は朝オフィスに着いたら&amp;quot;in ゼリー&amp;quot;を飲み、メールを読んで仕事を始めていた。眠くなったらレッド・ブルを飲んでいたし、チームの人はめちゃくちゃコーラを飲んでいた。昼ごはんも無料で食べられたので、会社に通勤していた日は夕飯のマック以外にお金を払う必要がなかった。昼の食事が美味しいかどうかはメニューによるが、総じてまずくはないというのが正直な感想である。美味しいと記憶に残っているのはうなぎである。オフィスによって食器の素材が変わるのだが、恵比寿は紙でありご飯がへばりつくのが難儀だった。飲食が無料であるのを当然と思ってはいけないと思うが、少なくとも飲食が有料な会社は積極的に選ばないと思う。&lt;/p&gt;
+&lt;p&gt;仕事で使う PC は会社から支給された 16 インチ MacBook Pro で、確か CPU は M1 Max でメモリも 64GB と開発用には申し分なかった。また、VM も自由に建てることができ Ubuntu 環境で働くことも可能だった。ハードウェアスペックが律速となることはなく、この点は非常に快適だった。&lt;/p&gt;
+&lt;p&gt;チームはスクラムを導入しており、Sprint、メンターとの 1on1 が午前には入っていた。その他会議も最初は入っていたが、徐々にインターンは参加しなくても良いのでは？ということで参加せずに開発に集中することになった。この柔軟性の高さには感心した。今までのインターンと比べてもトップレベルで働きやすい環境だったと思う。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;そんな感じで昼ごはんを食べ血糖値がバク上がりしインスリンがドバドバ出て爆睡していたら、知らない間に就業時間が終わっている。&lt;/del&gt; 午後は会議少なめでコーディングや技術調査を中心に過ごした。社員だと午後も会議があるらしいので、インターン生はかなり開発メインでやらせてもらっていたと思う。生産的な 1 日を過ごせるようにチームが頑張っているんだなとは思いながら過ごしていた。&lt;/p&gt;
+&lt;h2 id="社会人疑似体験"&gt;社会人疑似体験 &lt;a href="#%e7%a4%be%e4%bc%9a%e4%ba%ba%e7%96%91%e4%bc%bc%e4%bd%93%e9%a8%93"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;日本のベンチャーのインターンだと具体的な課題に関して、その課題を管理するチケットが発行され、それをこなす「業務委託(？)」みたいな働き方が多いと思う。特にマネジメントが崩壊している会社は(体験談)。一方、Indeed のインターンはそういう小間使いみたいな体験にならないように工夫していた。&lt;/p&gt;
+&lt;p&gt;最初に抽象度が高い課題が与えられ、その後マネージャーやメンターと一緒にその課題を解決するために(僕が主となって)Design Doc を書いて議論をする。そして、Design Doc に合わせて具体的な課題を設定し、いくつかチケットを発行しこなしていった。&lt;/p&gt;</description></item></channel></rss>

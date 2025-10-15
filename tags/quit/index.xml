@@ -1,82 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quit on barabara diary</title><link>https://diohabara.github.io/tags/quit/</link><description>Recent content in Quit on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Tue, 04 Feb 2025 01:51:56 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/quit/index.xml" rel="self" type="application/rss+xml"/><item><title>新卒で入って8ヶ月でGPIFやめますた</title><link>https://diohabara.github.io/blog/quit-gpif/</link><pubDate>Tue, 04 Feb 2025 01:51:56 +0900</pubDate><guid>https://diohabara.github.io/blog/quit-gpif/</guid><description>&lt;ul>
-&lt;li>&lt;a href="#%E6%83%B3%E5%AE%9A%E8%AA%AD%E8%80%85">想定読者&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E9%9D%9E%E6%83%B3%E5%AE%9A%E8%AA%AD%E8%80%85">非想定読者&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E6%A6%82%E8%A6%81">概要&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E5%85%A5%E7%A4%BE%E7%B5%8C%E7%B7%AF">入社経緯&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E3%81%A9%E3%81%86%E3%81%99%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%8B">どうするべきだったか&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#%E5%A0%B1%E5%91%8A%E3%81%AE%E9%89%84%E5%89%87">報告の鉄則&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E4%B8%8A%E5%8F%B8%E3%82%92%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%81%99%E3%82%8B">上司をマネジメントする&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nice-to-have-%E3%81%AF%E3%82%84%E3%82%89%E3%81%AA%E3%81%84">nice-to-have はやらない&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#%E6%83%B3%E5%AE%9A%E5%95%8F%E7%AD%94">想定問答&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#gpif-%E3%81%AF%E6%94%B9%E5%96%84%E3%81%AE%E4%BD%99%E5%9C%B0%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%AF%E8%BE%9E%E3%82%81%E3%82%8B%E5%89%8D%E3%81%AB%E3%82%82%E3%81%A3%E3%81%A8%E6%88%A6%E3%81%86%E9%81%B8%E6%8A%9E%E8%82%A2%E3%81%AF%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%8B">GPIF は改善の余地があったのでは？辞める前にもっと戦う選択肢はなかったのか？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E4%BC%9A%E7%A4%BE%E3%81%AB%E4%B8%8D%E6%BA%80%E3%81%8C%E3%81%82%E3%82%8B%E3%81%AA%E3%82%89%E5%85%A5%E7%A4%BE%E5%89%8D%E3%81%AB%E3%82%82%E3%81%A3%E3%81%A8%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%81%99%E3%81%B9%E3%81%8D%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%AF">会社に不満があるなら入社前にもっとリサーチすべきだったのでは？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#it-%E7%B3%BB%E3%81%AE%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%8B%E3%82%89%E6%8E%A1%E7%94%A8%E3%81%95%E3%82%8C%E3%81%9F%E3%81%AE%E3%81%AB%E9%83%A8%E7%BD%B2%E7%95%B0%E5%8B%95%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%81%A7%E6%96%87%E5%8F%A5%E3%82%92%E8%A8%80%E3%81%86%E3%81%AE%E3%81%AF%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%81%84%E3%81%8B">IT 系のことができるから採用されたのに部署異動ができないで文句を言うのはおかしくないか？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E6%9B%B2%E3%81%8C%E3%82%8A%E3%81%AA%E3%82%8A%E3%81%AB%E3%82%82%E3%81%8A%E4%B8%96%E8%A9%B1%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A0%E3%81%8B%E3%82%89%E4%BC%9A%E7%A4%BE%E3%81%AE%E6%82%AA%E5%8F%A3%E3%82%92%E8%A8%80%E3%81%86%E3%81%AE%E3%81%AF%E8%89%AF%E3%81%8F%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%84">曲がりなりにもお世話になったのだから会社の悪口を言うのは良くなくない？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E5%A5%BD%E3%81%8D%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%81%84%E3%81%A8%E8%A8%80%E3%82%8F%E3%82%8C%E3%81%9F%E6%9C%AC%E5%BD%93%E3%81%AB%E7%84%A1%E5%88%B6%E9%99%90%E3%81%AB%E4%BD%95%E3%82%92%E3%81%97%E3%81%A6%E3%82%82%E8%89%AF%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%97%E3%81%9F%E3%82%89%E9%A6%AC%E9%B9%BF%E3%81%98%E3%82%83%E3%81%AA%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B">「好きにしていい」と言われた本当に無制限に何をしても良いと思ったとしたら馬鹿じゃないですか？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#gpif-%E3%81%AB%E5%90%91%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%81%AF%E3%81%A9%E3%82%93%E3%81%AA%E4%BA%BA%E3%81%8B">GPIF に向いている人はどんな人か？&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="想定読者">想定読者 &lt;a href="#%e6%83%b3%e5%ae%9a%e8%aa%ad%e8%80%85">#&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>リアルの知り合い&lt;/li>
-&lt;/ol>
-&lt;h2 id="非想定読者">非想定読者 &lt;a href="#%e9%9d%9e%e6%83%b3%e5%ae%9a%e8%aa%ad%e8%80%85">#&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>GPIF の粗探しをしている人&lt;/li>
-&lt;li>GPIF への入社を検討している人&lt;/li>
-&lt;/ol>
-&lt;h2 id="概要">概要 &lt;a href="#%e6%a6%82%e8%a6%81">#&lt;/a>&lt;/h2>&lt;p>GPIF やめますた。&lt;/p>
-&lt;p>Quants Analyst として入社。6 月に入社したので、12-5+1=8 ヶ月働いたことになる。入る前は試用期間を超えたら入社エントリを書くつもりだったが、代わりに退職エントリを書くとは思わなかった。&lt;/p>
-&lt;p>入社 1 日目からやめたいと思っていたのでよくここまで続いたと思う。&lt;a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12274108107">A 級バックラー&lt;/a>の僕からしたら快挙だ。&lt;/p>
-&lt;h2 id="入社経緯">入社経緯 &lt;a href="#%e5%85%a5%e7%a4%be%e7%b5%8c%e7%b7%af">#&lt;/a>&lt;/h2>&lt;p>この会社に応募したのは矛盾していると思ったからだ。役所に行けばわかるが公的機関とは効率性は無視している。非効率なのに投資運用に力を入れているというアクセルとブレーキを同時に踏んでいる状況が面白いと思った。&lt;/p>
-&lt;p>また、日本に貢献をしたいと思ったからだ。公的な機関であり非効率な部分があるならば自分が改善できることがあると思った。&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>しかしながら、気持ちがあるくらいで金融の知識はさっぱりなかった。ところが幸運にも僕は新卒一期生であり GPIF をそもそも認知している学生(競争相手)が他におらず内定をもらえた。内定後に「好きにしていい」&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>と言われて「好き放題会社の(主に計算)資源を使ってやろう」とテンションが上り入社を決めた。&lt;/p>
-&lt;h2 id="どうするべきだったか">どうするべきだったか &lt;a href="#%e3%81%a9%e3%81%86%e3%81%99%e3%82%8b%e3%81%b9%e3%81%8d%e3%81%a0%e3%81%a3%e3%81%9f%e3%81%8b">#&lt;/a>&lt;/h2>&lt;p>で、8 ヶ月しか持たなかったわけだ。&lt;/p>
-&lt;p>退職したのは畢竟「言っても無駄だな&amp;hellip;」と諦観の域に達したからである。こうなったら在籍しても双方にとって不利益なので辞めた。&lt;/p>
-&lt;hr>
-&lt;p>&lt;strong>ここから個人の意見&lt;/strong>&lt;/p>
-&lt;hr>
-&lt;p>ひどい IT 環境&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>やデータサイエンス(データサイエンスとは言っていない)&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>など採用時に伝えておくべきことは多々あったと思うし、縦割り組織&lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>、「好きにしていい」の本当の意味&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup> など事前に通告されたかったと思う。また、入社時にどの部署に入るか伝えられておらずこちらから訴えた部署異動も叶わないといういわゆる「配属ガチャ」もあった。&lt;/p>
-&lt;p>改善するべき点は多くあり、良くなる確信はあった。しかし、GPIF は金融系の人からしたら終着点のような組織であり社内でなんとかしたいと思っている人は少数派だと感じた。そう認識・実感してからもう何も意見を言う気がなくなってしまった。&lt;/p>
-&lt;hr>
-&lt;p>&lt;strong>これからも個人の意見&lt;/strong>&lt;/p>
-&lt;hr>
-&lt;p>おかげで会社や組織や周りの人間に頼っても仕方がないと悟れた。奇跡的に周りがやる気に満ち溢れている状況を前提にしないほうが良く、現在の環境を言い訳にせず自分の人生にはどこまでも自分が責任を持つ必要があると気付かせてくれたのはありがたい。&lt;/p>
-&lt;p>ここで終わらせず次に繋げるために何をするべきだったのか、何が重要だったのかを振り返ってみる。&lt;/p>
-&lt;h3 id="報告の鉄則">報告の鉄則 &lt;a href="#%e5%a0%b1%e5%91%8a%e3%81%ae%e9%89%84%e5%89%87">#&lt;/a>&lt;/h3>&lt;p>最初に行うべきだったのは誰に報告するかを決めることだ。僕は最後まで上司が誰だかわからなかった&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>。その結果、IT 介護をすることになってしまったのだと思う。この悲劇はレポーティングラインを決めることで防げた。&lt;/p>
-&lt;p>また、レポーティングラインに一人は自分の話すことが理解できる人をいれるべきだ。自分がやっていることを毎回知識のない人にもわかるように説明をする必要があるのはかなりコミュニケーションコストが高く実質感情労働だ。感情労働はバーンアウトを生む。&lt;/p>
-&lt;ol>
-&lt;li>誰に報告するかを決める&lt;/li>
-&lt;li>前提を共有し論理で話せる味方を探す&lt;/li>
-&lt;/ol>
-&lt;p>ちなみに 1 の条件が達成できないことはないが、会社によっては 2 の条件が達成できないこともあるだろう。そういう会社には今後入らないことにする&lt;/p>
-&lt;h3 id="上司をマネジメントする">上司をマネジメントする &lt;a href="#%e4%b8%8a%e5%8f%b8%e3%82%92%e3%83%9e%e3%83%8d%e3%82%b8%e3%83%a1%e3%83%b3%e3%83%88%e3%81%99%e3%82%8b">#&lt;/a>&lt;/h3>&lt;p>レポーティングラインを定めたら、次はレポーティングライン上の上司をマネジメントをするべきだ。具体的には上司のスケジュールは把握して、空いているところに自分都合で予定を入れておくべきだ。可能なら側の座席に座り定期的にコミュニケーションを取る。要は距離を詰めるべきだった。&lt;/p>
-&lt;p>部下が上司のことをよくわからないのと同じくらい上司も部下のことがわかっていない。そのため、やりたい仕事、将来のキャリア像、何よりもやりたくない仕事を自分から伝えないと勘違いをされている可能性が高い。僕が IT 周りの便利屋をやらされたのは&lt;/p>
-&lt;p>社内の偉い人 1「DX しないといけないけど社内でやれるやつがいないなあ」&lt;/p></description></item><item><title>はてな退職エントリー(バイト)</title><link>https://diohabara.github.io/blog/quit-hatena-part-time/</link><pubDate>Tue, 19 Jul 2022 23:26:35 +0900</pubDate><guid>https://diohabara.github.io/blog/quit-hatena-part-time/</guid><description>&lt;ul>
-&lt;li>&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81">3 行まとめ&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E9%80%80%E8%81%B7">退職？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E3%81%AF%E3%81%A6%E3%81%AA%E3%81%A7%E3%81%AF%E4%BD%95%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%81%8B">はてなでは何をしていたのか&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#%E9%9D%9E%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E5%90%91%E3%81%91">非エンジニア向け&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E5%90%91%E3%81%91">エンジニア向け&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#%E6%84%9F%E6%83%B3">感想&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#%E7%A4%BE%E5%93%A1%E3%81%8C%E5%84%AA%E3%81%97%E3%81%843-%E3%81%A4%E5%8A%A0%E7%82%B9">社員が優しい(☆3 つ加点)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E7%A4%BE%E5%93%A1%E3%81%AE%E8%83%BD%E5%8A%9B%E3%81%8C%E9%AB%98%E3%81%843-%E3%81%A4%E5%8A%A0%E7%82%B9">社員の能力が高い(☆3 つ加点)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E3%83%90%E3%82%A4%E3%83%88%E6%A5%AD%E5%8B%99%E5%A7%94%E8%A8%97%E3%81%AE%E5%8F%97%E3%81%91%E5%85%A5%E3%82%8C%E4%BD%93%E5%88%B6%E3%81%AB%E6%94%B9%E5%96%84%E7%82%B9%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F1-%E3%81%A4%E6%B8%9B%E7%82%B9">バイト･業務委託の受け入れ体制に改善点があった(☆1 つ減点)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E3%82%A2%E3%83%AB%E3%83%90%E3%82%A4%E3%83%88%E4%BB%A5%E5%A4%96%E3%81%AE%E8%BA%AB%E5%88%86%E3%81%A7%E5%83%8D%E3%81%8D%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F-%E7%99%BA%E7%94%9F%E3%81%9B%E3%81%9A">アルバイト以外の身分で働きたいと思った(☆ 発生せず)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E6%99%82%E7%B5%A6%E3%81%8C%E5%AE%89%E3%81%841-%E3%81%A4%E6%B8%9B%E7%82%B9">時給が安い(☆1 つ減点)&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#%E8%AC%9D%E8%BE%9E">謝辞&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E5%8F%82%E7%85%A7">参照&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quit on barabara diary</title><link>https://diohabara.github.io/tags/quit/</link><description>Recent content in Quit on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Tue, 04 Feb 2025 01:51:56 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/quit/index.xml" rel="self" type="application/rss+xml"/><item><title>新卒で入って8ヶ月でGPIFやめますた</title><link>https://diohabara.github.io/blog/quit-gpif/</link><pubDate>Tue, 04 Feb 2025 01:51:56 +0900</pubDate><guid>https://diohabara.github.io/blog/quit-gpif/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E6%83%B3%E5%AE%9A%E8%AA%AD%E8%80%85"&gt;想定読者&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E9%9D%9E%E6%83%B3%E5%AE%9A%E8%AA%AD%E8%80%85"&gt;非想定読者&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E6%A6%82%E8%A6%81"&gt;概要&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E5%85%A5%E7%A4%BE%E7%B5%8C%E7%B7%AF"&gt;入社経緯&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E3%81%A9%E3%81%86%E3%81%99%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%8B"&gt;どうするべきだったか&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E5%A0%B1%E5%91%8A%E3%81%AE%E9%89%84%E5%89%87"&gt;報告の鉄則&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E4%B8%8A%E5%8F%B8%E3%82%92%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%81%99%E3%82%8B"&gt;上司をマネジメントする&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nice-to-have-%E3%81%AF%E3%82%84%E3%82%89%E3%81%AA%E3%81%84"&gt;nice-to-have はやらない&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E6%83%B3%E5%AE%9A%E5%95%8F%E7%AD%94"&gt;想定問答&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#gpif-%E3%81%AF%E6%94%B9%E5%96%84%E3%81%AE%E4%BD%99%E5%9C%B0%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%AF%E8%BE%9E%E3%82%81%E3%82%8B%E5%89%8D%E3%81%AB%E3%82%82%E3%81%A3%E3%81%A8%E6%88%A6%E3%81%86%E9%81%B8%E6%8A%9E%E8%82%A2%E3%81%AF%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%8B"&gt;GPIF は改善の余地があったのでは？辞める前にもっと戦う選択肢はなかったのか？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E4%BC%9A%E7%A4%BE%E3%81%AB%E4%B8%8D%E6%BA%80%E3%81%8C%E3%81%82%E3%82%8B%E3%81%AA%E3%82%89%E5%85%A5%E7%A4%BE%E5%89%8D%E3%81%AB%E3%82%82%E3%81%A3%E3%81%A8%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%81%99%E3%81%B9%E3%81%8D%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%AF"&gt;会社に不満があるなら入社前にもっとリサーチすべきだったのでは？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#it-%E7%B3%BB%E3%81%AE%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%8B%E3%82%89%E6%8E%A1%E7%94%A8%E3%81%95%E3%82%8C%E3%81%9F%E3%81%AE%E3%81%AB%E9%83%A8%E7%BD%B2%E7%95%B0%E5%8B%95%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%81%A7%E6%96%87%E5%8F%A5%E3%82%92%E8%A8%80%E3%81%86%E3%81%AE%E3%81%AF%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%81%84%E3%81%8B"&gt;IT 系のことができるから採用されたのに部署異動ができないで文句を言うのはおかしくないか？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E6%9B%B2%E3%81%8C%E3%82%8A%E3%81%AA%E3%82%8A%E3%81%AB%E3%82%82%E3%81%8A%E4%B8%96%E8%A9%B1%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A0%E3%81%8B%E3%82%89%E4%BC%9A%E7%A4%BE%E3%81%AE%E6%82%AA%E5%8F%A3%E3%82%92%E8%A8%80%E3%81%86%E3%81%AE%E3%81%AF%E8%89%AF%E3%81%8F%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E3%81%AF"&gt;曲がりなりにもお世話になったのだから会社の悪口を言うのは良くないのでは？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E5%A5%BD%E3%81%8D%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%81%84%E3%81%A8%E8%A8%80%E3%82%8F%E3%82%8C%E3%81%A6%E6%9C%AC%E5%BD%93%E3%81%AB%E7%84%A1%E5%88%B6%E9%99%90%E3%81%AB%E4%BD%95%E3%82%92%E3%81%97%E3%81%A6%E3%82%82%E8%89%AF%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%97%E3%81%9F%E3%82%89%E9%A6%AC%E9%B9%BF%E3%81%98%E3%82%83%E3%81%AA%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B"&gt;「好きにしていい」と言われて本当に無制限に何をしても良いと思ったとしたら馬鹿じゃないですか?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#gpif-%E3%81%AB%E5%90%91%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%81%AF%E3%81%A9%E3%82%93%E3%81%AA%E4%BA%BA%E3%81%8B"&gt;GPIF に向いている人はどんな人か？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="想定読者"&gt;想定読者 &lt;a href="#%e6%83%b3%e5%ae%9a%e8%aa%ad%e8%80%85"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;リアルの知り合い&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="非想定読者"&gt;非想定読者 &lt;a href="#%e9%9d%9e%e6%83%b3%e5%ae%9a%e8%aa%ad%e8%80%85"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;GPIF の粗探しをしている人&lt;/li&gt;
+&lt;li&gt;GPIF への入社を検討している人&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="概要"&gt;概要 &lt;a href="#%e6%a6%82%e8%a6%81"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;GPIF やめますた。&lt;/p&gt;
+&lt;p&gt;Quants Analyst として入社。6 月に入社したので、12-5+1=8 ヶ月働いたことになる。入る前は試用期間を超えたら入社エントリを書くつもりだったが、代わりに退職エントリを書くとは思わなかった。&lt;/p&gt;
+&lt;p&gt;入社 1 日目からやめたいと思っていたのでよくここまで続いたと思う。&lt;a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12274108107"&gt;A 級バックラー&lt;/a&gt;の僕からしたら快挙だ。&lt;/p&gt;
+&lt;h2 id="入社経緯"&gt;入社経緯 &lt;a href="#%e5%85%a5%e7%a4%be%e7%b5%8c%e7%b7%af"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;この会社に応募したのは矛盾していると思ったからだ。役所に行けばわかるが公的機関とは効率性は無視している。非効率なのに投資運用に力を入れているというアクセルとブレーキを同時に踏んでいる状況が面白いと思った。&lt;/p&gt;
+&lt;p&gt;また、日本に貢献をしたいと思ったからだ。公的な機関であり非効率な部分があるならば自分が改善できることがあると思った。&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;しかしながら、気持ちがあるくらいで金融の知識はさっぱりなかった。ところが幸運にも僕は新卒一期生であり GPIF をそもそも認知している学生(競争相手)が他におらず内定をもらえた。内定後に「好きにしていい」&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;と言われて「好き放題会社の(主に計算)資源を使ってやろう」とテンションが上り入社を決めた。&lt;/p&gt;
+&lt;h2 id="どうするべきだったか"&gt;どうするべきだったか &lt;a href="#%e3%81%a9%e3%81%86%e3%81%99%e3%82%8b%e3%81%b9%e3%81%8d%e3%81%a0%e3%81%a3%e3%81%9f%e3%81%8b"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;で、8 ヶ月しか持たなかったわけだ。&lt;/p&gt;
+&lt;p&gt;退職したのは畢竟「言っても無駄だな&amp;hellip;」と諦観の域に達したからである。こうなったら在籍しても双方にとって不利益なので辞めた。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;ここから個人の意見&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;ひどい IT 環境&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;やデータサイエンス(データサイエンスとは言っていない)&lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt;など採用時に伝えておくべきことは多々あったと思うし、縦割り組織&lt;sup id="fnref:5"&gt;&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref"&gt;5&lt;/a&gt;&lt;/sup&gt;、「好きにしていい」の本当の意味&lt;sup id="fnref:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt; など事前に通告されたかったと思う。また、入社時にどの部署に入るか伝えられておらずこちらから訴えた部署異動も叶わないといういわゆる「配属ガチャ」もあった。&lt;/p&gt;
+&lt;p&gt;改善するべき点は多くあり、良くなる確信はあった。しかし、GPIF は金融系の人からしたら終着点のような組織であり社内でなんとかしたいと思っている人は少数派だと感じた。そう認識・実感してからもう何も意見を言う気がなくなってしまった。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;これからも個人の意見&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;おかげで会社や組織や周りの人間に頼っても仕方がないと悟れた。奇跡的に周りがやる気に満ち溢れている状況を前提にしないほうが良く、現在の環境を言い訳にせず自分の人生にはどこまでも自分が責任を持つ必要があると気付かせてくれたのはありがたい。&lt;/p&gt;
+&lt;p&gt;ここで終わらせず次に繋げるために何をするべきだったのか、何が重要だったのかを振り返ってみる。&lt;/p&gt;
+&lt;h3 id="報告の鉄則"&gt;報告の鉄則 &lt;a href="#%e5%a0%b1%e5%91%8a%e3%81%ae%e9%89%84%e5%89%87"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;最初に行うべきだったのは誰に報告するかを決めることだ。僕は最後まで上司が誰だかわからなかった&lt;sup id="fnref:7"&gt;&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref"&gt;7&lt;/a&gt;&lt;/sup&gt;。その結果、IT 介護をすることになってしまったのだと思う。この悲劇はレポーティングラインを決めることで防げた。&lt;/p&gt;
+&lt;p&gt;また、レポーティングラインに一人は自分の話すことが理解できる人をいれるべきだ。自分がやっていることを毎回知識のない人にもわかるように説明をする必要があるのはかなりコミュニケーションコストが高く実質感情労働だ。感情労働はバーンアウトを生む。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;誰に報告するかを決める&lt;/li&gt;
+&lt;li&gt;前提を共有し論理で話せる味方を探す&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ちなみに 1 の条件が達成できないことはないが、会社によっては 2 の条件が達成できないこともあるだろう。そういう会社には今後入らないことにする。&lt;/p&gt;
+&lt;h3 id="上司をマネジメントする"&gt;上司をマネジメントする &lt;a href="#%e4%b8%8a%e5%8f%b8%e3%82%92%e3%83%9e%e3%83%8d%e3%82%b8%e3%83%a1%e3%83%b3%e3%83%88%e3%81%99%e3%82%8b"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;レポーティングラインを定めたら、次はレポーティングライン上の上司をマネジメントするべきだ。具体的には上司のスケジュールは把握して、空いているところに自分都合で予定を入れておくべきだ。可能なら側の座席に座り定期的にコミュニケーションを取る。要は距離を詰めるべきだった。&lt;/p&gt;
+&lt;p&gt;部下が上司のことをよくわからないのと同じくらい上司も部下のことがわかっていない。そのため、やりたい仕事、将来のキャリア像、何よりもやりたくない仕事を自分から伝えないと勘違いをされている可能性が高い。僕が IT 周りの便利屋をやらされたのは&lt;/p&gt;
+&lt;p&gt;社内の偉い人 1「DX しないといけないけど社内でやれるやつがいないなあ」&lt;/p&gt;</description></item><item><title>はてな退職エントリー(バイト)</title><link>https://diohabara.github.io/blog/quit-hatena-part-time/</link><pubDate>Tue, 19 Jul 2022 23:26:35 +0900</pubDate><guid>https://diohabara.github.io/blog/quit-hatena-part-time/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="#3-%E8%A1%8C%E3%81%BE%E3%81%A8%E3%82%81"&gt;3 行まとめ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E9%80%80%E8%81%B7"&gt;退職？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E3%81%AF%E3%81%A6%E3%81%AA%E3%81%A7%E3%81%AF%E4%BD%95%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%81%8B"&gt;はてなでは何をしていたのか&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E9%9D%9E%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E5%90%91%E3%81%91"&gt;非エンジニア向け&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E5%90%91%E3%81%91"&gt;エンジニア向け&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E6%84%9F%E6%83%B3"&gt;感想&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E7%A4%BE%E5%93%A1%E3%81%8C%E5%84%AA%E3%81%97%E3%81%843-%E3%81%A4%E5%8A%A0%E7%82%B9"&gt;社員が優しい(☆3 つ加点)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E7%A4%BE%E5%93%A1%E3%81%AE%E8%83%BD%E5%8A%9B%E3%81%8C%E9%AB%98%E3%81%843-%E3%81%A4%E5%8A%A0%E7%82%B9"&gt;社員の能力が高い(☆3 つ加点)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E3%83%90%E3%82%A4%E3%83%88%E6%A5%AD%E5%8B%99%E5%A7%94%E8%A8%97%E3%81%AE%E5%8F%97%E3%81%91%E5%85%A5%E3%82%8C%E4%BD%93%E5%88%B6%E3%81%AB%E6%94%B9%E5%96%84%E7%82%B9%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F1-%E3%81%A4%E6%B8%9B%E7%82%B9"&gt;バイト･業務委託の受け入れ体制に改善点があった(☆1 つ減点)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E3%82%A2%E3%83%AB%E3%83%90%E3%82%A4%E3%83%88%E4%BB%A5%E5%A4%96%E3%81%AE%E8%BA%AB%E5%88%86%E3%81%A7%E5%83%8D%E3%81%8D%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F-%E7%99%BA%E7%94%9F%E3%81%9B%E3%81%9A"&gt;アルバイト以外の身分で働きたいと思った(☆ 発生せず)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E6%99%82%E7%B5%A6%E3%81%8C%E5%AE%89%E3%81%841-%E3%81%A4%E6%B8%9B%E7%82%B9"&gt;時給が安い(☆1 つ減点)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E8%AC%9D%E8%BE%9E"&gt;謝辞&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E5%8F%82%E7%85%A7"&gt;参照&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
 
  
 
@@ -84,27 +84,27 @@
 
  
  
- &lt;img src="https://diohabara.github.io/images/hatena-bookmark-logo.png" alt="hatena" loading="lazy" />
+ &lt;img src="https://diohabara.github.io/images/hatena-bookmark-logo.png" alt="hatena" loading="lazy" /&gt;
  
 
-&lt;/p>
-&lt;h2 id="3-行まとめ">3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>株式会社はてなのアルバイトをやめた&lt;/li>
-&lt;li>はてなではエンジニアのアルバイトをした&lt;/li>
-&lt;li>時給が安い(小並感)&lt;/li>
-&lt;/ul>
-&lt;h2 id="退職">退職？ &lt;a href="#%e9%80%80%e8%81%b7">#&lt;/a>&lt;/h2>&lt;p>はてなでアルバイトをしていましたが、最近(5 月)やめました(7 月 19 日になるまで投稿をサボっていました！！！)。&lt;/p>
-&lt;p>はてなでサマーインターンをした人の記事はよく見かけませんか？おそらくはてなの目玉イベントだからでしょう。一方、アルバイト(そもそもアルバイトとインターンの違いがわかっていません)をした人の記事は寡聞にしてあまり知りません。しかし、アルバイトがどのようなことをしているのか興味がある人も多いと思います。需要があると思い記事にまとめてみました。&lt;/p>
-&lt;p>ちなみに、この記事が対象としているのは&lt;strong>これからはてなでアルバイトをしようと思っている人&lt;/strong>もしくは&lt;strong>はてなでのアルバイトがどのようなものか気になっているはてなユーザー&lt;/strong>です。&lt;/p>
-&lt;h2 id="はてなでは何をしていたのか">はてなでは何をしていたのか &lt;a href="#%e3%81%af%e3%81%a6%e3%81%aa%e3%81%a7%e3%81%af%e4%bd%95%e3%82%92%e3%81%97%e3%81%a6%e3%81%84%e3%81%9f%e3%81%ae%e3%81%8b">#&lt;/a>&lt;/h2>&lt;h3 id="非エンジニア向け">非エンジニア向け &lt;a href="#%e9%9d%9e%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%90%91%e3%81%91">#&lt;/a>&lt;/h3>&lt;p>&lt;a href="https://b.hatena.ne.jp/">はてなブックマーク&lt;/a>というソーシャルブックマークサービスに関するチームで働いていました。ソーシャルブックマークとはオンライン上にインターネットのページを記録するサービスのことです。はてなブックマークではインターネットのページに対してコメントを残し、議論をしたり他人の議論の様子を観察したりすることができます。&lt;/p>
-&lt;p>はてなブックマークはユーザーからは 1 つのサービスに見えるのですが、実は複数のサービスが組み合わさったものです。そして、そのようなサービス群を動かすためのサーバーのいくつかははてな社のものです。そのサービスの一部が外部の会社のサーバーで動くような変更を加えました。サービスを他の会社のサーバーに移すことで、サーバーの管理が容易になり、コストが抑えられ、拡張が容易になります。流行りのクラウド化をしたわけです。&lt;/p>
-&lt;p>仕事で必要な知識にはアルバイトを始めた頃には知らないものもたくさんありましたが、調べる時間を頂きながら社員の方に質問をして進めました。というか、ソフトウェアエンジニアの仕事というのはこういうもので調べ物をするだけでお金がもらえるものなのです。調べものや調べながら試すことが好きな人は向いている仕事だと思います。(なおバイト)&lt;/p>
-&lt;p>&lt;strong>これからバイトをするつもりの人&lt;/strong>は知識の多寡よりも、知らないことは調べればなんとかなるという経験･自信･直感があればバイトをしても大丈夫だと思います。以下はアルバイトのリンクです。&lt;/p>
-&lt;p>&lt;a href="https://hatenacorp.jp/recruit/arbeit">はてなアルバイト求人&lt;/a>&lt;/p>
-&lt;p>&lt;strong>はてなでのアルバイトがどのようなものか気になっているはてなユーザー&lt;/strong>はこんな感じで自分の使っているサービスができているんだとわかっていただけると幸いです。&lt;/p>
-&lt;h3 id="エンジニア向け">エンジニア向け &lt;a href="#%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%90%91%e3%81%91">#&lt;/a>&lt;/h3>&lt;p>ブックマークチームで CI/CD の改善をしていました。もう少し具体的に言うと Jenkins 上で実行されていた CI/CD のパイプラインを GitHub Actions に移すという作業をしていました。一部のタスクは社員の方の力が必要であったので、それを社員の方に頼んでいる間に CI/CD の高速化もやりました。&lt;/p>
-&lt;p>Docker、Jenkins、GitHub Actions にはあまり詳しくなかったのですが他のレポジトリのコードを読み、ネット上に上がっているサンプルコードや GitHub のドキュメントを参考に仕事を進めました。Docker や GitHub Actions に関して勉強をしてお金をもらっているようなものだったので、個人的には良かったと思います。&lt;/p>
-&lt;h2 id="感想">感想 &lt;a href="#%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/h2>&lt;p>星を付けるなら ☆☆☆☆ でした。以下採点の根拠です。&lt;/p>
-&lt;h3 id="社員が優しい3-つ加点">社員が優しい(☆3 つ加点) &lt;a href="#%e7%a4%be%e5%93%a1%e3%81%8c%e5%84%aa%e3%81%97%e3%81%843-%e3%81%a4%e5%8a%a0%e7%82%b9">#&lt;/a>&lt;/h3>&lt;p>何をしても怒られません。だから心理的安全性は高いです。今までに怒られて仕事の効率が上がったことはないので、とても良かったです。また、わからないことを質問するとすぐに反応が返ってくるのも良かったです。&lt;/p>
-&lt;h3 id="社員の能力が高い3-つ加点">社員の能力が高い(☆3 つ加点) &lt;a href="#%e7%a4%be%e5%93%a1%e3%81%ae%e8%83%bd%e5%8a%9b%e3%81%8c%e9%ab%98%e3%81%843-%e3%81%a4%e5%8a%a0%e7%82%b9">#&lt;/a>&lt;/h3>&lt;p>社員の技術力が高いと思いました。上で書いた質問への反応が早いことと関連しているかもしれません。&lt;/p>
-&lt;p>暇なときに社員の方のブログ記事やコードを読んだのですが、｢これでいいんだよこれで｣と思いながら読んでいました。ブログの内容からコンピュータに関する基礎的な知識を持っている方が多いということがわかり、質問の際に 0 から説明をしなくても社員さんが概要を理解していたので非常に楽でした。ただ同時に、こういう職場ばかりではないと思うので、自分が説明する能力を高めようとも思いました。&lt;/p></description></item></channel></rss>
+&lt;/p&gt;
+&lt;h2 id="3-行まとめ"&gt;3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;株式会社はてなのアルバイトをやめた&lt;/li&gt;
+&lt;li&gt;はてなではエンジニアのアルバイトをした&lt;/li&gt;
+&lt;li&gt;時給が安い(小並感)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="退職"&gt;退職？ &lt;a href="#%e9%80%80%e8%81%b7"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;はてなでアルバイトをしていましたが、最近(5 月)やめました(7 月 19 日になるまで投稿をサボっていました！！！)。&lt;/p&gt;
+&lt;p&gt;はてなでサマーインターンをした人の記事はよく見かけませんか？おそらくはてなの目玉イベントだからでしょう。一方、アルバイト(そもそもアルバイトとインターンの違いがわかっていません)をした人の記事は寡聞にしてあまり知りません。しかし、アルバイトがどのようなことをしているのか興味がある人も多いと思います。需要があると思い記事にまとめてみました。&lt;/p&gt;
+&lt;p&gt;ちなみに、この記事が対象としているのは&lt;strong&gt;これからはてなでアルバイトをしようと思っている人&lt;/strong&gt;もしくは&lt;strong&gt;はてなでのアルバイトがどのようなものか気になっているはてなユーザー&lt;/strong&gt;です。&lt;/p&gt;
+&lt;h2 id="はてなでは何をしていたのか"&gt;はてなでは何をしていたのか &lt;a href="#%e3%81%af%e3%81%a6%e3%81%aa%e3%81%a7%e3%81%af%e4%bd%95%e3%82%92%e3%81%97%e3%81%a6%e3%81%84%e3%81%9f%e3%81%ae%e3%81%8b"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="非エンジニア向け"&gt;非エンジニア向け &lt;a href="#%e9%9d%9e%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%90%91%e3%81%91"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href="https://b.hatena.ne.jp/"&gt;はてなブックマーク&lt;/a&gt;というソーシャルブックマークサービスに関するチームで働いていました。ソーシャルブックマークとはオンライン上にインターネットのページを記録するサービスのことです。はてなブックマークではインターネットのページに対してコメントを残し、議論をしたり他人の議論の様子を観察したりすることができます。&lt;/p&gt;
+&lt;p&gt;はてなブックマークはユーザーからは 1 つのサービスに見えるのですが、実は複数のサービスが組み合わさったものです。そして、そのようなサービス群を動かすためのサーバーのいくつかははてな社のものです。そのサービスの一部が外部の会社のサーバーで動くような変更を加えました。サービスを他の会社のサーバーに移すことで、サーバーの管理が容易になり、コストが抑えられ、拡張が容易になります。流行りのクラウド化をしたわけです。&lt;/p&gt;
+&lt;p&gt;仕事で必要な知識にはアルバイトを始めた頃には知らないものもたくさんありましたが、調べる時間を頂きながら社員の方に質問をして進めました。というか、ソフトウェアエンジニアの仕事というのはこういうもので調べ物をするだけでお金がもらえるものなのです。調べものや調べながら試すことが好きな人は向いている仕事だと思います。(なおバイト)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;これからバイトをするつもりの人&lt;/strong&gt;は知識の多寡よりも、知らないことは調べればなんとかなるという経験･自信･直感があればバイトをしても大丈夫だと思います。以下はアルバイトのリンクです。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://hatenacorp.jp/recruit/arbeit"&gt;はてなアルバイト求人&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;はてなでのアルバイトがどのようなものか気になっているはてなユーザー&lt;/strong&gt;はこんな感じで自分の使っているサービスができているんだとわかっていただけると幸いです。&lt;/p&gt;
+&lt;h3 id="エンジニア向け"&gt;エンジニア向け &lt;a href="#%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%90%91%e3%81%91"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;ブックマークチームで CI/CD の改善をしていました。もう少し具体的に言うと Jenkins 上で実行されていた CI/CD のパイプラインを GitHub Actions に移すという作業をしていました。一部のタスクは社員の方の力が必要であったので、それを社員の方に頼んでいる間に CI/CD の高速化もやりました。&lt;/p&gt;
+&lt;p&gt;Docker、Jenkins、GitHub Actions にはあまり詳しくなかったのですが他のレポジトリのコードを読み、ネット上に上がっているサンプルコードや GitHub のドキュメントを参考に仕事を進めました。Docker や GitHub Actions に関して勉強をしてお金をもらっているようなものだったので、個人的には良かったと思います。&lt;/p&gt;
+&lt;h2 id="感想"&gt;感想 &lt;a href="#%e6%84%9f%e6%83%b3"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;星を付けるなら ☆☆☆☆ でした。以下採点の根拠です。&lt;/p&gt;
+&lt;h3 id="社員が優しい3-つ加点"&gt;社員が優しい(☆3 つ加点) &lt;a href="#%e7%a4%be%e5%93%a1%e3%81%8c%e5%84%aa%e3%81%97%e3%81%843-%e3%81%a4%e5%8a%a0%e7%82%b9"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;何をしても怒られません。だから心理的安全性は高いです。今までに怒られて仕事の効率が上がったことはないので、とても良かったです。また、わからないことを質問するとすぐに反応が返ってくるのも良かったです。&lt;/p&gt;
+&lt;h3 id="社員の能力が高い3-つ加点"&gt;社員の能力が高い(☆3 つ加点) &lt;a href="#%e7%a4%be%e5%93%a1%e3%81%ae%e8%83%bd%e5%8a%9b%e3%81%8c%e9%ab%98%e3%81%843-%e3%81%a4%e5%8a%a0%e7%82%b9"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;社員の技術力が高いと思いました。上で書いた質問への反応が早いことと関連しているかもしれません。&lt;/p&gt;
+&lt;p&gt;暇なときに社員の方のブログ記事やコードを読んだのですが、「これでいいんだよこれで」と思いながら読んでいました。ブログの内容からコンピュータに関する基礎的な知識を持っている方が多いということがわかり、質問の際に 0 から説明をしなくても社員さんが概要を理解していたので非常に楽でした。ただ同時に、こういう職場ばかりではないと思うので、自分が説明する能力を高めようとも思いました。&lt;/p&gt;</description></item></channel></rss>
