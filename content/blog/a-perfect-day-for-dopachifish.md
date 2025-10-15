@@ -16,7 +16,7 @@ language: "ja"  # 言語を指定 / Language: "ja" or "en"
 
 ## 対象読者
 
-1. ``A Perfect Day for Bananafish''を読んだことがある
+1. "A Perfect Day for Bananafish"を読んだことがある
 2. ドーパミン中毒だと自覚している
 3. 「バイトをバックレたことがある」もしくは「入社後1年未満で転職をしたことがある」
 
