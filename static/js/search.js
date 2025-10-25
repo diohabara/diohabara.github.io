@@ -25,7 +25,7 @@
                     this.field('language');
 
                     // Add Japanese tokenizer if available
-                    if (lunr.jp) {
+                    if (typeof lunr.jp === 'function') {
                         this.use(lunr.jp);
                     }
 
@@ -68,7 +68,7 @@
     function performSearch(query) {
         const searchResults = document.getElementById('search-results');
         
-        if (!query || query.length < 2) {
+        if (!query || query.length < 1) {
             searchResults.innerHTML = '';
             return;
         }
@@ -79,7 +79,32 @@
         }
 
         try {
-            const results = searchIndex.search(query);
+            // For Japanese text, try multiple search strategies
+            let results = searchIndex.search(query);
+
+            // If no results and query contains Japanese characters, try with wildcards
+            if (results.length === 0 && /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(query)) {
+                // Try with wildcard for partial matches
+                results = searchIndex.search('*' + query + '*');
+
+                // If still no results, try searching each character
+                if (results.length === 0 && query.length > 1) {
+                    const charResults = [];
+                    for (let i = 0; i < query.length; i++) {
+                        const char = query[i];
+                        const charResult = searchIndex.search(char);
+                        charResults.push(...charResult);
+                    }
+                    // Deduplicate results
+                    const seen = new Set();
+                    results = charResults.filter(r => {
+                        if (seen.has(r.ref)) return false;
+                        seen.add(r.ref);
+                        return true;
+                    });
+                }
+            }
+
             displayResults(results, query);
         } catch (error) {
             console.error('Search error:', error);
