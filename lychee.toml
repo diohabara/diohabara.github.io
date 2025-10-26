@@ -14,7 +14,9 @@ user_agent = "Mozilla/5.0 (compatible; lychee/0.20.0; +https://github.com/lychee
 timeout = 30
 
 # Accept HTTP status codes
-accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 429]
+# 403 is included because some sites block automated requests (e.g., nsa-codebreaker.org)
+# 500 is included because some sites have temporary server errors (e.g., dic.nicovideo.jp)
+accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 403, 429, 500]
 
 # Skip checking external links (optional, set to true for faster checks)
 skip_missing = false
