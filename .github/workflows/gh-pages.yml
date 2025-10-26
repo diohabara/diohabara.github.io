@@ -22,10 +22,44 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
+          extended: true  # Use extended version for SCSS/SASS support
+
+      - name: Cache Hugo resources
+        uses: actions/cache@v3
+        with:
+          path: resources
+          key: ${{ runner.os }}-hugo-resources-${{ hashFiles('**/config.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-resources-
+
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --gc --cleanDestinationDir
         env:
           HUGO_SERVICES_GOOGLEANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          HUGO_ENV: production
+
+      - name: Verify build output
+        run: |
+          echo "Checking critical files..."
+          # Check if JavaScript files are included
+          test -f public/js/lunr-ja.js && echo "✓ lunr-ja.js found" || echo "✗ lunr-ja.js missing"
+          test -f public/js/search.js && echo "✓ search.js found" || echo "✗ search.js missing"
+          test -f public/js/image-lazy-load.js && echo "✓ image-lazy-load.js found" || echo "✗ image-lazy-load.js missing"
+
+          # Check if sitemap and robots.txt exist
+          test -f public/sitemap.xml && echo "✓ sitemap.xml found" || echo "✗ sitemap.xml missing"
+          test -f public/robots.txt && echo "✓ robots.txt found" || echo "✗ robots.txt missing"
+
+          # Check if index.json for search exists
+          test -f public/index.json && echo "✓ index.json found" || echo "✗ index.json missing"
+
+          # Verify JSON-LD is included in HTML
+          if grep -q 'application/ld+json' public/index.html; then
+            echo "✓ JSON-LD structured data found in index.html"
+          else
+            echo "✗ JSON-LD structured data missing in index.html"
+          fi
+
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:

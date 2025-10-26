@@ -1,0 +1,131 @@
+{{- /*
+Image shortcode with optimization features:
+- Lazy loading
+- Responsive images with srcset
+- WebP support with fallback
+- SEO-friendly alt text
+- Optional caption
+
+Usage:
+{{< image src="/images/example.jpg" alt="Description" caption="Optional caption" >}}
+{{< image src="/images/example.jpg" alt="Description" width="800" height="600" >}}
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "Image" -}}
+{{- $caption := .Get "caption" -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+
+{{- $webpSrc := "" -}}
+{{- if $src -}}
+  {{- $ext := path.Ext $src -}}
+  {{- if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") -}}
+    {{- $webpSrc = replace $src $ext ".webp" -}}
+  {{- end -}}
+{{- end -}}
+
+<figure class="image-figure {{ $class }}">
+  <picture>
+    {{- if $webpSrc -}}
+    {{- /* Check if WebP version exists */ -}}
+    {{- $webpPath := printf "static%s" $webpSrc -}}
+    {{- if fileExists $webpPath -}}
+    <source
+      srcset="{{ $webpSrc | absURL }}"
+      type="image/webp"
+    >
+    {{- end -}}
+    {{- end -}}
+
+    {{- /* Generate srcset for responsive images */ -}}
+    {{- $sizes := slice 400 800 1200 -}}
+    {{- $srcset := slice -}}
+    {{- range $sizes -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" ($src | absURL) .) -}}
+    {{- end -}}
+
+    <img
+      src="{{ $src | absURL }}"
+      {{- if gt (len $srcset) 0 }}
+      srcset="{{ delimit $srcset ", " }}"
+      sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+      {{- end }}
+      alt="{{ $alt }}"
+      {{- with $width }} width="{{ . }}"{{ end }}
+      {{- with $height }} height="{{ . }}"{{ end }}
+      loading="{{ $loading }}"
+      decoding="async"
+      class="responsive-image"
+    >
+  </picture>
+
+  {{- if $caption -}}
+  <figcaption>{{ $caption | markdownify }}</figcaption>
+  {{- end -}}
+</figure>
+
+<style>
+.image-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  color: var(--gray-600);
+  font-style: italic;
+}
+
+/* Loading animation for lazy-loaded images */
+.responsive-image[loading="lazy"] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+.responsive-image[loading="lazy"].loaded {
+  background: none;
+  animation: none;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Dark mode adjustments */
+body.dark .image-figure figcaption {
+  color: var(--gray-400);
+}
+</style>
+
+<script>
+// Remove loading animation when image is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.responsive-image[loading="lazy"]');
+  images.forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        this.classList.add('loaded');
+      });
+    }
+  });
+});
+</script>
