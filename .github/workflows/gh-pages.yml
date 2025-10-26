@@ -61,7 +61,7 @@ jobs:
           fi
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         with:
           args: --verbose ./public
       - name: Deploy
