@@ -19,7 +19,7 @@ jobs:
           submodules: true # fetch hugo themes
           fetch-depth: 0 # fetch all history
       - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           extended: true  # Use extended version for SCSS/SASS support
