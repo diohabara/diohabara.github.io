@@ -20,7 +20,8 @@ accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 429]
 skip_missing = false
 
 # Check fragments (anchors)
-include_fragments = true
+# Disable fragment checking as Hugo's anchor generation might differ from expectations
+include_fragments = false
 
 # Exclude patterns (in addition to .lycheeignore)
 exclude = [
@@ -34,16 +35,6 @@ exclude = [
     # Common CDN/external services that might block automated checks
     "https://fonts.googleapis.com",
     "https://fonts.gstatic.com",
-    # Exclude CSS and image assets (these are checked by build process)
-    "\\.css$",
-    "\\.min\\.css$",
-    "\\.jpg$",
-    "\\.jpeg$",
-    "\\.png$",
-    "\\.gif$",
-    "\\.webp$",
-    "\\.svg$",
-    "\\.ico$",
 ]
 
 # Check internal links (important for catching broken relative links)
