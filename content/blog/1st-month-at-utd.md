@@ -31,7 +31,7 @@ language: "ja"
 
 ### 授業
 
-[前回の記事](https://diohabara.github.io/ja-blog/intern-at-indeed-japan/)で書いたように Indeed でのインターン後に米国の大学院(University of Texas at Dallas)で Master Student として Computer Science を勉強しています。
+[前回の記事](/blog/intern-at-indeed-japan/)で書いたように Indeed でのインターン後に米国の大学院(University of Texas at Dallas)で Master Student として Computer Science を勉強しています。
 
 今学期履修しているのは以下の 3 講義です。各学生は Track というものを選び(途中で変更可能)、それによって必修が変わります。
 

@@ -1,0 +1,54 @@
+# Lychee configuration for link checking
+# https://github.com/lycheeverse/lychee
+
+# Base URL for resolving relative links
+base = "https://diohabara.github.io"
+
+# Maximum number of retries
+max_retries = 3
+
+# User agent string
+user_agent = "Mozilla/5.0 (compatible; lychee/0.20.0; +https://github.com/lycheeverse/lychee)"
+
+# Timeout for each request in seconds
+timeout = 30
+
+# Accept HTTP status codes
+accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 429]
+
+# Skip checking external links (optional, set to true for faster checks)
+skip_missing = false
+
+# Check fragments (anchors)
+include_fragments = true
+
+# Exclude patterns (in addition to .lycheeignore)
+exclude = [
+    # Protocol-specific links that don't need checking
+    "^javascript:",
+    "^mailto:",
+    "^tel:",
+    "^data:",
+    # Fragment-only links (anchors on same page)
+    "^#",
+    # Common CDN/external services that might block automated checks
+    "https://fonts.googleapis.com",
+    "https://fonts.gstatic.com",
+    # Exclude CSS and image assets (these are checked by build process)
+    "\\.css$",
+    "\\.min\\.css$",
+    "\\.jpg$",
+    "\\.jpeg$",
+    "\\.png$",
+    "\\.gif$",
+    "\\.webp$",
+    "\\.svg$",
+    "\\.ico$",
+]
+
+# Check internal links (important for catching broken relative links)
+include_verbatim = false
+
+# Headers to send with requests
+[headers]
+accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"

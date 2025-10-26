@@ -61,9 +61,10 @@ jobs:
           fi
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose ./public
+          args: --config lychee.toml --verbose ./public
+          fail: true  # Fail on broken links (default behavior)
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
