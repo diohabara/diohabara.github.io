@@ -1,0 +1,21 @@
+# Ignore localhost links
+http://localhost
+https://localhost
+http://127.0.0.1
+https://127.0.0.1
+
+# Ignore example domains
+http://example.com
+https://example.com
+http://example.org
+https://example.org
+
+# Ignore specific patterns that might be unstable
+https://twitter.com/.*
+https://x.com/.*
+
+# Ignore GitHub API links that require authentication
+https://api.github.com/.*
+
+# Ignore links that are known to be flaky
+https://www.linkedin.com/.*
