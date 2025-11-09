@@ -1,131 +1,118 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{- $homeURL := "/" | absURL -}}
+{{- $author := .Site.Params.author | default "Unknown" -}}
+{{- $siteDescription := .Site.Params.description | default "" -}}
+
 {{- if .IsHome -}}
+  {{- $websiteSchema := dict
+      "@context" "https://schema.org"
+      "@type" "WebSite"
+      "url" $homeURL
+      "name" .Site.Title
+      "description" $siteDescription
+      "author" (dict "@type" "Person" "name" $author)
+      "potentialAction" (dict
+        "@type" "SearchAction"
+        "target" (dict
+          "@type" "EntryPoint"
+          "urlTemplate" (printf "%ssearch/?q={search_term_string}" $homeURL)
+        )
+        "query-input" "required name=search_term_string"
+      )
+    -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": {{ .Site.BaseURL | jsonify }},
-  "name": {{ .Site.Title | jsonify }},
-  "description": {{ .Site.Params.description | jsonify }},
-  "author": {
-    "@type": "Person",
-    "name": {{ .Site.Params.author | jsonify }}
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "{{ .Site.BaseURL }}search/?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
-}
+{{ $websiteSchema | jsonify | safeJS }}
 </script>
 {{- else if .IsPage -}}
-{{- $author := .Site.Params.author | default "Unknown" -}}
-{{- $image := "" -}}
-{{- if .Params.image -}}
-  {{- $image = .Params.image | absURL -}}
-{{- else if .Site.Params.images -}}
-  {{- $image = (index .Site.Params.images 0) | absURL -}}
-{{- end -}}
+  {{- $image := "" -}}
+  {{- if .Params.image -}}
+    {{- $image = .Params.image | absURL -}}
+  {{- else if .Site.Params.images -}}
+    {{- $image = (index .Site.Params.images 0) | absURL -}}
+  {{- end -}}
+  {{- $description := cond (gt (len .Description) 0) (.Description | plainify) (.Summary | plainify | truncate 160) -}}
+  {{- $keywords := "" -}}
+  {{- with .Params.tags -}}
+    {{- $keywords = delimit . ", " -}}
+  {{- end -}}
+  {{- $publisherLogo := "" -}}
+  {{- with .Site.Params.images -}}
+    {{- $publisherLogo = (index . 0) | absURL -}}
+  {{- end -}}
+  {{- $blogPosting := dict
+      "@context" "https://schema.org"
+      "@type" "BlogPosting"
+      "headline" .Title
+      "name" .Title
+      "url" .Permalink
+      "description" $description
+      "keywords" $keywords
+      "wordCount" .WordCount
+      "datePublished" (.Date.Format $iso8601)
+      "dateModified" (.Lastmod.Format $iso8601)
+      "author" (dict "@type" "Person" "name" $author "url" $homeURL)
+      "publisher" (dict
+        "@type" "Person"
+        "name" $author
+        "logo" (dict "@type" "ImageObject" "url" $publisherLogo)
+      )
+      "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+      "inLanguage" (.Site.LanguageCode | default "ja")
+    -}}
+  {{- if $image -}}
+    {{- $blogPosting = merge $blogPosting (dict "image" (dict "@type" "ImageObject" "url" $image)) -}}
+  {{- end -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ .Title | jsonify }},
-  "name": {{ .Title | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | truncate 160 | jsonify }}{{ end }},
-  "keywords": {{ with .Params.tags }}{{ delimit . ", " | jsonify }}{{ else }}""{{ end }},
-  "wordCount": {{ .WordCount }},
-  "datePublished": {{ .Date.Format $iso8601 | jsonify }},
-  "dateModified": {{ .Lastmod.Format $iso8601 | jsonify }},
-  "author": {
-    "@type": "Person",
-    "name": {{ $author | jsonify }},
-    "url": {{ .Site.BaseURL | jsonify }}
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": {{ $author | jsonify }},
-    "logo": {
-      "@type": "ImageObject",
-      "url": {{ (index .Site.Params.images 0) | absURL | jsonify }}
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify }}
-  },
-  {{- if $image }}
-  "image": {
-    "@type": "ImageObject",
-    "url": {{ $image | jsonify }}
-  },
-  {{- end }}
-  "inLanguage": {{ .Site.LanguageCode | default "ja" | jsonify }}
-}
+{{ $blogPosting | jsonify | safeJS }}
 </script>
 
-{{- /* Breadcrumb structured data for non-home pages */ -}}
+{{- end -}}
+
 {{- if not .IsHome -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": {{ .Site.BaseURL | jsonify }}
-    }
-    {{- if .Parent -}}
+  {{- /* Breadcrumb structured data for non-home pages */ -}}
+  {{- $breadcrumbItems := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" $homeURL) -}}
+  {{- if .Parent -}}
     {{- if not .Parent.IsHome -}}
-    ,{
-      "@type": "ListItem",
-      "position": 2,
-      "name": {{ .Parent.Title | jsonify }},
-      "item": {{ .Parent.Permalink | jsonify }}
-    }
-    ,{
-      "@type": "ListItem",
-      "position": 3,
-      "name": {{ .Title | jsonify }},
-      "item": {{ .Permalink | jsonify }}
-    }
+      {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" .Parent.Title "item" .Parent.Permalink) -}}
+      {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) -}}
     {{- else -}}
-    ,{
-      "@type": "ListItem",
-      "position": 2,
-      "name": {{ .Title | jsonify }},
-      "item": {{ .Permalink | jsonify }}
-    }
+      {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
     {{- end -}}
-    {{- end -}}
-  ]
-}
+  {{- else -}}
+    {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+  {{- end -}}
+  {{- $breadcrumb := dict
+      "@context" "https://schema.org"
+      "@type" "BreadcrumbList"
+      "itemListElement" $breadcrumbItems
+    -}}
+<script type="application/ld+json">
+{{ $breadcrumb | jsonify | safeJS }}
 </script>
 {{- end -}}
-{{- end -}}
 
-{{- /* Organization schema (appears on all pages) */ -}}
+{{- /* Person schema (appears on all pages) */ -}}
+{{- $sameAs := slice -}}
+{{- with .Site.Params.twitterUsername -}}
+  {{- $sameAs = $sameAs | append (printf "https://twitter.com/%s" .) -}}
+{{- end -}}
+{{- with .Site.Params.socialIcons -}}
+  {{- range . -}}
+    {{- if .url -}}
+      {{- $sameAs = $sameAs | append .url -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $person := dict
+    "@context" "https://schema.org"
+    "@type" "Person"
+    "name" $author
+    "url" $homeURL
+    "description" $siteDescription
+  -}}
+{{- if gt (len $sameAs) 0 -}}
+  {{- $person = merge $person (dict "sameAs" $sameAs) -}}
+{{- end -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": {{ .Site.Params.author | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }},
-  "sameAs": [
-    {{ with .Site.Params.twitterUsername }}"https://twitter.com/{{ . }}"{{ end }}
-    {{ with .Site.Params.socialIcons }}
-      {{- range $index, $icon := . -}}
-        {{- if ne $index 0 -}},{{- end -}}
-        {{ $icon.url | jsonify }}
-      {{- end -}}
-    {{ end }}
-  ],
-  "description": {{ .Site.Params.description | jsonify }}
-}
+{{ $person | jsonify | safeJS }}
 </script>
