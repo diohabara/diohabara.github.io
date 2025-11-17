@@ -7,12 +7,25 @@ My personal blog.
 ## deps
 
 - `hugo` (latest version - automatically updated in CI)
+- [`lychee`](https://github.com/lycheeverse/lychee)（リンクチェッカー。CI と同じ検証をローカルで行うために使用します）
 
 ## watch
 
 ```sh
 hugo server
 ```
+
+## Link check (same as CI)
+
+CI では Hugo でサイトをビルドしたあと `lychee` でリンク切れを検出しています。同じ検証を手元で再現するには、`lychee` をインストールしたうえで次を実行してください:
+
+```bash
+brew install lycheeverse/lychee/lychee # もしくは `cargo install lychee`
+./scripts/link-check.sh                  # ネットワーク接続がある場合
+LYCHEE_OFFLINE=1 ./scripts/link-check.sh # 外部ネットワークが使えない環境 (強制)
+```
+
+このスクリプトは CI と同じ `hugo --minify --gc --cleanDestinationDir` を実行し、生成された `public/` を `lychee --offline --root-dir <repo>/public` でチェックします（内部リンクのみ検証）。外部リンクは現在 CI では検査していません。必要なら追加の引数を渡して各自実行してください。
 
 ## how to write posts
 
