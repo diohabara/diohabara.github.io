@@ -60,13 +60,12 @@ jobs:
             echo "✗ JSON-LD structured data missing in index.html"
           fi
 
-      - name: Link Checker
+      - name: Link Checker (internal)
         uses: lycheeverse/lychee-action@v2
         with:
-          # Check both external links and internal file links
-          # Warnings about relative paths are expected and don't indicate broken links
-          args: --config lychee.toml --verbose ./public
-          fail: true  # Fail on broken links (404 and ERROR only)
+          args: --config lychee.toml --verbose --root-dir ${{ github.workspace }}/public --offline ./public
+          fail: true
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
