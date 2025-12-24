@@ -14,7 +14,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           submodules: true # fetch hugo themes
           fetch-depth: 0 # fetch all history
@@ -25,7 +25,7 @@ jobs:
           extended: true  # Use extended version for SCSS/SASS support
 
       - name: Cache Hugo resources
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: resources
           key: ${{ runner.os }}-hugo-resources-${{ hashFiles('**/config.toml') }}
