@@ -3,7 +3,7 @@ title: "ドパチフィッシュにうってつけの日"  # 記事のタイト�
 date: 2025-08-18T00:00:00+09:00
 draft: false
 type: "post"
-tags: ["essay", "work", "life", "capitalism"]  # タグをカンマ区切りで追加 / Add tags (e.g. ["tech", "hugo"])
+tags: ["essay", "work", "life", "capitalism", "kaibunsho"]  # タグをカンマ区切りで追加 / Add tags (e.g. ["tech", "hugo"])
 language: "ja"  # 言語を指定 / Language: "ja" or "en"
 ---
 

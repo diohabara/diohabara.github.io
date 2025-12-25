@@ -3,7 +3,7 @@ title: "2025年度参院選: 考えるのをやめた結果"
 date: 2025-07-13T00:00:00+09:00
 draft: false
 type: "post"
-tags: ["election", "ai"]
+tags: ["election", "ai", "kaibunsho"]
 language: "ja" # 言語を指定 (ja または en)
 # OGP画像を指定する場合は以下のコメントを外してパスを設定
 # image: "/images/your-ogp-image.jpg"

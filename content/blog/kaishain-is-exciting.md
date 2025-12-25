@@ -3,7 +3,7 @@ title: "ポイ活で資産1億万円達成したので会社なんて今すぐ�
 date: 2025-07-10T00:00:00+09:00
 draft: false
 type: "post"
-tags: ["career", "japanese"]
+tags: ["career", "japanese", "kaibunsho"]
 language: "ja"
 ---
 
