@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ブログ on barabara diary</title><link>https://diohabara.github.io/blog/</link><description>Recent content in ブログ on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Thu, 13 Nov 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>SIEで働き始めて10ヶ月経過しますた</title><link>https://diohabara.github.io/blog/first-10-month-at-sie/</link><pubDate>Thu, 13 Nov 2025 00:00:00 +0900</pubDate><guid>https://diohabara.github.io/blog/first-10-month-at-sie/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ブログ on barabara diary</title><link>https://diohabara.github.io/blog/</link><description>Recent content in ブログ on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Thu, 25 Dec 2025 04:24:42 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>◯×□△怪文書◯×□△</title><link>https://diohabara.github.io/blog/sie-kaibunsho2025/</link><pubDate>Thu, 25 Dec 2025 04:24:42 +0900</pubDate><guid>https://diohabara.github.io/blog/sie-kaibunsho2025/</guid><description>&lt;h2 id="tldr"&gt;TL;DR &lt;a href="#tldr"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;ハード性能は頭打ちになり、差は「体験」に移る&lt;/li&gt;
+&lt;li&gt;ゲームはコミュニティと経済圏を抱える「プラットフォーム化」が進行中&lt;/li&gt;
+&lt;li&gt;SIE の勝ち筋は、IP とコミュニティ、商流の統合にある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="注意点"&gt;注意点 &lt;a href="#%e6%b3%a8%e6%84%8f%e7%82%b9"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;この記事は &lt;a href="https://github.com/diohabara"&gt;https://github.com/diohabara&lt;/a&gt; が公開情報と &lt;a href="https://github.com/diohabara"&gt;https://github.com/diohabara&lt;/a&gt; の妄想から捻り出したエンタメ記事です。&lt;/p&gt;
+&lt;h2 id="みんなやってるか"&gt;みんな〜やってるか! &lt;a href="#%e3%81%bf%e3%82%93%e3%81%aa%e3%82%84%e3%81%a3%e3%81%a6%e3%82%8b%e3%81%8b"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;
+
+ 
+
+
+
+ 
+ 
+ &lt;img src="https://diohabara.github.io/images/yatteru.png" alt="yatteru" loading="lazy" /&gt;
+ 
+
+&lt;/p&gt;
+&lt;p&gt;「みんな〜やってるか!」&lt;/p&gt;
+&lt;p&gt;昨今、各人の権利が尊重されたおかげで上記のセクハラのような質問をされることは減った。しかし、某社では「PlayStation やってる?」や「ゲームやってる?」という質問がされることはよくある。というか私がよくする。そして、大体周りの返答は「Switch ならやるんだけどね&amp;hellip;」や「実況なら見るんだけど&amp;hellip;」というものだ。&lt;/p&gt;
+&lt;p&gt;要するに、私の周りで PS をドッグフーディングしている人はすごく少ない。&lt;/p&gt;
+&lt;p&gt;ゲーム売上定点観測&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;(週刊ファミ通の販売推計を集計した民間サイト)の **2025 年 年間販売台数（最終更新 2025/12/20 時点）**を見ると、日本の家庭用ゲーム機ハード販売台数では任天堂系が大半を占め、PlayStation は相対的に小さい。年によって構図は変わり得るが、少なくとも日本市場では「PS は少数派」という認知が強くなりやすい。なお、これはあくまで &lt;strong&gt;家庭用ハードの販売台数&lt;/strong&gt; の話であり、PC/スマホを含めた&amp;quot;ゲーム人口&amp;quot;で見れば相対的にさらに小さく見える可能性はある。&lt;/p&gt;
+&lt;h2 id="何が起きているのか"&gt;何が起きているのか &lt;a href="#%e4%bd%95%e3%81%8c%e8%b5%b7%e3%81%8d%e3%81%a6%e3%81%84%e3%82%8b%e3%81%ae%e3%81%8b"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="プラットフォームの整理"&gt;プラットフォームの整理 &lt;a href="#%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%81%ae%e6%95%b4%e7%90%86"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;まず、現在の主なゲームプラットフォーマーは次のようになっている。&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;プレイヤー&lt;/th&gt;
+ &lt;th&gt;ゲームプラットフォーム&lt;/th&gt;
+ &lt;th&gt;ハード&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;ソニー&lt;/td&gt;
+ &lt;td&gt;PlayStation&lt;/td&gt;
+ &lt;td&gt;PlayStation 5, PlayStation 4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;任天堂&lt;/td&gt;
+ &lt;td&gt;Nintendo Switch&lt;/td&gt;
+ &lt;td&gt;Nintendo Switch 2, Nintendo Switch&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;マイクロソフト&lt;/td&gt;
+ &lt;td&gt;Xbox&lt;/td&gt;
+ &lt;td&gt;Xbox Series X/S, Xbox One, PC (Windows)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Valve&lt;/td&gt;
+ &lt;td&gt;Steam&lt;/td&gt;
+ &lt;td&gt;PC (Windows, macOS, Linux), Steam Deck&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Apple&lt;/td&gt;
+ &lt;td&gt;App Store&lt;/td&gt;
+ &lt;td&gt;iOS, iPadOS, macOS&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Google&lt;/td&gt;
+ &lt;td&gt;Google Play&lt;/td&gt;
+ &lt;td&gt;Android&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;任天堂には言わずもがなファーストパーティーの強力な IP があり、マイクロソフトは昨今 Game Pass というゲームのクラウド・マルチデバイス対応を強力に推進しており、売上は 2025 年 7 月(Microsoft の FY25 Q4 決算期)に、Game Pass の年換算売上が約 50 億ドル(米ドル)規模に到達したと報じられた&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;。Valve の Steam はインディーズから AAA まで幅広い需要に対応しており、ハードの制限はゆるく Mod も可能で多様性がある。Apple や Google は日常に不可欠なデバイスを持っている。&lt;/p&gt;</description></item><item><title>SIEで働き始めて10ヶ月経過しますた</title><link>https://diohabara.github.io/blog/first-10-month-at-sie/</link><pubDate>Thu, 13 Nov 2025 00:00:00 +0900</pubDate><guid>https://diohabara.github.io/blog/first-10-month-at-sie/</guid><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="#tldr"&gt;TL;DR&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#%E5%85%A5%E3%82%8B%E3%81%BE%E3%81%A7"&gt;入るまで&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#%E5%85%A5%E3%81%A3%E3%81%9F%E6%84%9F%E6%83%B3"&gt;入った感想&lt;/a&gt;
