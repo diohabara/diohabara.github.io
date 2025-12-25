@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kaibunsho on barabara diary</title><link>https://diohabara.github.io/tags/kaibunsho/</link><description>Recent content in Kaibunsho on barabara diary</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Thu, 25 Dec 2025 04:24:42 +0900</lastBuildDate><atom:link href="https://diohabara.github.io/tags/kaibunsho/index.xml" rel="self" type="application/rss+xml"/><item><title>◯×□△怪文書◯×□△</title><link>https://diohabara.github.io/blog/sie-kaibunsho2025/</link><pubDate>Thu, 25 Dec 2025 04:24:42 +0900</pubDate><guid>https://diohabara.github.io/blog/sie-kaibunsho2025/</guid><description>&lt;h2 id="tldr"&gt;TL;DR &lt;a href="#tldr"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;ハード性能は頭打ちになり、差は「体験」に移る&lt;/li&gt;
-&lt;li&gt;ゲームはコミュニティと経済圏を抱える「プラットフォーム化」が進行中&lt;/li&gt;
+&lt;li&gt;ハード性能は頭打ちになり、差は体験そのものに移る&lt;/li&gt;
+&lt;li&gt;ゲームはコミュニティと経済圏を抱えるプラットフォームへ変化している&lt;/li&gt;
 &lt;li&gt;SIE の勝ち筋は、IP とコミュニティ、商流の統合にある&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="注意点"&gt;注意点 &lt;a href="#%e6%b3%a8%e6%84%8f%e7%82%b9"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;この記事は &lt;a href="https://github.com/diohabara"&gt;https://github.com/diohabara&lt;/a&gt; が公開情報と &lt;a href="https://github.com/diohabara"&gt;https://github.com/diohabara&lt;/a&gt; の妄想から捻り出したエンタメ記事です。&lt;/p&gt;
@@ -19,7 +19,7 @@
 &lt;p&gt;「みんな〜やってるか!」&lt;/p&gt;
 &lt;p&gt;昨今、各人の権利が尊重されたおかげで上記のセクハラのような質問をされることは減った。しかし、某社では「PlayStation やってる?」や「ゲームやってる?」という質問がされることはよくある。というか私がよくする。そして、大体周りの返答は「Switch ならやるんだけどね&amp;hellip;」や「実況なら見るんだけど&amp;hellip;」というものだ。&lt;/p&gt;
 &lt;p&gt;要するに、私の周りで PS をドッグフーディングしている人はすごく少ない。&lt;/p&gt;
-&lt;p&gt;ゲーム売上定点観測&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;(週刊ファミ通の販売推計を集計した民間サイト)の 2025 年 年間販売台数を見ると、日本の家庭用ゲーム機ハード販売台数では任天堂系が大半を占め、PlayStation は相対的に小さい。年によって構図は変わり得るが、少なくとも日本市場では「PS は少数派」という認知が強くなりやすい。なお、これはあくまで 家庭用ハードの販売台数 の話であり、PC/スマホを含めた&amp;quot;ゲーム人口&amp;quot;で見れば相対的にさらに小さく見える可能性はある。&lt;/p&gt;
+&lt;p&gt;ゲーム売上定点観測&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;(週刊ファミ通の販売推計を集計した民間サイト)の 2025 年 年間販売台数を見ると、日本の家庭用ゲーム機ハード販売台数では任天堂系が大半を占め、PlayStation は相対的に小さい。年によって構図は変わり得るが、少なくとも日本市場では PS は少数派という認知が強くなりやすい。なお、これはあくまで 家庭用ハードの販売台数 の話であり、PC/スマホを含めたゲーム人口で見れば相対的にさらに小さく見える可能性はある。&lt;/p&gt;
 &lt;h2 id="何が起きているのか"&gt;何が起きているのか &lt;a href="#%e4%bd%95%e3%81%8c%e8%b5%b7%e3%81%8d%e3%81%a6%e3%81%84%e3%82%8b%e3%81%ae%e3%81%8b"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="プラットフォームの整理"&gt;プラットフォームの整理 &lt;a href="#%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%81%ae%e6%95%b4%e7%90%86"&gt;#&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;まず、現在の主なゲームプラットフォーマーは次のようになっている。&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
