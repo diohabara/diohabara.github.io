@@ -22,7 +22,7 @@ language: "ja"
   - [総括](#総括)
 - [謝辞](#謝辞)
 
-![badge](/images/badgea1.png)
+![badge](./static/images/badgea1.png "NSA Codebreaker Challenge 2022のバッジ")
 
 ## 3 行まとめ
 
