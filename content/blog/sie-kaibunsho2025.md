@@ -83,6 +83,15 @@ Roblox(ロブロックス)は、ユーザーがゲームを作成、共有し、
 
 だからこそスーパーゲームでゲーム機のユーザーを増やし、彼らにその他のゲームも買わせるという戦略が必要になる。一見ソニーと似た印象を受けるマイクロソフトはこの未来に早くに気付いていたのだろう。スーパーゲームの代わりに多くのファンのいる CoD[^cod]を買収し Game Pass を強化し、PC でも遊べるように Xbox だけに閉じずソフトで戦うという戦略を取っていると考えられる。
 
+追記開始
+
+MS はマインクラフトの存在を忘れていた。マインクラフトも専用通貨を持つスーパーゲームとして進化している。[^minecraft] マインクラフトに投資をしたことがMSの日本のゲームシーンでの存在感を高めることに繋がっているのではないだろう。Xboxそのものへの売上にはGame Passなど周辺サービスを通じて貢献されると予想され、この積み重ねがMSが侮れないと思う点である(褒めてる)。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「PS5売れてねー売れてねー」とうるさいから、各ゲーム機メーカーの日本におけるソフト売り上げをちょっと調べたけど、こりゃ納得感ある。<br><br>あと、マイクロソフトは何かバグってる。<br><br>2025年<br>任天堂：マリオカートワールド（245万本）<br>マイクロソフト：マインクラフト（31万本）…</p>&mdash; ミーシャ@ゲーム垢 (@mishaqma_game) <a href="https://twitter.com/mishaqma_game/status/2004373126654918854?ref_src=twsrc%5Etfw">December 26, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+追記終わり
+
+[^minecraft]: <https://www.minecraft.net/ja-jp/marketplace>
 [^cod]: 実は最近スキンで炎上していた
 
 ### コミュニティと開発者の重み
