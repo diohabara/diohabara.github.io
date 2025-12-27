@@ -174,17 +174,10 @@ Apply ROT13 to it and you&amp;rsquo;ll get the flag.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#%E8%AC%9D%E8%BE%9E"&gt;謝辞&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;
-
- 
-
-
-
- 
- 
- &lt;img src="https://diohabara.github.io/images/badgea1.png" alt="badge" loading="lazy" /&gt;
- 
-
+&lt;p&gt;&lt;figure&gt;
+ &lt;img src="https://diohabara.github.io/images/badgea1.png" alt="badge" /&gt;
+ &lt;figcaption&gt;NSA Codebreaker Challenge 2022のバッジ&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;h2 id="3-行まとめ"&gt;3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;NSA はアメリカの大学(院)生を対象に CTF コンテストを開いている&lt;/li&gt;

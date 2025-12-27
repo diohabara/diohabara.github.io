@@ -41,17 +41,9 @@
 &lt;li&gt;&lt;a href="#%E8%AC%9D%E8%BE%9E"&gt;謝辞&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#%E5%8F%82%E7%85%A7"&gt;参照&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;
-
- 
-
-
-
- 
- 
- &lt;img src="https://diohabara.github.io/images/hatena-bookmark-logo.png" alt="hatena" loading="lazy" /&gt;
- 
-
+&lt;p&gt;&lt;figure&gt;
+ &lt;img src="https://diohabara.github.io/images/hatena-bookmark-logo.png" alt="hatena" /&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;h2 id="3-行まとめ"&gt;3 行まとめ &lt;a href="#3-%e8%a1%8c%e3%81%be%e3%81%a8%e3%82%81"&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;株式会社はてなのアルバイトをやめた&lt;/li&gt;
