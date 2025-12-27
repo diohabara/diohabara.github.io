@@ -1,42 +1,10 @@
-{{ $img := .Page.Resources.GetMatch .Destination }}
-{{ if not $img }}
-  {{ $img = resources.Get .Destination }}
-{{ end }}
-
-{{ if $img }}
-  {{ $webp := $img.Resize "1200x webp q85" }}
-  {{ $original := $img.Resize "1200x q85" }}
-  
-  {{ if .Title }}
-  <figure>
-    <picture>
-      <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-      <img src="{{ $original.RelPermalink }}" 
-           alt="{{ .Text }}" 
-           loading="lazy"
-           width="{{ $original.Width }}"
-           height="{{ $original.Height }}">
-    </picture>
-    <figcaption>{{ .Title }}</figcaption>
-  </figure>
-  {{ else }}
-  <picture>
-    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-    <img src="{{ $original.RelPermalink }}" 
-         alt="{{ .Text }}" 
-         loading="lazy"
-         width="{{ $original.Width }}"
-         height="{{ $original.Height }}">
-  </picture>
-  {{ end }}
-{{ else }}
-  <!-- Fallback for external images or images not found -->
-  {{ if .Title }}
-  <figure>
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" />
-    <figcaption>{{ .Title }}</figcaption>
-  </figure>
-  {{ else }}
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" />
-  {{ end }}
-{{ end }}
+{{- $src := .Destination -}}
+{{- if hasPrefix $src "./static/" -}}
+  {{- $src = strings.TrimPrefix "./static" $src -}}
+{{- end -}}
+<figure>
+  <img src="{{ $src | safeURL }}" alt="{{ .Text }}" />
+  {{- with .Title }}
+  <figcaption>{{ . }}</figcaption>
+  {{- end }}
+</figure>
