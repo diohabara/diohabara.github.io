@@ -52,6 +52,7 @@ author = "diohabara"
 twitterUsername = "diohabara"
 # Enable custom CSS
 customcss = true
+customHeadHTML = "<link rel=\"stylesheet\" href=\"/css/custom.css\">"
 
 # Services configuration
 [services]
