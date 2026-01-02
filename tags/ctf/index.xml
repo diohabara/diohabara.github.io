@@ -174,7 +174,7 @@ Apply ROT13 to it and you&amp;rsquo;ll get the flag.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#%E8%AC%9D%E8%BE%9E"&gt;謝辞&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;figure&gt;
+&lt;p&gt;&lt;figure class="markdown-image"&gt;
  &lt;img src="https://diohabara.github.io/images/badgea1.png" alt="badge" /&gt;
  &lt;figcaption&gt;NSA Codebreaker Challenge 2022のバッジ&lt;/figcaption&gt;
 &lt;/figure&gt;

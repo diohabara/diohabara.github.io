@@ -41,7 +41,7 @@
 &lt;li&gt;&lt;a href="#%E8%AC%9D%E8%BE%9E"&gt;謝辞&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#%E5%8F%82%E7%85%A7"&gt;参照&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;figure&gt;
+&lt;p&gt;&lt;figure class="markdown-image"&gt;
  &lt;img src="https://diohabara.github.io/images/hatena-bookmark-logo.png" alt="hatena" /&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
