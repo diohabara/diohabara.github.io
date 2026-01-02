@@ -21,6 +21,29 @@ main#content {
   margin: 1.5em 0;
 }
 
+.post-content figure.markdown-image {
+  display: block;
+  width: 100%;
+  margin: 1.5em auto;
+  text-align: center;
+}
+
+.post-content figure.markdown-image img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.post-content figure.markdown-image figcaption {
+  display: block;
+  width: 100%;
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  color: var(--dark-text-color, #555);
+  opacity: 0.85;
+  text-align: center;
+}
+
 .post-content h1,
 .post-content h2,
 .post-content h3,

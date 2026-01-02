@@ -1,8 +1,10 @@
 {{- $src := .Destination -}}
 {{- if hasPrefix $src "./static/" -}}
   {{- $src = strings.TrimPrefix "./static" $src -}}
+{{- else if hasPrefix $src "static/" -}}
+  {{- $src = strings.TrimPrefix "static" $src -}}
 {{- end -}}
-<figure>
+<figure class="markdown-image">
   <img src="{{ $src | safeURL }}" alt="{{ .Text }}" />
   {{- with .Title }}
   <figcaption>{{ . }}</figcaption>
