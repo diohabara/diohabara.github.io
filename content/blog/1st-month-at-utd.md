@@ -19,7 +19,7 @@ language: "ja"
 - [謝辞](#謝辞)
 - [参照](#参照)
 
-![lone_star_state](/images/lone_star_state.svg "ボッチのメタファー＝テキサス州旗")
+![lone_star_state](../img/lone_star_state.svg "ボッチのメタファー＝テキサス州旗")
 
 ## 3 行まとめ
 

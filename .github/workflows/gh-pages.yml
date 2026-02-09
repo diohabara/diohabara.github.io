@@ -6,7 +6,6 @@ on:
       - main
   pull_request:
 
-# ref: https://github.com/marketplace/actions/hugo-setup
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,46 +14,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        with:
-          submodules: true # fetch hugo themes
-          fetch-depth: 0 # fetch all history
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "latest"
-          extended: true  # Use extended version for SCSS/SASS support
 
-      - name: Cache Hugo resources
-        uses: actions/cache@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: resources
-          key: ${{ runner.os }}-hugo-resources-${{ hashFiles('**/config.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-hugo-resources-
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: hugo --minify --gc --cleanDestinationDir
+        run: pnpm run build
         env:
-          HUGO_SERVICES_GOOGLEANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
-          HUGO_ENV: production
+          PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       - name: Verify build output
         run: |
           echo "Checking critical files..."
-          # Check if JavaScript files are included
-          test -f public/js/lunr-ja.js && echo "✓ lunr-ja.js found" || echo "✗ lunr-ja.js missing"
-          test -f public/js/search.js && echo "✓ search.js found" || echo "✗ search.js missing"
-          test -f public/js/image-lazy-load.js && echo "✓ image-lazy-load.js found" || echo "✗ image-lazy-load.js missing"
+          test -f dist/sitemap-index.xml && echo "✓ sitemap-index.xml found" || echo "✗ sitemap-index.xml missing"
+          test -f dist/robots.txt && echo "✓ robots.txt found" || echo "✗ robots.txt missing"
+          test -f dist/rss.xml && echo "✓ rss.xml found" || echo "✗ rss.xml missing"
 
-          # Check if sitemap and robots.txt exist
-          test -f public/sitemap.xml && echo "✓ sitemap.xml found" || echo "✗ sitemap.xml missing"
-          test -f public/robots.txt && echo "✓ robots.txt found" || echo "✗ robots.txt missing"
-
-          # Check if index.json for search exists
-          test -f public/index.json && echo "✓ index.json found" || echo "✗ index.json missing"
-
-          # Verify JSON-LD is included in HTML
-          if grep -q 'application/ld+json' public/index.html; then
+          if grep -q 'application/ld+json' dist/index.html; then
             echo "✓ JSON-LD structured data found in index.html"
           else
             echo "✗ JSON-LD structured data missing in index.html"
@@ -63,7 +47,7 @@ jobs:
       - name: Link Checker (internal)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --config lychee.toml --verbose --root-dir ${{ github.workspace }}/public --offline ./public
+          args: --config lychee.toml --verbose --root-dir ${{ github.workspace }}/dist --offline ./dist
           fail: true
 
       - name: Deploy
@@ -71,4 +55,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./dist

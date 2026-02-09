@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Search" description="Search blog posts">
+  <h1>Search</h1>
+  <div id="search"></div>
+  <p id="search-fallback" style="display:none; color:var(--text-muted);">
+    Search is available after building the site. Run <code>pnpm run build && pnpm preview</code> to use search.
+  </p>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script is:inline>
+    (function() {
+      var script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = function() {
+        new PagefindUI({
+          element: '#search',
+          showSubResults: true,
+          showImages: false,
+        });
+      };
+      script.onerror = function() {
+        var fb = document.getElementById('search-fallback');
+        if (fb) fb.style.display = 'block';
+      };
+      document.head.appendChild(script);
+    })();
+  </script>
+</Layout>

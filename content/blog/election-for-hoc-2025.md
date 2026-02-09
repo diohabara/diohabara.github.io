@@ -39,7 +39,7 @@ language: "ja" # 言語を指定 (ja または en)
 
 [^shin-san]: [晋さん…ここにいたんだね…](https://w.atwiki.jp/seitei/pages/133.html)
 
-![yusaku](/images/yousuck.png)
+![yusaku](../img/yousuck.png)
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">【今後のお金ばらまき予定】<br><br>時期：未定<br><br>金額：未定<br><br>人数：未定<br><br>応募条件：僕のフォロー<br><br>＊過去にはRTを応募条件にした時もありましたが、RTは人に知られて恥ずかしいという人多数なので今後はRTなしで大丈夫です。その代わりフォローは必須で。次のばらまきまでにこっそりフォローしといてね👍</p>&mdash; 前澤友作 (@yousuck2020) <a href="https://twitter.com/yousuck2020/status/1274950958787649536?ref_src=twsrc%5Etfw">June 22, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -126,7 +126,7 @@ ChatGPT党 2025年参議院選挙 政策と想定Q&A一覧
 
 若年層の間でれいわと国民民主党の支持率が上がっているというニュース[^nhkweb]をたまに見るので、それに引っ張られている感がある。
 
-![jakunen](/images/sanninnsenn2025.png)
+![jakunen](../img/sanninnsenn2025.png)
 
 今回の選挙はこのまま行くと参政党が議席数を伸ばしそうなので、選挙後に「参政党旋風！」みたいなニュースを参考にしたら生成 AI の出力がどうなるのか気になる。ということで続編に続く(かも)。
 

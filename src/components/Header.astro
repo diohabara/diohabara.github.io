@@ -1,0 +1,53 @@
+---
+const navItems = [
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Compensation', href: '/compensation/' },
+  { name: 'Tags', href: '/tags/' },
+  { name: 'GitHub', href: 'https://github.com/diohabara/', external: true },
+  { name: 'Search', href: '/search/' },
+  { name: 'RSS', href: '/rss.xml' },
+];
+---
+
+<header class="site-header">
+  <h1><a href="/">barabara diary</a></h1>
+  <nav class="site-nav">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        {item.name}
+      </a>
+    ))}
+    <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+</header>
+
+<script>
+  function initTheme() {
+    const toggle = document.getElementById('dark-toggle');
+    const icon = document.getElementById('theme-icon');
+    if (!toggle || !icon) return;
+
+    const html = document.documentElement;
+    const isDark = html.classList.contains('dark');
+    icon.textContent = isDark ? '☀️' : '🌙';
+
+    // Enable transitions only after first paint
+    requestAnimationFrame(() => {
+      html.classList.add('transitions-ready');
+    });
+
+    toggle.addEventListener('click', () => {
+      const dark = html.classList.toggle('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      icon.textContent = dark ? '☀️' : '🌙';
+    });
+  }
+
+  initTheme();
+  document.addEventListener('astro:after-swap', initTheme);
+</script>

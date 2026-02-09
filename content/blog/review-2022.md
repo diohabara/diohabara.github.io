@@ -16,7 +16,7 @@ language: "ja"
 - [そして伝説に](#そして伝説に)
 - [謝辞](#謝辞)
 
-![toshidensetsu](/images/toshidensetsu.jpeg)
+![toshidensetsu](../img/toshidensetsu.jpeg)
 
 ## 3 行まとめ
 

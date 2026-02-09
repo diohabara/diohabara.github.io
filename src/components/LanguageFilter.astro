@@ -1,0 +1,46 @@
+---
+interface Props {
+  jCount: number;
+  enCount: number;
+  totalCount: number;
+}
+
+const { jCount, enCount, totalCount } = Astro.props;
+---
+
+<div class="language-filter">
+  <button class="filter-btn active" data-lang="all">
+    All <span class="filter-count">{totalCount}</span>
+  </button>
+  <button class="filter-btn" data-lang="ja">
+    日本語 <span class="filter-count">{jCount}</span>
+  </button>
+  <button class="filter-btn" data-lang="en">
+    English <span class="filter-count">{enCount}</span>
+  </button>
+</div>
+
+<script>
+  function initFilter() {
+    const btns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.post-item[data-lang]');
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const lang = btn.getAttribute('data-lang');
+        items.forEach((item) => {
+          if (lang === 'all' || item.getAttribute('data-lang') === lang) {
+            (item as HTMLElement).style.display = '';
+          } else {
+            (item as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  initFilter();
+  document.addEventListener('astro:after-swap', initFilter);
+</script>

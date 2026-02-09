@@ -22,7 +22,7 @@ language: "ja"
 - [謝辞](#謝辞)
 - [参照](#参照)
 
-![hatena](/images/hatena-bookmark-logo.png)
+![hatena](../img/hatena-bookmark-logo.png)
 
 ## 3 行まとめ
 
