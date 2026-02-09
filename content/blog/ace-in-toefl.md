@@ -71,7 +71,7 @@ language: "ja" # 言語を指定 / Language: "ja" or "en"
 1. 統合問題：文章を読み、それに関する講義（反論または賛成）を聞いて要約
 2. アカデミック・ディスカッション：教授の質問に対する 2 人の学生の意見を踏まえて、自分の意見を述べる
 
-![toefl](/images/toefl-w2.png)[^yt-toefl]
+![toefl](../img/toefl-w2.png)[^yt-toefl]
 
 [^yt-toefl]: <https://www.youtube.com/watch?v=tEHmx27RgFE>からスクショ
 
@@ -236,9 +236,9 @@ javascript: (async function () {
 Speaking の 1 問目、ある意見に対して自分の意見を述べさせられる問題で具体的にどのように解答・採点・添削を行うかを示す。
 
 1. まずは問題に回答する
-   - ![toefl-speaking-question](/images/tpo-s1-1.png)
+   - ![toefl-speaking-question](../img/tpo-s1-1.png)
 2. その後解答ページに行く
-   - ![toefl-speaking-answer](/images/tpo-s1-2.png)
+   - ![toefl-speaking-answer](../img/tpo-s1-2.png)
 3. 解答ページから問題文をコピペする
 
    ```text
@@ -248,12 +248,12 @@ Speaking の 1 問目、ある意見に対して自分の意見を述べさせ�
 
 4. ブックマークレットで解答をダウンロードする(今回は問題の読み上げのみなので解答のみ)
 5. Google AI Studio に[先程の GitHub](https://github.com/diohabara/toefl)のプロンプト・問題文・音声を貼り付ける。イメージは次の通り
-   - ![toefl-speaking-prompt](/images/tpo-s1-3.png)
+   - ![toefl-speaking-prompt](../img/tpo-s1-3.png)
 6. 解答を元に改善に取り組む
 
 全体像はこんな感じ:
 
-![toefl-prompt-answer](/images/tpo-s1-4.png)
+![toefl-prompt-answer](../img/tpo-s1-4.png)
 
 <details>
 <summary>
