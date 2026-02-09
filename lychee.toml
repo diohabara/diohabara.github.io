@@ -37,8 +37,8 @@ exclude = [
     # Common CDN/external services that might block automated checks
     "https://fonts.googleapis.com",
     "https://fonts.gstatic.com",
-    # Tag pages - lychee offline mode cannot resolve directory index.html
-    # Pattern without ^ anchor so it matches resolved URLs (https://diohabara.github.io/tags/...)
+    # Tag pages - lychee offline mode cannot resolve directory/index.html
+    # Verified separately in CI "Verify build output" step
     "/tags",
 ]
 
