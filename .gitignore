@@ -4,3 +4,6 @@ dist/
 .env
 .env.local
 .obsidian/
+
+# Override global gitignore "tags" pattern
+!src/pages/tags/
