@@ -34,15 +34,33 @@ jobs:
       - name: Verify build output
         run: |
           echo "Checking critical files..."
-          test -f dist/sitemap-index.xml && echo "✓ sitemap-index.xml found" || echo "✗ sitemap-index.xml missing"
-          test -f dist/robots.txt && echo "✓ robots.txt found" || echo "✗ robots.txt missing"
-          test -f dist/rss.xml && echo "✓ rss.xml found" || echo "✗ rss.xml missing"
+          fail=0
+          test -f dist/sitemap-index.xml && echo "✓ sitemap-index.xml found" || { echo "✗ sitemap-index.xml missing"; fail=1; }
+          test -f dist/robots.txt && echo "✓ robots.txt found" || { echo "✗ robots.txt missing"; fail=1; }
+          test -f dist/rss.xml && echo "✓ rss.xml found" || { echo "✗ rss.xml missing"; fail=1; }
 
           if grep -q 'application/ld+json' dist/index.html; then
             echo "✓ JSON-LD structured data found in index.html"
           else
             echo "✗ JSON-LD structured data missing in index.html"
+            fail=1
           fi
+
+          echo ""
+          echo "Checking tag pages..."
+          test -f dist/tags/index.html && echo "✓ /tags/ index page" || { echo "✗ /tags/ index page missing"; fail=1; }
+          tag_count=0
+          for dir in dist/tags/*/; do
+            if [ -f "${dir}index.html" ]; then
+              tag_count=$((tag_count + 1))
+            else
+              echo "✗ ${dir}index.html missing"
+              fail=1
+            fi
+          done
+          echo "✓ ${tag_count} tag pages generated"
+
+          exit $fail
 
       - name: Link Checker (internal)
         uses: lycheeverse/lychee-action@v2
