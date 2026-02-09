@@ -2,7 +2,7 @@
 # https://github.com/lycheeverse/lychee
 
 # Base URL for resolving relative links
-base = "https://diohabara.github.io/blog"
+base = "https://diohabara.github.io"
 
 # Maximum number of retries
 max_retries = 3

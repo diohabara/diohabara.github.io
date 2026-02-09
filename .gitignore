@@ -1,4 +1,6 @@
-draft
-public
+node_modules/
+dist/
+.astro/
 .env
 .env.local
+.obsidian/

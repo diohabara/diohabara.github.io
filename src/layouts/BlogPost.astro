@@ -1,0 +1,79 @@
+---
+import Layout from './Layout.astro';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  title: string;
+  date: Date;
+  tags?: string[];
+  description?: string;
+  image?: string;
+  language?: string;
+  wordCount?: number;
+  headings?: Heading[];
+}
+
+const { title, date, tags = [], description, image, wordCount, headings = [] } = Astro.props;
+const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+
+const formattedDate = date.toLocaleDateString('ja-JP', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+
+const isoDate = date.toISOString();
+const siteUrl = Astro.site?.href ?? 'https://diohabara.github.io';
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={image}
+  type="article"
+  publishedTime={isoDate}
+  modifiedTime={isoDate}
+  tags={tags}
+  schemaType="article"
+  wordCount={wordCount}
+  parentTitle="Blog"
+  parentUrl={`${siteUrl}blog/`}
+>
+  <article>
+    <header class="article-header">
+      <h1>{title}</h1>
+      <div class="post-meta">
+        <time datetime={isoDate}>{formattedDate}</time>
+        {tags.length > 0 && (
+          <span class="post-tags">
+            {tags.map((tag) => (
+              <a class="tag" href={`/tags/${tag}/`}>{tag}</a>
+            ))}
+          </span>
+        )}
+      </div>
+    </header>
+    {tocHeadings.length > 0 && (
+      <nav class="toc">
+        <details open>
+          <summary>目次</summary>
+          <ul>
+            {tocHeadings.map((h) => (
+              <li class={h.depth === 3 ? 'toc-h3' : ''}>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </nav>
+    )}
+    <div class="article-content">
+      <slot />
+    </div>
+  </article>
+</Layout>
