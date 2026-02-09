@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "Running pre-push check: building site..."
+pnpm run build > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo "Build failed. Push aborted."
+  echo "Run 'pnpm run build' to see errors."
+  exit 1
+fi
+echo "Build succeeded."
