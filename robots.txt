@@ -1,17 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://diohabara.github.io/sitemap.xml
+Sitemap: https://diohabara.github.io/sitemap-index.xml
 
-# Crawl-delay (optional, in seconds)
-# Crawl-delay: 1
-
-# Disallow specific paths if needed
-# Disallow: /admin/
-# Disallow: /private/
-
-# Block bad bots
 User-agent: AhrefsBot
 Disallow: /
 
@@ -24,7 +15,6 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
-# Allow search engine bots
 User-agent: Googlebot
 Allow: /
 
