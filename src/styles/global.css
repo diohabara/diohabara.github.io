@@ -394,6 +394,15 @@ a:focus:not(:focus-visible) {
   padding: 0.3em 0.8em;
 }
 
+/* Pagefind UI dark mode overrides */
+html.dark {
+  --pagefind-ui-primary: var(--link);
+  --pagefind-ui-text: var(--text);
+  --pagefind-ui-background: var(--search-bg);
+  --pagefind-ui-border: var(--border);
+  --pagefind-ui-tag: var(--tag-bg);
+}
+
 /* Search */
 .search-input {
   width: 100%;
