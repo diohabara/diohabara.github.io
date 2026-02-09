@@ -38,7 +38,8 @@ exclude = [
     "https://fonts.googleapis.com",
     "https://fonts.gstatic.com",
     # Tag pages - lychee offline mode cannot resolve directory index.html
-    "^/tags",
+    # Pattern without ^ anchor so it matches resolved URLs (https://diohabara.github.io/tags/...)
+    "/tags",
 ]
 
 # Check internal links (important for catching broken relative links)
