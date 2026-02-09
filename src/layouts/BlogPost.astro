@@ -44,7 +44,7 @@ const siteUrl = Astro.site?.href ?? 'https://diohabara.github.io';
   parentTitle="Blog"
   parentUrl={`${siteUrl}blog/`}
 >
-  <article>
+  <article class="has-sidenotes">
     <header class="article-header">
       <h1>{title}</h1>
       <div class="post-meta">
@@ -77,3 +77,153 @@ const siteUrl = Astro.site?.href ?? 'https://diohabara.github.io';
     </div>
   </article>
 </Layout>
+
+<script>
+  function initSidenotes() {
+    // Remove any previously created sidenotes
+    document.querySelectorAll('.sidenote').forEach((el) => el.remove());
+
+    // Show footnotes section by default
+    document.querySelectorAll('.footnotes').forEach((el) => {
+      (el as HTMLElement).style.display = '';
+    });
+
+    const footnotesSection = document.querySelector(
+      'section.footnotes[data-footnotes]'
+    );
+    if (!footnotesSection) return;
+
+    const footnoteItems = footnotesSection.querySelectorAll('li[id^="user-content-fn-"]');
+    if (footnoteItems.length === 0) return;
+
+    const articleContent = document.querySelector('.article-content');
+    if (!articleContent) return;
+
+    const isDesktop = window.innerWidth >= 1120;
+
+    // Build a map from footnote ID to its content
+    const fnMap = new Map<string, HTMLElement>();
+    footnoteItems.forEach((item) => {
+      const fnId = item.id.replace('user-content-fn-', '');
+      fnMap.set(fnId, item as HTMLElement);
+    });
+
+    // Process in document order (order of ref links in the body text)
+    const refLinks = articleContent.querySelectorAll('a[data-footnote-ref]');
+    const insertedSidenotes: HTMLElement[] = [];
+
+    refLinks.forEach((refLink) => {
+      const href = refLink.getAttribute('href') || '';
+      const fnId = href.replace('#user-content-fn-', '');
+      const item = fnMap.get(fnId);
+      if (!item) return;
+
+      // Get the displayed number from the ref link text
+      const fnNumber = refLink.textContent?.trim() || '';
+
+      // Find the closest block-level parent within article-content
+      let refBlock = refLink.closest('p, li, blockquote, h1, h2, h3, h4, h5, h6, div, table, pre');
+      if (!refBlock || !articleContent.contains(refBlock)) return;
+
+      // If refBlock is nested (e.g., li inside ul), find the direct child of article-content
+      while (refBlock && refBlock.parentElement !== articleContent) {
+        refBlock = refBlock.parentElement;
+        if (!refBlock) return;
+      }
+
+      // Clone footnote content (without the back-reference link)
+      const clone = item.cloneNode(true) as HTMLElement;
+      clone.querySelectorAll('a[data-footnote-backref]').forEach((a) => a.remove());
+
+      const aside = document.createElement('aside');
+      aside.className = 'sidenote';
+      aside.setAttribute('role', 'note');
+      aside.setAttribute('data-footnote-id', fnId);
+
+      // Build sidenote content
+      const numberSpan = document.createElement('span');
+      numberSpan.className = 'sidenote-number';
+      numberSpan.textContent = fnNumber;
+
+      const contentSpan = document.createElement('span');
+      contentSpan.className = 'sidenote-content';
+      const cloneParagraphs = clone.querySelectorAll('p');
+      if (cloneParagraphs.length > 0) {
+        cloneParagraphs.forEach((p, i) => {
+          if (i > 0) contentSpan.appendChild(document.createElement('br'));
+          contentSpan.appendChild(document.createTextNode(p.textContent || ''));
+        });
+      } else {
+        contentSpan.textContent = clone.textContent?.trim() || '';
+      }
+
+      aside.appendChild(numberSpan);
+      aside.appendChild(contentSpan);
+
+      // Find correct insertion point: after the last sidenote following refBlock, or after refBlock itself
+      let insertAfter: Element = refBlock;
+      let next = refBlock.nextElementSibling;
+      while (next && next.classList.contains('sidenote')) {
+        insertAfter = next;
+        next = next.nextElementSibling;
+      }
+      insertAfter.insertAdjacentElement('afterend', aside);
+      insertedSidenotes.push(aside);
+    });
+
+    // On desktop, adjust vertical positions to prevent overlap
+    if (isDesktop) {
+      let lastBottom = 0;
+      insertedSidenotes.forEach((aside) => {
+        const rect = aside.getBoundingClientRect();
+        const scrollY = window.scrollY;
+        const asideTop = rect.top + scrollY;
+        if (asideTop < lastBottom) {
+          const offset = lastBottom - asideTop;
+          aside.style.marginTop = `${offset}px`;
+        }
+        const updatedRect = aside.getBoundingClientRect();
+        lastBottom = updatedRect.bottom + scrollY + 8;
+      });
+    }
+
+    // Hide the original footnotes section
+    (footnotesSection as HTMLElement).style.display = 'none';
+
+    // Add highlight on hover/focus of footnote ref links
+    document.querySelectorAll('a[data-footnote-ref]').forEach((link) => {
+      const href = link.getAttribute('href') || '';
+      const fnId = href.replace('#user-content-fn-', '');
+      const sidenote = document.querySelector(`.sidenote[data-footnote-id="${fnId}"]`);
+      if (!sidenote) return;
+
+      link.addEventListener('mouseenter', () => sidenote.classList.add('sidenote-highlight'));
+      link.addEventListener('mouseleave', () => sidenote.classList.remove('sidenote-highlight'));
+      link.addEventListener('focus', () => sidenote.classList.add('sidenote-highlight'));
+      link.addEventListener('blur', () => sidenote.classList.remove('sidenote-highlight'));
+
+      // Prevent default jump to footnotes section on click
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        sidenote.classList.add('sidenote-highlight');
+        setTimeout(() => sidenote.classList.remove('sidenote-highlight'), 1500);
+      });
+    });
+  }
+
+  // Initialize on page load
+  initSidenotes();
+
+  // Re-initialize on Astro page navigation
+  document.addEventListener('astro:after-swap', initSidenotes);
+
+  // Re-initialize on resize across breakpoint
+  let wasDesktop = window.innerWidth >= 1120;
+  window.addEventListener('resize', () => {
+    const isNowDesktop = window.innerWidth >= 1120;
+    if (isNowDesktop !== wasDesktop) {
+      wasDesktop = isNowDesktop;
+      initSidenotes();
+    }
+  });
+</script>

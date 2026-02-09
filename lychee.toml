@@ -37,6 +37,8 @@ exclude = [
     # Common CDN/external services that might block automated checks
     "https://fonts.googleapis.com",
     "https://fonts.gstatic.com",
+    # Tag pages - lychee offline mode cannot resolve directory index.html
+    "^/tags",
 ]
 
 # Check internal links (important for catching broken relative links)
