@@ -7,3 +7,4 @@ dist/
 
 # Override global gitignore "tags" pattern
 !src/pages/tags/
+.playwright-mcp/

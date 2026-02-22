@@ -487,3 +487,203 @@ html.dark {
     content: '.';
   }
 }
+
+/* GitHub Embeds */
+.gh-embed {
+  margin: 1.5em 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gh-embed-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  background: var(--code-bg);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.gh-embed-icon {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.gh-embed-link {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gh-embed-ref {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.1em 0.5em;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.gh-embed pre {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+/* Issue/PR cards */
+.gh-embed-issue {
+  background: var(--card-bg);
+}
+
+.gh-embed-issue-link {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.gh-embed-issue-link:hover {
+  background: var(--code-bg);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.gh-embed-issue-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.gh-embed-issue-type {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.gh-issue-state {
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.gh-issue-open {
+  background: #238636;
+  color: #fff;
+}
+
+.gh-issue-closed {
+  background: #8957e5;
+  color: #fff;
+}
+
+.gh-embed-issue-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.3em;
+}
+
+.gh-embed-issue-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.gh-label {
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Fallback styled link */
+.gh-embed-fallback {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em;
+  background: var(--code-bg);
+}
+
+.gh-embed-fallback .gh-embed-icon {
+  flex-shrink: 0;
+}
+
+.gh-embed-fallback a {
+  word-break: break-all;
+  font-size: 0.9rem;
+}
+
+/* GitHub Gist <script> embed — dark mode + overflow fix */
+.gh-embed-gist-fallback {
+  overflow: hidden;
+}
+
+.gh-embed-gist-fallback .gist {
+  max-width: 100%;
+}
+
+.gh-embed-gist-fallback .gist .gist-file {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.gh-embed-gist-fallback .gist .gist-data {
+  max-height: 60vh;
+  overflow: auto;
+  border-bottom: none;
+}
+
+/* Dark mode overrides for GitHub's injected stylesheet */
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .gist-file {
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .gist-data {
+  background: var(--code-bg) !important;
+  border-color: var(--border) !important;
+}
+
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .gist-data .blob-wrapper {
+  background: var(--code-bg) !important;
+}
+
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .blob-code,
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .blob-code-inner {
+  color: var(--text) !important;
+  background: var(--code-bg) !important;
+}
+
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .blob-num {
+  color: var(--text-muted) !important;
+  background: var(--code-bg) !important;
+  border-right-color: var(--border) !important;
+}
+
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .gist-meta {
+  background: var(--card-bg) !important;
+  color: var(--text-muted) !important;
+  border-top-color: var(--border) !important;
+}
+
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .gist-meta a {
+  color: var(--link) !important;
+}
+
+/* Override GitHub's syntax highlighting for dark mode */
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-c { color: #6a737d !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-k { color: #f97583 !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-s { color: #9ecbff !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-en { color: #b392f0 !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-smi { color: #e1e4e8 !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-c1 { color: #79b8ff !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-v { color: #ffab70 !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-pds { color: #9ecbff !important; }
+:root[data-theme="dark"] .gh-embed-gist-fallback .gist .pl-s1 { color: #9ecbff !important; }
