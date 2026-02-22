@@ -5,6 +5,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkGitHubEmbed from './src/plugins/remark-github-embed.mjs';
 import { visit } from 'unist-util-visit';
 
 function remarkMermaid() {
@@ -30,7 +31,7 @@ export default defineConfig({
     shikiConfig: {
       theme: 'monokai',
     },
-    remarkPlugins: [remarkMermaid, remarkMath],
+    remarkPlugins: [remarkMermaid, remarkGitHubEmbed, remarkMath],
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
