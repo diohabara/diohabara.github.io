@@ -1,7 +1,7 @@
 ---
 title: Karpathyの「GPTを200行で実装する」を読み解く
 date: 2026-02-22T00:00:00+09:00
-draft: false
+draft: tru
 type: post
 tags:
   - machine-learning
