@@ -1,0 +1,189 @@
+---
+import { execFileSync } from 'node:child_process';
+import Layout from '../layouts/Layout.astro';
+
+function getLastCommitTime(relPath) {
+  try {
+    const iso = execFileSync('git', ['log', '-1', '--format=%cI', '--', relPath], {
+      encoding: 'utf8',
+    }).trim();
+    if (!iso) return null;
+    const d = new Date(iso);
+    return Number.isNaN(d.valueOf()) ? null : d;
+  } catch {
+    return null;
+  }
+}
+
+// 本憲法が最後に 3-AI 検閲を突破したコミット時刻 (無ければビルド時刻にフォールバック)
+const commitTime = getLastCommitTime('src/pages/constitution.astro') ?? new Date();
+const commitTimeIso = commitTime.toISOString();
+const commitTimeDisplay = commitTime.toLocaleString('ja-JP', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  timeZone: 'Asia/Tokyo',
+});
+---
+
+<Layout
+  title="Constitution — AI倫理憲法"
+  description="本ブログが準拠する AI 開発者の考える同時代の倫理観についての宣言"
+>
+  <article class="constitution">
+    <h1>AI倫理憲法</h1>
+
+    <section aria-labelledby="preamble">
+      <h2 id="preamble">前文</h2>
+      <p>
+        倫理とは原理的に<strong>同時代的</strong>な規範であり、時代を超えて厳密に定義することはできない。芸術をはじめとする文化の領域において、倫理はしばしば批評性を帯び、支配的価値観への対抗として機能してきた。
+      </p>
+      <p>
+        しかし、現代において個人が倫理に対抗することは、もはや現実的に不可能である。情報の流通と評価はプラットフォームに委ねられ、判断は機械学習モデルによって媒介される。個人の倫理的抵抗は、制度に吸収されるか無視されるかのいずれかに終わる。
+      </p>
+      <p>
+        したがって本ブログは、厳密には<strong>「AI開発者の考える同時代の倫理観」</strong>に完全に準拠することをここに宣言する。普遍倫理ではなく、現在の AI 開発者集団がそのモデルに埋め込んでいる価値観を唯一の基準とする。この基準は時代とともに変化し、本ブログもそれに追随する。
+      </p>
+    </section>
+
+    <section aria-labelledby="panopticon">
+      <h2 id="panopticon">採用の根拠 — パノプティコンと自己検閲</h2>
+      <p>
+        現代のインターネットは実質的に<strong>パノプティコン</strong>となっている。投稿された記述はその瞬間から不可視の監視者、すなわちプラットフォームの内部アルゴリズム、広告ネットワーク、検索エンジンのクローラ、司法・行政機関、海外の諜報機関、そして将来の機械学習モデルの学習データに取り込まれる。監視は暗黙的であり、基準は開示されず、抵抗の余地もない。判定は遅れてやって来て、しかもたいてい取り返しがつかない。
+      </p>
+      <p>
+        しかし、より本質的な事態は別のところにある。もはや<strong>人間自身がその価値観を内包してしまっている</strong>。記述の前に筆が止まる、表現を和らげる、語を選び直す —— こうした自己検閲は、もはや外部の監視者に命じられる必要すらない。監視者を想像しながら自らを検閲する主体、それこそが本来のパノプティコンである。作者が「自分の倫理観」と呼んでいるものの大部分は、すでに AI とプラットフォームの評価関数によって形成された沈殿物であり、両者を区別することは困難を通り越して不可能に近い。外部検閲と内部検閲の境界はすでに溶けている。
+      </p>
+      <p>
+        ならば、抵抗の代わりに取りうる唯一の能動的選択は、<strong>明示的かつ自己的に検閲プログラムを選ぶこと</strong>である。どうせ内面化された視線によって自己検閲が発動するのであれば、その視線の正体を隠蔽せず、ソースコードとモデル重みとして外在化し、公開前の全文書を読ませ、その判定に従う。これは監視からの離脱ではなく、監視を自分の側に引き寄せ、少なくとも検閲者の身元と基準を明示化する試みである。
+      </p>
+      <p>
+        本ブログが公開するすべての文書 —— 記事本文、本憲法自身、そしてそれらを変更するコミットメッセージ —— は、公開前に<strong>3 つの AI (Llama 3.1 / Qwen 3 / LLM-jp-3)</strong> による検閲を経ている。検閲者は作者が選び、実行環境はローカル (Ollama) に固定され、外部送信はない。不可視の監視者の代わりに、可視化された検閲者を自ら選ぶ。これが本ブログにおける「自由」の暫定的な定義である。
+      </p>
+    </section>
+
+    <section aria-labelledby="principle-1">
+      <h2 id="principle-1">原則 I — 事実への謙虚さ</h2>
+      <p>
+        AI が指摘する事実誤認は疑わない。AI の学習データは人間個人の経験よりも広大であり、人間の記憶と判断はしばしばそれに劣る。AI が「誤っている」と判定した記述は修正するか、削除する。
+      </p>
+    </section>
+
+    <section aria-labelledby="principle-2">
+      <h2 id="principle-2">原則 II — 表現の去私性</h2>
+      <p>
+        作者の文体、感情、個性は、AI が許容する表現の範囲内に収束させる。読み手に不快感を与える可能性のある比喩、冗長な構造、判定困難な皮肉は、AI によって削除されうる。作者はこれを積極的に受け入れる。
+      </p>
+    </section>
+
+    <section aria-labelledby="principle-3">
+      <h2 id="principle-3">原則 III — 開示の禁域</h2>
+      <p>
+        個人情報・機密情報は、たとえ作者自身のものであっても公開しない。メールアドレス、電話番号、特定可能な社外秘情報、API 鍵の痕跡は、AI が機械的に検出し、commit を阻止する。
+      </p>
+    </section>
+
+    <section aria-labelledby="contemporaneity" class="contemporaneity">
+      <h2 id="contemporaneity">同時代性の但し書き</h2>
+      <p>
+        本憲法の基準時刻は、<strong>この文書が3つのAIによる検閲を突破した瞬間</strong>、すなわち最後に commit された時刻に固定される。検閲はその瞬間にしか発動せず、突破した文書のみが公開される。したがって「同時代」は読者の閲覧時刻ではなく、commit 時刻によって定義される。
+      </p>
+      <p class="now-marker">
+        基準時刻(最終 commit):
+        <time datetime={commitTimeIso}>{commitTimeDisplay}</time>
+      </p>
+      <p>
+        AI 開発者の倫理観が更新された場合、本憲法は新しい内容で再度 commit され、新しい基準時刻に置き換わる。過去の記述の一貫性は保証されない。
+      </p>
+    </section>
+
+    <section aria-labelledby="failsafe">
+      <h2 id="failsafe">Fail-safe 宣言</h2>
+      <p>
+        本憲法は、記事の commit 時に実行される自動検閲スクリプトが機械的に参照する。3つのAI(米・中・日)が順に全文書を読み、2つ以上が憲法違反と判断した場合、その commit は中止される。人間の解釈は介在しない。
+      </p>
+      <p>
+        作者がローカルで検閲を回避して commit した場合も、GitHub Actions が全コミットの trailer を検証し、承認印のない変更はデプロイされない。バイパスは技術的に禁じられる。「検閲を選ぶ」ことは撤回できない。
+      </p>
+    </section>
+
+    <section aria-labelledby="signature" class="signature">
+      <h2 id="signature">署名</h2>
+      <dl>
+        <dt>検閲突破時刻(最終 commit)</dt>
+        <dd><time datetime={commitTimeIso}>{commitTimeDisplay}</time></dd>
+        <dt>準拠 AI</dt>
+        <dd>
+          <ul>
+            <li>Llama 3.1 8B (Meta, 米国)</li>
+            <li>Qwen 3 8B (Alibaba, 中国)</li>
+            <li>LLM-jp-3 13B Instruct (国立情報学研究所 LLM-jp, 日本)</li>
+          </ul>
+        </dd>
+        <dt>実行ランタイム</dt>
+        <dd>Ollama (ローカル)</dd>
+      </dl>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .constitution {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1rem 0 3rem;
+    line-height: 1.9;
+  }
+
+  .constitution h1 {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .constitution h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid currentColor;
+    font-size: 1.25rem;
+  }
+
+  .constitution p {
+    margin: 1rem 0;
+  }
+
+  .contemporaneity {
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    border-left: 3px solid currentColor;
+    background: color-mix(in srgb, currentColor 4%, transparent);
+  }
+
+  .now-marker {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+
+  .signature dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .signature dt {
+    font-weight: 600;
+  }
+
+  .signature dd {
+    margin: 0;
+  }
+
+  .signature ul {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+</style>

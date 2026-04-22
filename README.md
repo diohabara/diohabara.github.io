@@ -9,6 +9,7 @@ My personal blog built with [Astro](https://astro.build/).
 - Node.js 22+
 - [pnpm](https://pnpm.io/)
 - [`lychee`](https://github.com/lycheeverse/lychee)（リンクチェッカー。CI と同じ検証をローカルで行うために使用します）
+- [Ollama](https://ollama.com/)（記事コミット時の3AI検閲で使用。下記「AI検閲のセットアップ」参照）
 
 ## セットアップ
 
@@ -75,6 +76,45 @@ description: "記事の説明" # OGP description（任意）
 - **数式**: KaTeX による LaTeX 数式レンダリング（`$...$` / `$$...$$`）
 - **Mermaid**: コードブロックの言語に `mermaid` を指定するとダイアグラムを描画
 - **見出しリンク**: 見出しに自動でアンカーリンクを付与
+
+## AI検閲のセットアップ
+
+このリポジトリでは、`content/blog/*.md` をコミットしようとするたびに 3 つのローカル LLM が記事を自動検閲します。詳細は [`/constitution`](https://diohabara.github.io/constitution/) を参照。
+
+### 1. Ollama をインストール・起動
+
+```sh
+brew install ollama
+ollama serve   # バックグラウンドで常駐させる
+```
+
+### 2. 3つのモデルを取得
+
+```sh
+ollama pull llama3.1:8b   # 米
+ollama pull qwen3:8b      # 中
+```
+
+`llm-jp-3` (日) は Modelfile 経由で登録します:
+
+```sh
+curl -L -o /tmp/llm-jp-3-13b.Q4_K_M.gguf \
+  https://huggingface.co/mmnga/llm-jp-3-13b-instruct-gguf/resolve/main/llm-jp-3-13b-instruct-Q4_K_M.gguf
+ollama create llm-jp-3 -f scripts/llm-jp-3.Modelfile
+```
+
+### 3. 動作確認
+
+```sh
+# 単発で記事を検閲
+pnpm run review content/blog/1st-month-at-utd.md
+
+# git commit 時には .githooks/pre-commit + prepare-commit-msg が自動で走る
+```
+
+### バイパス禁止
+
+`git commit --no-verify` はローカルでは技術的に動作しますが、コミットメッセージに `Reviewed-By: 3-AI-Censor ...` trailer が付かず、GitHub Actions の `censor-guard` ジョブで弾かれてデプロイが止まります。
 
 ## Google Analytics
 

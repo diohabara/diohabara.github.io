@@ -1,0 +1,6 @@
+#!/bin/sh
+# 3-AI 憲法検閲 (ローカル第1層).
+# --no-verify を付けるとこの hook はスキップされるが、
+# その場合はコミットメッセージに Reviewed-By trailer が入らず、
+# GitHub Actions の censor-guard で push が弾かれる。
+node scripts/censor.mjs --check-only
