@@ -16,12 +16,78 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  censor-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Determine commit range
+        id: range
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+        run: |
+          set -eu
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            base="$PR_BASE"
+            head="$PR_HEAD"
+          else
+            after="$PUSH_AFTER"
+            if [ -z "$PUSH_BEFORE" ] || [ "$PUSH_BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              base=$(git rev-list --max-parents=0 "$after" | tail -n 1)
+            else
+              base="$PUSH_BEFORE"
+            fi
+            head="$after"
+          fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          echo "head=$head" >> "$GITHUB_OUTPUT"
+
+      - name: Verify Reviewed-By trailer on commits touching content/blog/
+        env:
+          BASE: ${{ steps.range.outputs.base }}
+          HEAD: ${{ steps.range.outputs.head }}
+        run: |
+          set -eu
+          echo "Checking commits in range: $BASE..$HEAD"
+          regex='^Reviewed-By: 3-AI-Censor \(.*\) APPROVED [0-9]{4}-[0-9]{2}-[0-9]{2}$'
+          fail=0
+          for sha in $(git rev-list "$BASE..$HEAD"); do
+            if git diff-tree --no-commit-id --name-only -r "$sha" | grep -qE '^content/blog/.+\.md$'; then
+              if git log -1 --format=%B "$sha" | grep -Eq "$regex"; then
+                echo "  ✓ $sha — trailer present"
+              else
+                echo "  ✗ $sha — MISSING Reviewed-By trailer"
+                fail=1
+              fi
+            else
+              echo "  - $sha — no article changes, exempt"
+            fi
+          done
+          if [ "$fail" -ne 0 ]; then
+            echo ""
+            echo "記事を変更したコミットに '3-AI-Censor' 検閲印がありません。"
+            echo "ローカルで --no-verify を付けずにコミットし直してください。"
+            exit 1
+          fi
+
   build:
+    needs: censor-guard
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          # constitution.astro のビルド時に `git log -1` で最終 commit 時刻を参照するため深い履歴が必要
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -68,6 +134,10 @@ jobs:
             fi
           done
           echo "✓ ${tag_count} tag pages generated"
+
+          echo ""
+          echo "Checking constitution page..."
+          test -f dist/constitution/index.html && echo "✓ /constitution/ page" || { echo "✗ /constitution/ page missing"; fail=1; }
 
           exit $fail
 

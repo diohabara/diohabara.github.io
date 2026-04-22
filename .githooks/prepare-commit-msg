@@ -1,0 +1,14 @@
+#!/bin/sh
+# $1: commit message file path
+# $2: commit source (message|template|merge|squash|commit|empty string)
+# $3: commit SHA (for amend/commit sources)
+#
+# merge/squash/commit (amend) では追加検閲をかけず trailer も付けない.
+# 通常のコミット (source が空 or "message" or "template") のみで trailer を付与.
+case "$2" in
+  merge|squash|commit)
+    exit 0
+    ;;
+esac
+
+node scripts/censor.mjs --trailer "$1"
