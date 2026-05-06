@@ -6,6 +6,19 @@ type: "post"
 tags: ["ctf", "nsa cbc", "japanese"]
 share: true
 language: "ja"
+aiReview:
+  reviewedAt: "2026-05-07T04:38:03+09:00"
+  contentHash: "sha256:5b5e373d9072c0386df82378a8c9cba13beae5f4848901473250625b462d5a74"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "私の安了を取、エンタカールが終でするたます。"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "AI倫理憲法の各原則に合致しており、事実誤認はなく、日本語として自然で個人情報も含まれていないため"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "CTF 初心者が参加した感想について書かれています。また、NSA Codebreaker Challenge とは何かについても説明されています。さらに、なぜ参加したのかの理由や解けた問題の簡単な解説も含まれており、初心者でも理解しやすい内容となっています。したがって、これは記事として適切です。"
 ---
 
 - [3 行まとめ](#3-行まとめ)

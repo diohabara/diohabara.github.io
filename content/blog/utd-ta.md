@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["UTD", "TA", "japanese"]
 language: "ja"
+aiReview:
+  reviewedAt: "2026-05-07T04:47:46+09:00"
+  contentHash: "sha256:5f52a6a5d81ec6a9dc1ef5deeadc6a9a389bf77fa2fa27a817839117c2f886c8"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "本試は安了を反しらう、バールに私った。"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "記事はAI倫理憲法の各原則に合致しており、事実誤認はなく、日本語として自然で、個人情報や機密情報は含まれていない。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The provided text is a well-structured and coherent article that meets the requirements of an AI assistant. It contains all necessary information, including title, date, draft status, type, tags, lang"
 ---
 
 <!-- TOC -->

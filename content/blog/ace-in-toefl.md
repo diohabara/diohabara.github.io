@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["toefl", "test", "ai", "programming"] # タグをカンマ区切りで追加 / Add tags (e.g. ["tech", "hugo"])
 language: "ja" # 言語を指定 / Language: "ja" or "en"
+aiReview:
+  reviewedAt: "2026-05-07T04:28:55+09:00"
+  contentHash: "sha256:1d60486aa37331c8d1c7a4e8d8faa08522070db24b57e83d19648920ddb251e9"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "The method of using free resources, AI-based feedback, and continuous practice to improve TOEFL scores is efficient and cost-effective. The use of Google AI Studio and the provided GitHub repository f"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "The content is well-structured, informative, and provides a clear example of how to use AI for TOEFL speaking practice. It includes practical steps, examples, and a detailed explanation of the feedbac"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The proposed method effectively improved the speaker's TOEFL score by utilizing free resources and AI-powered feedback, demonstrating a significant improvement in efficiency compared to traditional me"
 ---
 
 ## TL;DR

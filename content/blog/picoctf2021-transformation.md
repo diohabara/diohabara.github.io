@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["CTF", "Reverse Engineering"]
 language: "en"
+aiReview:
+  reviewedAt: "2026-05-07T04:42:52+09:00"
+  contentHash: "sha256:a2053fcbfe44242a363b51b4b3b5a5c5118cf2b0b1b95097006626939d3bc87a"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "アラビントでたるんざい、害反にたるいますいださいしい、ヒールエテストを反前にらう。"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "記事はAI倫理憲法の原則に合致し、事実誤認なし、日本語として自然で個人情報・機密情報は含まれていない。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The provided solution is correct as it correctly decrypts the flag using the given algorithm."
 ---
 
 - [Solution](#solution)

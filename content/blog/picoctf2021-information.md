@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["CTF", "Forensics"]
 language: "en"
+aiReview:
+  reviewedAt: "2026-05-07T04:38:56+09:00"
+  contentHash: "sha256:8ff17a9d72a1156ce5191e0fa0be3b4cff3d657a84f8f9ed6dd6a0e48b8a7349"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "本は安了を終涕した、バールエレカスが反たるできます。"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "記事はAI倫理憲法の原則に合致し、事実誤認がなく、日本語として自然で、個人情報や機密情報が含まれていない。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The provided content is a valid MD file containing information about the PicoCTF 2021 event. It includes metadata such as title, date, language, and tags; solution details for the puzzles; acknowledgm"
 ---
 
 - [Solution](#solution)
