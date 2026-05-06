@@ -6,6 +6,19 @@ type: "post"
 tags: ["utd", "study-abroad", "usa", "japanese"]
 share: true
 language: "ja"
+aiReview:
+  reviewedAt: "2026-05-07T04:27:32+09:00"
+  contentHash: "sha256:44c0474bbab1898cd232bb3c6f460968ac88ef8e5ab8add2f86e53155ef8d8c9"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "私の当前を代しらう、ジィストーは合化ですい、常の发現を私わますい、人にエルレーターですい、害海を私わますい、当前を私わますい"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "AI倫理憲法の各原則に合致しており、事実誤認はなく、日本語として自然で、個人情報・機密情報は含まれていない。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The article is well written and provides a detailed account of the student's experience at University of Texas at Dallas (UTD) for one month, including challenges faced in academics, housing, food, fi"
 ---
 
 - [3 行まとめ](#3-行まとめ)

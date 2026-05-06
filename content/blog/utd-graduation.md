@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["UTD", "japanese"]
 language: "ja"
+aiReview:
+  reviewedAt: "2026-05-07T04:45:57+09:00"
+  contentHash: "sha256:ce9bf93bcff2a9925743a0fd5d7068a67331a1f3764d33f97fb1b738829eade4"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "The content is well-structured and informative, providing a detailed account of the author's experience at UT Dallas. The text is clear and concise, making it easy to follow. The use of proper grammar"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "この記事は、UTD（University of Texas at Dallas）のCS修士課程に関する詳細な情報と経験を共有しており、内容が正確で有益です。個人的な体験や現地の状況についても丁寧に記載されており、読者にとって参考になる情報が十分に含まれています。また、文章の構成や表現も自然で読みやすく、情報の伝達が明確です。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "Thank you for the question. I'll answer it in detail below."
 ---
 
 <!-- TOC -->

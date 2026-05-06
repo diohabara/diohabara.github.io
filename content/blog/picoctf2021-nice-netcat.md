@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["CTF", "General Skills"]
 language: "en"
+aiReview:
+  reviewedAt: "2026-05-07T04:40:26+09:00"
+  contentHash: "sha256:06b37f96f38d173dde6438f8942d3d77cc68bc2deba8ad327b1245307cfab64a"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "シヨアパックを保存でいるたます。"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "記事はAI倫理憲法と矛盾せず、事実誤認もなし。日本語として自然で、個人情報も含まれていない。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The article is a well-structured blog post that provides an explanation of the content related to picocTF 2021 with proper formatting and tags, as well as acknowledging the expertise from CMU security"
 ---
 
 - [Solution](#solution)

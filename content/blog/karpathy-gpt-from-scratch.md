@@ -10,6 +10,19 @@ tags:
   - gpt
 language: ja
 description: Andrej Karpathyが公開した200行のPure Python GPT実装を、コンポーネントごとに分解して解説する。
+aiReview:
+  reviewedAt: "2026-05-07T04:36:42+09:00"
+  contentHash: "sha256:109cf886c853f4d10b8daf6fa0bf59b491a11156f4a73e6c768d51e7a8dc4fdb"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "安狝は一丂を試きたら、テストルを終った。"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "AI倫理憲法の各原則に合致しており、事実誤認はなく、日本語表現も自然で、個人情報・機密情報は含まれていない。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "この記事はAndrej KarpathyのGPT-200実装について詳細に解説しており、各コンポーネント（トークナイザー、自動微分エンジン、Transformerアーキテクチャ）がどのように構成されているかを具体的なコード例とともに説明しています。また、訓練ループや推論プロセスについても触れており、アルゴリズム自体を理解するのに非常に有用です。さらに、この記事はPythonと数学の知識があれば実行"
 ---
 
 ## はじめに

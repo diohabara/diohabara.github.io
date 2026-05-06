@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["memo", "python", "algorithm", "bisect"]  # タグをカンマ区切りで追加 / Add tags (e.g. ["tech", "hugo"])
 language: "ja"  # 言語を指定 / Language: "ja" or "en"
+aiReview:
+  reviewedAt: "2026-05-07T04:30:44+09:00"
+  contentHash: "sha256:ad7e669f03c5ce7d647045fba658d5a191cb8547bbe95aaade888aea893582c8"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "REJECTED"
+      comment: "The code is too long and complex. It contains multiple examples, explanations, and references, which make it difficult to understand the main idea of the code."
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "記事は技術的な内容を正確に説明しており、事実誤認や誤った情報は含まれていません。また、表現や構成も適切です。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The provided content is well structured, contains relevant information about the topic of 'Python Bisector', and includes practical examples to demonstrate its usage. The explanations are clear and co"
 ---
 
 ## TL;DR

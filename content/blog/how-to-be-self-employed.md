@@ -5,6 +5,19 @@ draft: false
 type: "post"
 tags: ["career", "self-employment", "japanese"]
 language: "ja"
+aiReview:
+  reviewedAt: "2026-05-07T04:34:55+09:00"
+  contentHash: "sha256:0c1641fe7a7713abde3f70c272da2a3db5afabc001c8563cdb72ed9fe80363cb"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "本人产手はさらきますん、ブエゲータカですいです。"
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "AI倫理憲法の各原則に合致しており、事実誤認もなければ不自然な表現も個人情報も含まれていない。"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The article is well-structured and provides a clear explanation of the process to become an individual entrepreneur. It includes relevant information such as definitions, benefits, and steps involved "
 ---
 
 - [個人事業主とは？](#個人事業主とは)

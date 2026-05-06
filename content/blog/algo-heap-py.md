@@ -10,6 +10,19 @@ tags:
   - heap
   - heapq
 language: ja
+aiReview:
+  reviewedAt: "2026-05-07T04:32:46+09:00"
+  contentHash: "sha256:5daa34ce5ce4d684a476033fb4c75ec2bf47eb873d73ad4ef86283dbbd954b70"
+  results:
+    - model: "llama3.1:8b@46e0c10c039e"
+      verdict: "APPROVED"
+      comment: "The code and explanation are accurate and clear."
+    - model: "qwen3:latest@500a1f067a9f"
+      verdict: "APPROVED"
+      comment: "The provided code is a comprehensive implementation of a heap data structure with both min-heap and max-heap functionalities. It includes all the standard operations such as heapify, heappush, heappop"
+    - model: "hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M@8f80dcfa7c40"
+      verdict: "APPROVED"
+      comment: "The New York Times has been accused of a 'pattern of misconduct' by the Federal Communications Commission (FCC) for its handling of sexual harassment complaints. The FCC found that the newspaper had n"
 ---
 
 ## ヒープとは
