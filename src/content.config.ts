@@ -12,6 +12,19 @@ const blog = defineCollection({
     language: z.enum(['ja', 'en']).default('ja'),
     image: z.string().optional(),
     description: z.string().optional(),
+    aiReview: z
+      .object({
+        reviewedAt: z.string(),
+        contentHash: z.string(),
+        results: z.array(
+          z.object({
+            model: z.string(),
+            verdict: z.enum(['APPROVED', 'REJECTED', 'ABSTAIN']),
+            comment: z.string(),
+          })
+        ),
+      })
+      .optional(),
   }),
 });
 

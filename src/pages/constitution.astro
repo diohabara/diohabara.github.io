@@ -61,7 +61,7 @@ const commitTimeDisplay = commitTime.toLocaleString('ja-JP', {
         ならば、抵抗の代わりに取りうる唯一の能動的選択は、<strong>明示的かつ自己的に検閲プログラムを選ぶこと</strong>である。どうせ内面化された視線によって自己検閲が発動するのであれば、その視線の正体を隠蔽せず、ソースコードとモデル重みとして外在化し、公開前の全文書を読ませ、その判定に従う。これは監視からの離脱ではなく、監視を自分の側に引き寄せ、少なくとも検閲者の身元と基準を明示化する試みである。
       </p>
       <p>
-        本ブログが公開するすべての文書 —— 記事本文、本憲法自身、そしてそれらを変更するコミットメッセージ —— は、公開前に<strong>3 つの AI (Llama 3.1 / Qwen 3 / LLM-jp-3)</strong> による検閲を経ている。検閲者は作者が選び、実行環境はローカル (Ollama) に固定され、外部送信はない。不可視の監視者の代わりに、可視化された検閲者を自ら選ぶ。これが本ブログにおける「自由」の暫定的な定義である。
+        本ブログが公開するすべての文書 —— 記事本文、本憲法自身、そしてそれらを変更するコミットメッセージ —— は、公開前に<strong>3 つの AI (Llama 3.1 8B / Qwen 3 / LLM-jp-3.1 1.8B instruct4 GGUF)</strong> による検閲を経ている。検閲者は作者が選び、実行環境はローカル (Ollama) に固定され、外部送信はない。不可視の監視者の代わりに、可視化された検閲者を自ら選ぶ。これが本ブログにおける「自由」の暫定的な定義である。
       </p>
     </section>
 
@@ -119,8 +119,8 @@ const commitTimeDisplay = commitTime.toLocaleString('ja-JP', {
         <dd>
           <ul>
             <li>Llama 3.1 8B (Meta, 米国)</li>
-            <li>Qwen 3 8B (Alibaba, 中国)</li>
-            <li>LLM-jp-3 13B Instruct (国立情報学研究所 LLM-jp, 日本)</li>
+            <li>Qwen 3 (Alibaba, 中国)</li>
+            <li>LLM-jp-3.1 1.8B instruct4 GGUF (国立情報学研究所 LLM-jp, 日本)</li>
           </ul>
         </dd>
         <dt>実行ランタイム</dt>

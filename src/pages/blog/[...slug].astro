@@ -27,6 +27,7 @@ const wordCount = post.body ? post.body.split(/\s+/).length : 0;
   language={post.data.language}
   wordCount={wordCount}
   headings={headings}
+  aiReview={post.data.aiReview}
 >
   <Content />
 </BlogPost>

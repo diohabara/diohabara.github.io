@@ -16,9 +16,18 @@ interface Props {
   language?: string;
   wordCount?: number;
   headings?: Heading[];
+  aiReview?: {
+    reviewedAt: string;
+    contentHash: string;
+    results: {
+      model: string;
+      verdict: 'APPROVED' | 'REJECTED' | 'ABSTAIN';
+      comment: string;
+    }[];
+  };
 }
 
-const { title, date, tags = [], description, image, wordCount, headings = [] } = Astro.props;
+const { title, date, tags = [], description, image, wordCount, headings = [], aiReview } = Astro.props;
 const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 
 const formattedDate = date.toLocaleDateString('ja-JP', {
@@ -75,6 +84,32 @@ const siteUrl = Astro.site?.href ?? 'https://diohabara.github.io';
     <div class="article-content">
       <slot />
     </div>
+    <footer class="ai-review" aria-labelledby="ai-review-title">
+      <h2 id="ai-review-title">AIレビュー</h2>
+      {aiReview ? (
+        <>
+          <p class="ai-review-date">
+            レビュー日時:
+            <time datetime={aiReview.reviewedAt}>{aiReview.reviewedAt}</time>
+          </p>
+          <ul>
+            {aiReview.results.map((result) => (
+              <li>
+                <div class="ai-review-model">
+                  <code>{result.model}</code>
+                  <span class={`ai-review-verdict verdict-${result.verdict.toLowerCase()}`}>
+                    {result.verdict}
+                  </span>
+                </div>
+                <p>{result.comment}</p>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p>AIレビューはまだ記録されていません。</p>
+      )}
+    </footer>
   </article>
 </Layout>
 
@@ -227,3 +262,55 @@ const siteUrl = Astro.site?.href ?? 'https://diohabara.github.io';
     }
   });
 </script>
+
+<style>
+  .ai-review {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border, currentColor);
+    font-size: 0.9rem;
+  }
+
+  .ai-review h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+  }
+
+  .ai-review-date {
+    margin: 0 0 1rem;
+  }
+
+  .ai-review ul {
+    display: grid;
+    gap: 0.9rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .ai-review li {
+    padding-left: 0.85rem;
+    border-left: 2px solid var(--color-border, currentColor);
+  }
+
+  .ai-review-model {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .ai-review code {
+    overflow-wrap: anywhere;
+  }
+
+  .ai-review-verdict {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  .ai-review p {
+    margin: 0.35rem 0 0;
+  }
+</style>
