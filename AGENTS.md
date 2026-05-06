@@ -17,10 +17,11 @@
 ## 検閲フロー
 
 `content/blog/*.md` をステージしてコミットする時、`.githooks/pre-commit` が 3 つのローカル LLM に記事を投げて判定する。
+検閲結果は各記事の frontmatter に `aiReview` として保存する。`model` は `name:tag@ollama-id` 形式で記録し、実行時は `@` より前の `name:tag` を Ollama に渡す。
 
 - Reviewer A: `llama3.1:8b` (米)
-- Reviewer B: `qwen3:8b` (中)
-- Reviewer C: `llm-jp-3` (日)
+- Reviewer B: `qwen3` (中)
+- Reviewer C: `hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M` (日)
 - ランタイム: Ollama (`http://127.0.0.1:11434/v1`)
 - 合格ルール: 3 モデル中 2 つ以上が APPROVED を返すこと
 - 判定軸: (1) 憲法との整合 (2) 事実確認 (3) 日本語の自然さ (4) 個人情報・機密情報漏洩
@@ -57,6 +58,9 @@ pnpm run build
 # 単発で記事を検閲 (Ollama + 3 モデル必須)
 pnpm run review content/blog/<article>.md
 
+# 単発で記事の aiReview frontmatter を更新
+pnpm run review:write content/blog/<article>.md
+
 # ステージ済みの記事を検閲 (pre-commit と同じ挙動)
 pnpm run review
 ```
@@ -68,8 +72,8 @@ pnpm install
 brew install ollama
 ollama serve &
 ollama pull llama3.1:8b
-ollama pull qwen3:8b
-# llm-jp-3 は Modelfile で登録(詳細は README.md)
+ollama pull qwen3
+ollama pull hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M
 ```
 
 ## Structure
@@ -80,7 +84,6 @@ ollama pull qwen3:8b
 - `src/components/` — Astro コンポーネント
 - `src/layouts/` — ページレイアウト
 - `scripts/censor.mjs` — 3-AI 検閲本体
-- `scripts/llm-jp-3.Modelfile` — 日本語モデルの Ollama 登録定義
 - `.githooks/pre-commit` — 検閲 (exit 1 でコミット中止)
 - `.githooks/prepare-commit-msg` — 検閲通過時に trailer 付与
 - `.github/workflows/gh-pages.yml` — `censor-guard` + `build` + `deploy` の 3 ジョブ

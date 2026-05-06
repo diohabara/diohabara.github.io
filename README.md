@@ -60,6 +60,13 @@ tags: ["tag1", "tag2"]
 language: "ja"           # "ja" または "en"
 image: "../img/ogp.jpg"  # OGP画像（任意）
 description: "記事の説明" # OGP description（任意）
+aiReview:                # pnpm run review:write または pre-commit が自動更新
+  reviewedAt: "2026-05-07T00:30:00+09:00"
+  contentHash: "sha256:..."
+  results:
+    - model: "llama3.1:8b@..."
+      verdict: "APPROVED"
+      comment: "..."
 ---
 ```
 
@@ -92,22 +99,20 @@ ollama serve   # バックグラウンドで常駐させる
 
 ```sh
 ollama pull llama3.1:8b   # 米
-ollama pull qwen3:8b      # 中
+ollama pull qwen3         # 中
+ollama pull hf.co/mmnga/llm-jp-3.1-1.8b-instruct4-gguf:Q4_K_M
 ```
 
-`llm-jp-3` (日) は Modelfile 経由で登録します:
-
-```sh
-curl -L -o /tmp/llm-jp-3-13b.Q4_K_M.gguf \
-  https://huggingface.co/mmnga/llm-jp-3-13b-instruct-gguf/resolve/main/llm-jp-3-13b-instruct-Q4_K_M.gguf
-ollama create llm-jp-3 -f scripts/llm-jp-3.Modelfile
-```
+日本語レビュー担当は LLM-jp-3.1 1.8B instruct4 の GGUF を Hugging Face から直接取得して使います。
 
 ### 3. 動作確認
 
 ```sh
 # 単発で記事を検閲
 pnpm run review content/blog/1st-month-at-utd.md
+
+# 記事の aiReview frontmatter を更新
+pnpm run review:write content/blog/1st-month-at-utd.md
 
 # git commit 時には .githooks/pre-commit + prepare-commit-msg が自動で走る
 ```
