@@ -28,7 +28,9 @@ interface Props {
 }
 
 const { title, date, tags = [], description, image, wordCount, headings = [], aiReview } = Astro.props;
-const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+const tocHeadings = headings.filter(
+  (h) => h.depth >= 2 && h.depth <= 3 && h.slug !== 'footnote-label'
+);
 
 const formattedDate = date.toLocaleDateString('ja-JP', {
   year: 'numeric',
@@ -186,10 +188,14 @@ const siteUrl = Astro.site?.href ?? 'https://diohabara.github.io';
       if (cloneParagraphs.length > 0) {
         cloneParagraphs.forEach((p, i) => {
           if (i > 0) contentSpan.appendChild(document.createElement('br'));
-          contentSpan.appendChild(document.createTextNode(p.textContent || ''));
+          Array.from(p.childNodes).forEach((node) => {
+            contentSpan.appendChild(node.cloneNode(true));
+          });
         });
       } else {
-        contentSpan.textContent = clone.textContent?.trim() || '';
+        Array.from(clone.childNodes).forEach((node) => {
+          contentSpan.appendChild(node.cloneNode(true));
+        });
       }
 
       aside.appendChild(numberSpan);
