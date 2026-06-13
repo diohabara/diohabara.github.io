@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build && pnpm pagefind --site dist",
     "preview": "astro preview",
+    "test": "node --test scripts/*.test.mjs",
     "review": "node scripts/censor.mjs",
     "review:write": "node scripts/censor.mjs --write",
     "prepare": "git config core.hooksPath .githooks"
