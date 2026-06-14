@@ -10,6 +10,7 @@ interface Props {
   modifiedTime?: string;
   tags?: string[];
   canonicalUrl?: string;
+  noIndex?: boolean;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   modifiedTime,
   tags = [],
   canonicalUrl,
+  noIndex = false,
 } = Astro.props;
 
 const siteTitle = 'barabara diary';
@@ -36,6 +38,7 @@ const keywords = ['blog', 'diohabara', ...tags].join(', ');
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
 <meta name="Hatena::Bookmark" content="nocomment" />
+{noIndex && <meta name="robots" content="noindex, follow" />}
 
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content={type} />

@@ -17,6 +17,8 @@ interface Props {
   wordCount?: number;
   parentTitle?: string;
   parentUrl?: string;
+  noIndex?: boolean;
+  pagefindIgnore?: boolean;
 }
 
 const {
@@ -31,11 +33,13 @@ const {
   wordCount,
   parentTitle,
   parentUrl,
+  noIndex = false,
+  pagefindIgnore = false,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
   <head>
     <script is:inline>
       (function() {
@@ -54,6 +58,7 @@ const {
       publishedTime={publishedTime}
       modifiedTime={modifiedTime}
       tags={tags}
+      noIndex={noIndex}
     />
     <SchemaOrg
       type={schemaType}
