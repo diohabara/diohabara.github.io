@@ -1,0 +1,1979 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+interface WorldPost {
+  title: string;
+  url: string;
+  date: string;
+  language: string;
+  tags: string[];
+}
+
+const { posts } = Astro.props;
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+
+const worldPosts: WorldPost[] = posts.map((post) => ({
+  title: post.data.title,
+  url: `/blog/${post.id}/`,
+  date: formatDate(post.data.date),
+  language: post.data.language.toUpperCase(),
+  tags: post.data.tags.slice(0, 3),
+}));
+
+const postsJson = JSON.stringify(worldPosts).replace(/</g, '\\u003c');
+---
+
+<section class="blog-world" data-blog-world aria-label="3D blog world">
+  <canvas class="blog-world__canvas" data-world-canvas aria-label="3D blog buildings"></canvas>
+
+  <div class="blog-world__shade" aria-hidden="true"></div>
+
+  <div class="world-brand">
+    <p>barabara diary</p>
+    <h2>Neon Archive</h2>
+    <a href="/blog/">Archive</a>
+  </div>
+
+  <aside class="world-status" data-world-status hidden aria-live="polite">
+    <p class="world-status__meta" data-world-meta></p>
+    <h3 data-world-title></h3>
+    <div class="world-status__tags" data-world-tags></div>
+    <button type="button" data-world-enter>Enter</button>
+  </aside>
+
+  <div class="world-controls" aria-label="Game controls">
+    <p class="world-controls__help" data-world-help>
+      WSAD / arrow keys / E / Enter
+    </p>
+    <div class="world-controls__pad" aria-label="Move pad">
+      <button type="button" data-move="forward" aria-label="Hold to move forward">↑</button>
+      <button type="button" data-move="left" aria-label="Hold to move left">←</button>
+      <button type="button" data-move="back" aria-label="Hold to move back">↓</button>
+      <button type="button" data-move="right" aria-label="Hold to move right">→</button>
+    </div>
+    <button class="world-controls__enter" type="button" data-world-enter aria-label="Enter selected building">ENTER</button>
+  </div>
+
+  <div class="world-fallback" data-world-fallback>
+    <h2>Blog</h2>
+    <p>3D 表示が使えない環境では、通常の記事一覧から読めます。</p>
+    <ul>
+      {worldPosts.map((post) => (
+        <li><a href={post.url}>{post.title}</a></li>
+      ))}
+    </ul>
+  </div>
+
+  <script type="application/json" id="blog-world-posts" set:html={postsJson}></script>
+</section>
+
+<section class="reader-panel" data-reader hidden aria-hidden="true" aria-labelledby="reader-title">
+  <div class="reader-panel__backdrop" data-reader-close></div>
+  <div class="reader-panel__frame">
+    <header class="reader-panel__header">
+      <p>Now reading</p>
+      <h2 id="reader-title" data-reader-title>Article</h2>
+      <a href="/blog/" data-reader-open>Open page</a>
+      <button type="button" data-reader-close data-reader-close-button aria-label="Close reader">x</button>
+    </header>
+    <iframe data-reader-frame title="Article reader" loading="lazy"></iframe>
+  </div>
+</section>
+
+<script>
+  import {
+    ACESFilmicToneMapping,
+    BoxGeometry,
+    CanvasTexture,
+    Color,
+    ConeGeometry,
+    CylinderGeometry,
+    DirectionalLight,
+    DoubleSide,
+    Fog,
+    Group,
+    HemisphereLight,
+    InstancedMesh,
+    MathUtils,
+    Mesh,
+    MeshBasicMaterial,
+    MeshStandardMaterial,
+    Object3D,
+    PerspectiveCamera,
+    PlaneGeometry,
+    PointLight,
+    Raycaster,
+    Scene,
+    SphereGeometry,
+    Sprite,
+    SpriteMaterial,
+    SRGBColorSpace,
+    TorusGeometry,
+    Vector2,
+    Vector3,
+    WebGLRenderer,
+  } from 'three';
+
+  const root = document.querySelector('[data-blog-world]');
+  const canvas = document.querySelector('[data-world-canvas]');
+  const postScript = document.getElementById('blog-world-posts');
+  const reader = document.querySelector('[data-reader]');
+  const readerTitle = document.querySelector('[data-reader-title]');
+  const readerFrame = document.querySelector('[data-reader-frame]');
+  const readerOpen = document.querySelector('[data-reader-open]');
+  const readerCloseButton = document.querySelector('[data-reader-close-button]');
+  const statusPanel = document.querySelector('[data-world-status]');
+  const statusTitle = document.querySelector('[data-world-title]');
+  const statusMeta = document.querySelector('[data-world-meta]');
+  const statusTags = document.querySelector('[data-world-tags]');
+
+  const posts = JSON.parse(postScript?.textContent || '[]');
+  const reducedMotionQuery = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+
+  const MODEL_DETAIL_LEVEL = {
+    bodySegments: 3,
+    facadeRows: 12,
+    facadeColumns: 8,
+    roofUnits: 7,
+    conduitSegments: 64,
+  };
+
+  if (root instanceof HTMLElement && canvas instanceof HTMLCanvasElement && posts.length > 0) {
+    startWorld();
+  }
+
+  function startWorld() {
+    const scene = new Scene();
+    scene.background = new Color(0x061018);
+    scene.fog = new Fog(0x061018, 14, 58);
+
+    let renderer;
+    try {
+      renderer = new WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+    } catch {
+      root.classList.add('blog-world--fallback');
+      return;
+    }
+    root.classList.add('blog-world--ready');
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.outputColorSpace = SRGBColorSpace;
+    renderer.toneMapping = ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.18;
+    renderer.shadowMap.enabled = true;
+
+    const camera = new PerspectiveCamera(46, 1, 0.1, 120);
+    camera.position.set(0, 9, 18);
+
+    const ambient = new HemisphereLight(0x6ffcff, 0x070b14, 1.28);
+    scene.add(ambient);
+
+    const sun = new DirectionalLight(0xff2bd6, 2.2);
+    sun.position.set(9, 17, 8);
+    sun.castShadow = true;
+    sun.shadow.mapSize.set(1024, 1024);
+    scene.add(sun);
+
+    const ground = new Mesh(
+      new PlaneGeometry(90, 90),
+      new MeshStandardMaterial({
+        color: 0x071820,
+        roughness: 0.9,
+        metalness: 0.16,
+        emissive: 0x061018,
+        emissiveIntensity: 0.25,
+      })
+    );
+    ground.rotation.x = -Math.PI / 2;
+    ground.receiveShadow = true;
+    scene.add(ground);
+
+    const buildings = [];
+    const pickables = [];
+    const animatedArchiveObjects = [];
+    const layout = makeLayout(posts.length);
+    animatedArchiveObjects.push(...createArchiveSkyline(scene, layout));
+    animatedArchiveObjects.push(...createLightCanopy(scene, layout));
+    createGroundCircuitField(scene, layout);
+    animatedArchiveObjects.push(...createMemoryDistrict(scene, layout));
+    posts.forEach((post, index) => {
+      const building = createArchiveBuilding(post, index, layout[index]);
+      scene.add(building.group);
+      buildings.push(building);
+      pickables.push(...building.pickables);
+      animatedArchiveObjects.push(...building.animated);
+    });
+
+    const player = createPlayer();
+    scene.add(player);
+    player.position.set(0, 0, layout.startZ);
+
+    const pressed = new Set();
+    const heldControls = new Set();
+    const raycaster = new Raycaster();
+    const pointer = new Vector2();
+    const target = new Vector3(player.position.x, 0, player.position.z);
+    let targetBuilding = null;
+    let activeBuilding = null;
+    let lastFocusedElement = null;
+    let lastTime = performance.now();
+    let animationFrameId = 0;
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(root);
+    resize();
+
+    window.addEventListener('keydown', (event) => {
+      if (event.defaultPrevented) return;
+      if (!isWorldModeRenderable()) return;
+
+      if (!isReaderHidden()) {
+        if (event.key === 'Escape') closeReader();
+        return;
+      }
+
+      const direction = keyToDirection(event.key);
+      if (direction) {
+        event.preventDefault();
+        pressed.add(direction);
+        targetBuilding = null;
+        return;
+      }
+
+      if (
+        (event.key === 'Enter' || event.key.toLowerCase() === 'e') &&
+        activeBuilding &&
+        !isInteractiveTarget(event.target)
+      ) {
+        event.preventDefault();
+        openReader(activeBuilding.post);
+      }
+    });
+
+    window.addEventListener('keyup', (event) => {
+      if (!isWorldModeRenderable()) {
+        pressed.clear();
+        heldControls.clear();
+        return;
+      }
+
+      const direction = keyToDirection(event.key);
+      if (direction) pressed.delete(direction);
+    });
+
+    document.querySelectorAll('[data-move]').forEach((button) => {
+      const direction = button.getAttribute('data-move');
+      let skipKeyboardClick = false;
+      button.addEventListener('pointerdown', (event) => {
+        event.preventDefault();
+        button.setPointerCapture?.(event.pointerId);
+        heldControls.add(direction);
+        targetBuilding = null;
+      });
+
+      button.addEventListener('keydown', (event) => {
+        if (event.key !== ' ' && event.key !== 'Enter') return;
+        event.preventDefault();
+        heldControls.add(direction);
+        targetBuilding = null;
+      });
+
+      button.addEventListener('keyup', (event) => {
+        if (event.key !== ' ' && event.key !== 'Enter') return;
+        event.preventDefault();
+        release();
+        stepControl(direction);
+        skipKeyboardClick = true;
+      });
+
+      button.addEventListener('click', (event) => {
+        if (skipKeyboardClick) {
+          skipKeyboardClick = false;
+          return;
+        }
+        event.preventDefault();
+        stepControl(direction);
+      });
+
+      const release = () => heldControls.delete(direction);
+      button.addEventListener('pointerup', release);
+      button.addEventListener('pointercancel', release);
+      button.addEventListener('lostpointercapture', release);
+    });
+
+    canvas.addEventListener('pointerdown', (event) => {
+      if (!isReaderHidden()) return;
+
+      const rect = canvas.getBoundingClientRect();
+      pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      raycaster.setFromCamera(pointer, camera);
+
+      const buildingHit = raycaster.intersectObjects(pickables, false)[0];
+      if (buildingHit) {
+        const building = buildings[buildingHit.object.userData.buildingIndex];
+        target.copy(building.entrance);
+        targetBuilding = building;
+        updateActiveBuilding();
+        return;
+      }
+
+      const groundHit = raycaster.intersectObject(ground, false)[0];
+      if (groundHit) {
+        target.copy(groundHit.point);
+        target.y = 0;
+        targetBuilding = null;
+      }
+    });
+
+    document.querySelectorAll('[data-world-enter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (activeBuilding) openReader(activeBuilding.post);
+      });
+    });
+
+    document.querySelectorAll('[data-reader-close]').forEach((control) => {
+      control.addEventListener('click', closeReader);
+    });
+
+    window.addEventListener('home-mode-change', updateAnimationState);
+    document.addEventListener('visibilitychange', updateAnimationState);
+    reducedMotionQuery?.addEventListener('change', updateAnimationState);
+    updateAnimationState();
+
+    function animate(time) {
+      animationFrameId = 0;
+      if (!isWorldModeRenderable()) return;
+
+      const dt = Math.min(0.04, (time - lastTime) / 1000);
+      lastTime = time;
+
+      movePlayer(dt);
+      updateActiveBuilding();
+      updateCamera(dt);
+      animateArchiveAtmosphere(time * 0.001);
+
+      renderer.render(scene, camera);
+      scheduleAnimation();
+    }
+
+    function updateAnimationState() {
+      root.classList.toggle('blog-world--ready', !shouldReduceMotion());
+      root.classList.toggle('blog-world--fallback', shouldReduceMotion());
+
+      if (!isWorldModeRenderable()) {
+        pressed.clear();
+        heldControls.clear();
+        stopAnimation();
+        return;
+      }
+
+      lastTime = performance.now();
+      resize();
+      scheduleAnimation();
+    }
+
+    function isWorldModeRenderable() {
+      return !shouldReduceMotion() &&
+        document.visibilityState !== 'hidden' &&
+        document.documentElement.dataset.homeMode === 'world' &&
+        !root.closest('[hidden]');
+    }
+
+    function shouldReduceMotion() {
+      return reducedMotionQuery?.matches === true;
+    }
+
+    function scheduleAnimation() {
+      if (animationFrameId === 0) animationFrameId = requestAnimationFrame(animate);
+    }
+
+    function stopAnimation() {
+      if (animationFrameId === 0) return;
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = 0;
+    }
+
+    function animateArchiveAtmosphere(seconds) {
+      animatedArchiveObjects.forEach((object, index) => {
+        const rotateSpeed = object.userData.rotateSpeed ?? (0.0025 + (index % 3) * 0.0008);
+        object.rotation.y += rotateSpeed;
+        if (object.userData.floatBaseY != null) {
+          object.position.y = object.userData.floatBaseY + Math.sin(seconds * 0.9 + index) * 0.09;
+        }
+      });
+    }
+
+    function movePlayer(dt) {
+      const input = new Vector3();
+      for (const direction of [...pressed, ...heldControls]) {
+        if (direction === 'forward') input.z -= 1;
+        if (direction === 'back') input.z += 1;
+        if (direction === 'left') input.x -= 1;
+        if (direction === 'right') input.x += 1;
+      }
+
+      if (input.lengthSq() > 0) {
+        input.normalize();
+        player.position.addScaledVector(input, 6.2 * dt);
+        target.copy(player.position);
+      } else {
+        const toTarget = target.clone().sub(player.position);
+        toTarget.y = 0;
+        const distance = toTarget.length();
+        if (distance > 0.08) {
+          player.position.addScaledVector(toTarget.normalize(), Math.min(7 * dt, distance));
+        } else if (targetBuilding && activeBuilding === targetBuilding) {
+          openReader(targetBuilding.post);
+          targetBuilding = null;
+        }
+      }
+
+      player.position.x = MathUtils.clamp(player.position.x, layout.minX, layout.maxX);
+      player.position.z = MathUtils.clamp(player.position.z, layout.minZ, layout.maxZ);
+    }
+
+    function updateActiveBuilding() {
+      let nearest = null;
+      let nearestDistance = Infinity;
+
+      for (const building of buildings) {
+        const distance = player.position.distanceTo(building.group.position);
+        if (distance < nearestDistance) {
+          nearest = building;
+          nearestDistance = distance;
+        }
+      }
+
+      const nextActive = targetBuilding || (nearestDistance < 4.1 ? nearest : null);
+      if (nextActive === activeBuilding) return;
+
+      if (activeBuilding) setBuildingActive(activeBuilding, false);
+      activeBuilding = nextActive;
+      if (activeBuilding) {
+        setBuildingActive(activeBuilding, true);
+        updateStatus(activeBuilding);
+      } else {
+        hideStatus();
+      }
+    }
+
+    function stepControl(direction) {
+      const delta = directionToVector(direction);
+      if (!delta) return;
+
+      targetBuilding = null;
+      target.copy(player.position).addScaledVector(delta, 2.8);
+      target.x = MathUtils.clamp(target.x, layout.minX, layout.maxX);
+      target.z = MathUtils.clamp(target.z, layout.minZ, layout.maxZ);
+    }
+
+    function updateCamera(dt) {
+      const wanted = new Vector3(
+        player.position.x + 6.4,
+        7.25,
+        player.position.z + 10.4
+      );
+      camera.position.lerp(wanted, 1 - Math.pow(0.001, dt));
+      camera.lookAt(player.position.x, 1.35, player.position.z - 3.1);
+    }
+
+    function resize() {
+      const width = Math.max(1, root.clientWidth);
+      const height = Math.max(1, root.clientHeight);
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    }
+
+    function openReader(post) {
+      if (
+        !(reader instanceof HTMLElement) ||
+        !(readerFrame instanceof HTMLIFrameElement) ||
+        !(readerTitle instanceof HTMLElement) ||
+        !(readerOpen instanceof HTMLAnchorElement)
+      ) {
+        window.location.href = post.url;
+        return;
+      }
+
+      lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      readerTitle.textContent = post.title;
+      readerFrame.src = post.url;
+      readerFrame.title = post.title;
+      readerOpen.href = post.url;
+      reader.hidden = false;
+      reader.setAttribute('aria-hidden', 'false');
+      document.documentElement.classList.add('reader-open');
+      if (readerCloseButton instanceof HTMLElement) readerCloseButton.focus();
+    }
+
+    function closeReader() {
+      if (!(reader instanceof HTMLElement) || !(readerFrame instanceof HTMLIFrameElement)) return;
+
+      reader.hidden = true;
+      reader.setAttribute('aria-hidden', 'true');
+      readerFrame.removeAttribute('src');
+      document.documentElement.classList.remove('reader-open');
+      lastFocusedElement?.focus();
+      lastFocusedElement = null;
+    }
+  }
+
+  function isReaderHidden() {
+    return !(reader instanceof HTMLElement) || reader.hidden;
+  }
+
+  function keyToDirection(key) {
+    const lowered = key.toLowerCase();
+    if (lowered === 'w' || key === 'ArrowUp') return 'forward';
+    if (lowered === 's' || key === 'ArrowDown') return 'back';
+    if (lowered === 'a' || key === 'ArrowLeft') return 'left';
+    if (lowered === 'd' || key === 'ArrowRight') return 'right';
+    return null;
+  }
+
+  function directionToVector(direction) {
+    if (direction === 'forward') return new Vector3(0, 0, -1);
+    if (direction === 'back') return new Vector3(0, 0, 1);
+    if (direction === 'left') return new Vector3(-1, 0, 0);
+    if (direction === 'right') return new Vector3(1, 0, 0);
+    return null;
+  }
+
+  function isInteractiveTarget(target) {
+    return target instanceof Element && Boolean(
+      target.closest('a, button, input, textarea, select, summary, [contenteditable="true"]')
+    );
+  }
+
+  function makeLayout(total) {
+    const columns = Math.ceil(Math.sqrt(total));
+    const rows = Math.ceil(total / columns);
+    const spacing = 7;
+    const positions = [];
+
+    for (let index = 0; index < total; index += 1) {
+      const row = Math.floor(index / columns);
+      const column = index % columns;
+      positions.push({
+        x: (column - (columns - 1) / 2) * spacing,
+        z: (row - (rows - 1) / 2) * spacing - 2,
+      });
+    }
+
+    const halfWidth = (columns * spacing) / 2 + 8;
+    const halfDepth = (rows * spacing) / 2 + 10;
+    return Object.assign(positions, {
+      minX: -halfWidth,
+      maxX: halfWidth,
+      minZ: -halfDepth - 4,
+      maxZ: halfDepth + 7,
+      startZ: halfDepth + 3,
+    });
+  }
+
+  function createArchiveSkyline(scene, layout) {
+    const animated = [];
+    const towerMaterial = new MeshStandardMaterial({
+      color: 0x081724,
+      roughness: 0.58,
+      metalness: 0.36,
+      emissive: 0x071c2a,
+      emissiveIntensity: 0.42,
+    });
+    const crownMaterial = new MeshBasicMaterial({ color: 0xff2bd6, transparent: true, opacity: 0.42 });
+    const windowMaterial = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.36 });
+    const dummy = new Object3D();
+    const skyline = new Group();
+    const towerCount = 34;
+
+    for (let index = 0; index < towerCount; index += 1) {
+      const edge = index % 4;
+      const t = (index / Math.max(1, towerCount - 1));
+      const x = edge < 2
+        ? layout.minX + t * (layout.maxX - layout.minX)
+        : (edge === 2 ? layout.minX - 5.2 : layout.maxX + 5.2);
+      const z = edge < 2
+        ? (edge === 0 ? layout.minZ - 5.2 : layout.maxZ + 4.8)
+        : layout.minZ + t * (layout.maxZ - layout.minZ);
+      const width = 1.15 + (index % 5) * 0.22;
+      const depth = 0.98 + (index % 4) * 0.18;
+      const height = 4.2 + (index % 7) * 0.72;
+
+      const tower = new Mesh(
+        new BoxGeometry(width, height, depth, 2, MODEL_DETAIL_LEVEL.bodySegments, 2),
+        towerMaterial
+      );
+      tower.position.set(x, height / 2 + 0.08, z);
+      tower.rotation.y = (index % 3 - 1) * 0.06;
+      tower.receiveShadow = true;
+      tower.castShadow = true;
+      skyline.add(tower);
+
+      const crown = new Mesh(new BoxGeometry(width * 0.82, 0.045, depth * 1.04), crownMaterial);
+      crown.position.set(x, height + 0.12, z);
+      crown.rotation.y = tower.rotation.y;
+      skyline.add(crown);
+    }
+
+    const columns = 9;
+    const rows = 16;
+    const windowGeometry = new BoxGeometry(0.08, 0.045, 0.018);
+    const windows = new InstancedMesh(windowGeometry, windowMaterial, towerCount * columns * rows);
+    let instance = 0;
+    for (let tower = 0; tower < towerCount; tower += 1) {
+      const edge = tower % 4;
+      const t = (tower / Math.max(1, towerCount - 1));
+      const baseX = edge < 2
+        ? layout.minX + t * (layout.maxX - layout.minX)
+        : (edge === 2 ? layout.minX - 5.2 : layout.maxX + 5.2);
+      const baseZ = edge < 2
+        ? (edge === 0 ? layout.minZ - 5.2 : layout.maxZ + 4.8)
+        : layout.minZ + t * (layout.maxZ - layout.minZ);
+      const width = 1.15 + (tower % 5) * 0.22;
+      const height = 4.2 + (tower % 7) * 0.72;
+      for (let row = 0; row < rows; row += 1) {
+        for (let column = 0; column < columns; column += 1) {
+          if ((row + column + tower) % 5 === 0) continue;
+          dummy.position.set(
+            baseX - width * 0.34 + column * (width * 0.68 / columns),
+            0.72 + row * (height * 0.72 / rows),
+            baseZ + 0.55
+          );
+          dummy.updateMatrix();
+          windows.setMatrixAt(instance, dummy.matrix);
+          instance += 1;
+        }
+      }
+    }
+    windows.count = instance;
+    windows.instanceMatrix.needsUpdate = true;
+    skyline.add(windows);
+
+    scene.add(skyline);
+    skyline.userData.rotateSpeed = 0;
+    animated.push(skyline);
+    return animated;
+  }
+
+  function createLightCanopy(scene, layout) {
+    const animated = [];
+    const canopy = new Group();
+    const lineMaterial = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.2 });
+    const magentaMaterial = new MeshBasicMaterial({ color: 0xff2bd6, transparent: true, opacity: 0.18 });
+    const lightCount = 7;
+
+    for (let index = 0; index < lightCount; index += 1) {
+      const x = layout.minX + (index + 0.5) * ((layout.maxX - layout.minX) / lightCount);
+      const z = layout.minZ + 1.5 + (index % 3) * 4.2;
+      const rail = new Mesh(
+        new BoxGeometry(layout.maxX - layout.minX + 6, 0.025, 0.035),
+        index % 2 ? magentaMaterial : lineMaterial
+      );
+      rail.position.set(0, 5.4 + (index % 2) * 0.52, z);
+      rail.rotation.y = (index % 2 ? -1 : 1) * 0.16;
+      canopy.add(rail);
+
+      const lamp = new PointLight(index % 2 ? 0xff2bd6 : 0x3df8ff, 0.42, 9, 2);
+      lamp.position.set(x, 4.6 + (index % 2) * 0.44, z);
+      scene.add(lamp);
+    }
+
+    canopy.userData.rotateSpeed = 0.0007;
+    canopy.userData.floatBaseY = 0;
+    scene.add(canopy);
+    animated.push(canopy);
+    return animated;
+  }
+
+  function createGroundCircuitField(scene, layout) {
+    const dummy = new Object3D();
+    const material = new MeshBasicMaterial({ color: 0xb8ff2c, transparent: true, opacity: 0.14 });
+    const geometry = new BoxGeometry(0.035, 0.018, 2.4);
+    const columns = 18;
+    const rows = 12;
+    const circuits = new InstancedMesh(geometry, material, columns * rows);
+    let instance = 0;
+
+    for (let row = 0; row < rows; row += 1) {
+      for (let column = 0; column < columns; column += 1) {
+        if ((row * 3 + column) % 4 === 0) continue;
+        dummy.position.set(
+          layout.minX + column * ((layout.maxX - layout.minX) / columns),
+          0.115,
+          layout.minZ + row * ((layout.maxZ - layout.minZ) / rows)
+        );
+        dummy.rotation.y = (row + column) % 2 ? Math.PI / 2 : 0;
+        dummy.updateMatrix();
+        circuits.setMatrixAt(instance, dummy.matrix);
+        instance += 1;
+      }
+    }
+
+    circuits.count = instance;
+    circuits.instanceMatrix.needsUpdate = true;
+    scene.add(circuits);
+  }
+
+  function createMemoryDistrict(scene, layout) {
+    const animated = [];
+    const centerZ = (layout.minZ + layout.maxZ) / 2;
+    addDataRail(scene, 5.8, layout.maxZ - layout.minZ + 10, 0, centerZ, 'Cyber data rail');
+    addDataRail(scene, layout.maxX - layout.minX + 8, 4.8, 0, 0, 'Cyber data rail');
+
+    const plaza = new Mesh(
+      new CylinderGeometry(4.7, 5.25, 0.12, 48),
+      new MeshStandardMaterial({
+        color: 0x0a1e2a,
+        roughness: 0.62,
+        metalness: 0.22,
+        emissive: 0x12234a,
+        emissiveIntensity: 0.28,
+      })
+    );
+    plaza.position.set(0, 0.09, 0);
+    plaza.receiveShadow = true;
+    scene.add(plaza);
+
+    const ring = new Mesh(
+      new TorusGeometry(5.2, 0.055, 8, 96),
+      new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.9 })
+    );
+    ring.rotation.x = Math.PI / 2;
+    ring.position.y = 0.2;
+    scene.add(ring);
+    animated.push(ring);
+
+    const beacon = createArchiveBeacon('Neon Archive');
+    beacon.position.set(0, 3.15, 0);
+    beacon.userData.floatBaseY = beacon.position.y;
+    scene.add(beacon);
+    animated.push(beacon);
+
+    const fragments = createFloatingFragments(10, 0x3df8ff, 0xff2bd6);
+    fragments.position.set(0, 1.4, 0);
+    fragments.userData.floatBaseY = fragments.position.y;
+    scene.add(fragments);
+    animated.push(fragments);
+
+    return animated;
+  }
+
+  function addDataRail(scene, width, depth, x, z, label = 'Cyber data rail') {
+    const road = new Mesh(
+      new BoxGeometry(width, 0.04, depth),
+      new MeshStandardMaterial({
+        color: 0x07131c,
+        roughness: 0.72,
+        metalness: 0.28,
+        emissive: 0x03141a,
+        emissiveIntensity: 0.5,
+      })
+    );
+    road.position.set(x, 0.03, z);
+    road.receiveShadow = true;
+    road.name = label;
+    scene.add(road);
+
+    const stripeMaterial = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.82 });
+    const stripeMaterialB = new MeshBasicMaterial({ color: 0xff2bd6, transparent: true, opacity: 0.78 });
+    const stripeA = new Mesh(new BoxGeometry(Math.max(0.08, width * 0.035), 0.02, depth), stripeMaterial);
+    const stripeB = new Mesh(new BoxGeometry(Math.max(0.08, width * 0.035), 0.02, depth), stripeMaterialB);
+    stripeA.position.set(x - width * 0.26, 0.07, z);
+    stripeB.position.set(x + width * 0.26, 0.07, z);
+    scene.add(stripeA, stripeB);
+
+    const gridMaterial = new MeshBasicMaterial({ color: 0xb8ff2c, transparent: true, opacity: 0.28 });
+    const markerCount = Math.max(4, Math.floor(depth / 4));
+    for (let index = 0; index < markerCount; index += 1) {
+      const offset = -depth / 2 + (index + 0.5) * (depth / markerCount);
+      const marker = new Mesh(new BoxGeometry(width * 0.72, 0.018, 0.045), gridMaterial);
+      marker.position.set(x, 0.09, z + offset);
+      scene.add(marker);
+    }
+  }
+
+  function createArchiveBuilding(post, index, position) {
+    const palette = [0x0b1e2d, 0x10172a, 0x111f24, 0x191832, 0x0c2430, 0x1a1628];
+    const cyberNeonPalette = [0x3df8ff, 0xff2bd6, 0xb8ff2c, 0xfff36a, 0x8a5cff, 0xff7a1a];
+    const color = palette[index % palette.length];
+    const accent = cyberNeonPalette[index % cyberNeonPalette.length];
+    const width = 2.3 + (index % 3) * 0.34;
+    const depth = 2.0 + (index % 2) * 0.28;
+    const height = 3.2 + (index % 5) * 0.72;
+    const group = new Group();
+    const pickables = [];
+    group.position.set(position.x, 0, position.z);
+
+    const platform = new Mesh(
+      new CylinderGeometry(width * 0.92, width * 1.08, 0.34, 6),
+      new MeshStandardMaterial({
+        color: 0x07131c,
+        roughness: 0.58,
+        metalness: 0.34,
+        emissive: accent,
+        emissiveIntensity: 0.06,
+      })
+    );
+    platform.position.y = 0.17;
+    platform.rotation.y = Math.PI / 6;
+    platform.receiveShadow = true;
+    group.add(platform);
+
+    const paperStack = createPaperStack(width, depth, height, color, accent, index);
+    paperStack.group.children.forEach((child) => {
+      child.userData.buildingIndex = index;
+      pickables.push(child);
+    });
+    group.add(paperStack.group);
+
+    const highResolutionFacade = createHighResolutionFacade(width, depth, height, accent, index);
+    group.add(highResolutionFacade);
+
+    const windowBands = createNeonWindowBands(width, depth, height, accent, index);
+    group.add(windowBands);
+
+    const rooftopMachinery = createRooftopMachinery(width, depth, height, accent, index);
+    group.add(rooftopMachinery);
+
+    const conduitNetwork = createAerialConduitNetwork(width, depth, height, accent, index);
+    conduitNetwork.userData.floatBaseY = height * 0.9;
+    group.add(conduitNetwork);
+
+    const postTube = createPostTube(height, accent, index);
+    postTube.children.forEach((child) => {
+      child.userData.buildingIndex = index;
+      pickables.push(child);
+    });
+    postTube.position.set(-width * 0.58, 0.2, depth * 0.12);
+    group.add(postTube);
+
+    const orbit = createBrassOrbit(width, depth, height);
+    orbit.position.y = height * 0.78;
+    orbit.userData.floatBaseY = orbit.position.y;
+    group.add(orbit);
+
+    const fragments = createFloatingFragments(5 + (index % 3), 0x3df8ff, accent);
+    fragments.position.set(width * 0.28, height * 0.65, -depth * 0.18);
+    fragments.userData.floatBaseY = fragments.position.y;
+    group.add(fragments);
+
+    const sign = createHologramBillboard(post.title, index, accent);
+    sign.position.set(0.18, height + 0.45, depth / 2 + 0.5);
+    sign.userData.floatBaseY = sign.position.y;
+    sign.userData.buildingIndex = index;
+    group.add(sign);
+    pickables.push(sign);
+
+    const layeredHologramFrame = createLayeredHologramFrame(width, height, accent);
+    layeredHologramFrame.position.copy(sign.position);
+    group.add(layeredHologramFrame);
+
+    const entryPortal = createEntryPortal(width, depth, height, accent, index);
+    entryPortal.traverse((child) => {
+      child.userData.buildingIndex = index;
+      if (child.isMesh) pickables.push(child);
+    });
+    group.add(entryPortal);
+
+    const marker = new Mesh(
+      new TorusGeometry(width * 0.62, 0.045, 8, 48),
+      new MeshBasicMaterial({ color: 0xfff0a3, transparent: true, opacity: 0 })
+    );
+    marker.rotation.x = Math.PI / 2;
+    marker.position.set(0, 0.08, depth / 2 + 1.15);
+    group.add(marker);
+
+    return {
+      group,
+      post,
+      material: paperStack.material,
+      marker,
+      pickables,
+      animated: [orbit, fragments, sign, conduitNetwork],
+      entrance: new Vector3(position.x, 0, position.z + depth / 2 + 1.25),
+    };
+  }
+
+  function createPaperStack(width, depth, height, color, accent, index) {
+    const group = new Group();
+    const material = new MeshStandardMaterial({
+      color,
+      roughness: 0.5,
+      metalness: 0.42,
+      emissive: new Color(accent).multiplyScalar(0.18),
+      emissiveIntensity: 0.24,
+    });
+    const shadowMaterial = new MeshStandardMaterial({
+      color: 0x07131c,
+      roughness: 0.68,
+      metalness: 0.24,
+      emissive: 0x03070c,
+      emissiveIntensity: 0.16,
+    });
+
+    const sheetCount = MODEL_DETAIL_LEVEL.facadeRows + (index % 4);
+    for (let sheet = 0; sheet < sheetCount; sheet += 1) {
+      const isCore = sheet === Math.floor(sheetCount / 2);
+      const sheetMesh = new Mesh(
+        new BoxGeometry(
+          width - sheet * 0.028,
+          height / sheetCount + 0.05,
+          depth - sheet * 0.022,
+          MODEL_DETAIL_LEVEL.bodySegments,
+          1,
+          MODEL_DETAIL_LEVEL.bodySegments
+        ),
+        isCore ? material : shadowMaterial
+      );
+      sheetMesh.position.set(
+        Math.sin(index + sheet) * 0.024,
+        0.42 + sheet * (height / sheetCount),
+        Math.cos(index * 0.7 + sheet) * 0.018
+      );
+      sheetMesh.rotation.y = (sheet - sheetCount / 2) * 0.006;
+      sheetMesh.castShadow = true;
+      sheetMesh.receiveShadow = true;
+      group.add(sheetMesh);
+    }
+
+    const ribbon = new Mesh(
+      new BoxGeometry(width * 0.18, height * 0.96, depth + 0.08),
+      new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.72 })
+    );
+    ribbon.position.set(width * 0.34, height * 0.5 + 0.33, 0);
+    ribbon.castShadow = true;
+    group.add(ribbon);
+
+    return { group, material };
+  }
+
+  function createHighResolutionFacade(width, depth, height, accent, index) {
+    const group = new Group();
+    const rows = MODEL_DETAIL_LEVEL.facadeRows + (index % 3);
+    const columns = MODEL_DETAIL_LEVEL.facadeColumns + (index % 2);
+    const dummy = new Object3D();
+    const panelWidth = (width * 0.66) / columns;
+    const panelHeight = (height * 0.58) / rows;
+    const panelMaterial = new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.72 });
+    const dimPanelMaterial = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.34 });
+    const panelGeometry = new BoxGeometry(panelWidth * 0.62, panelHeight * 0.46, 0.035);
+    const frontPanels = new InstancedMesh(panelGeometry, panelMaterial, rows * columns);
+
+    let instanceIndex = 0;
+    for (let row = 0; row < rows; row += 1) {
+      for (let column = 0; column < columns; column += 1) {
+        const x = -width * 0.33 + (column + 0.5) * panelWidth;
+        const y = 0.72 + (row + 0.5) * panelHeight;
+        dummy.position.set(x, y, depth / 2 + 0.082);
+        dummy.scale.set(1, (row + column + index) % 5 === 0 ? 1.45 : 1, 1);
+        dummy.updateMatrix();
+        frontPanels.setMatrixAt(instanceIndex, dummy.matrix);
+        instanceIndex += 1;
+      }
+    }
+    frontPanels.instanceMatrix.needsUpdate = true;
+    group.add(frontPanels);
+
+    const sideColumns = Math.max(4, Math.floor(columns * 0.62));
+    const sideGeometry = new BoxGeometry(0.032, panelHeight * 0.44, (depth * 0.52) / sideColumns);
+    const sidePanels = new InstancedMesh(sideGeometry, dimPanelMaterial, rows * sideColumns * 2);
+    instanceIndex = 0;
+    for (let row = 0; row < rows; row += 1) {
+      for (let column = 0; column < sideColumns; column += 1) {
+        const y = 0.72 + (row + 0.5) * panelHeight;
+        const z = -depth * 0.26 + (column + 0.5) * ((depth * 0.52) / sideColumns);
+        dummy.position.set(-width / 2 - 0.075, y, z);
+        dummy.scale.set(1, (row + column) % 4 === 0 ? 1.35 : 1, 1);
+        dummy.updateMatrix();
+        sidePanels.setMatrixAt(instanceIndex, dummy.matrix);
+        instanceIndex += 1;
+        dummy.position.set(width / 2 + 0.075, y, z);
+        dummy.updateMatrix();
+        sidePanels.setMatrixAt(instanceIndex, dummy.matrix);
+        instanceIndex += 1;
+      }
+    }
+    sidePanels.instanceMatrix.needsUpdate = true;
+    group.add(sidePanels);
+
+    const ribMaterial = new MeshStandardMaterial({
+      color: 0x061018,
+      roughness: 0.42,
+      metalness: 0.54,
+      emissive: accent,
+      emissiveIntensity: 0.12,
+    });
+    for (let column = 0; column <= columns; column += 2) {
+      const x = -width * 0.35 + column * panelWidth;
+      const rib = new Mesh(
+        new BoxGeometry(0.024, height * 0.68, 0.052, 1, MODEL_DETAIL_LEVEL.bodySegments, 1),
+        ribMaterial
+      );
+      rib.position.set(x, height * 0.42 + 0.32, depth / 2 + 0.105);
+      rib.castShadow = true;
+      group.add(rib);
+    }
+
+    return group;
+  }
+
+  function createRooftopMachinery(width, depth, height, accent, index) {
+    const group = new Group();
+    const unitMaterial = new MeshStandardMaterial({
+      color: 0x07131c,
+      roughness: 0.34,
+      metalness: 0.62,
+      emissive: accent,
+      emissiveIntensity: 0.18,
+    });
+    const lightMaterial = new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.82 });
+    const roofY = height + 0.35;
+
+    for (let unit = 0; unit < MODEL_DETAIL_LEVEL.roofUnits; unit += 1) {
+      const angle = (unit / MODEL_DETAIL_LEVEL.roofUnits) * Math.PI * 2 + index * 0.18;
+      const x = Math.cos(angle) * width * 0.32;
+      const z = Math.sin(angle) * depth * 0.32;
+      const casing = new Mesh(
+        new BoxGeometry(0.34, 0.16 + (unit % 3) * 0.04, 0.24, MODEL_DETAIL_LEVEL.bodySegments, 1, 2),
+        unitMaterial
+      );
+      casing.position.set(x, roofY + (unit % 2) * 0.035, z);
+      casing.rotation.y = angle;
+      casing.castShadow = true;
+      group.add(casing);
+
+      const light = new Mesh(new BoxGeometry(0.24, 0.024, 0.026), lightMaterial);
+      light.position.set(x, roofY + 0.11, z + 0.14);
+      light.rotation.y = angle;
+      group.add(light);
+    }
+
+    const mast = new Mesh(
+      new CylinderGeometry(0.035, 0.048, height * 0.34, 32),
+      unitMaterial
+    );
+    mast.position.set(width * 0.34, roofY + height * 0.17, -depth * 0.28);
+    mast.castShadow = true;
+    group.add(mast);
+
+    const antenna = new Mesh(
+      new TorusGeometry(0.26, 0.014, 8, MODEL_DETAIL_LEVEL.conduitSegments),
+      lightMaterial
+    );
+    antenna.position.set(width * 0.34, roofY + height * 0.36, -depth * 0.28);
+    antenna.rotation.x = Math.PI / 2.35;
+    group.add(antenna);
+
+    return group;
+  }
+
+  function createAerialConduitNetwork(width, depth, height, accent, index) {
+    const group = new Group();
+    const conduitMaterial = new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.58 });
+    const darkMaterial = new MeshStandardMaterial({
+      color: 0x07131c,
+      roughness: 0.46,
+      metalness: 0.5,
+      emissive: 0x3df8ff,
+      emissiveIntensity: 0.16,
+    });
+    const topY = height * 0.9;
+    const ring = new Mesh(
+      new TorusGeometry(Math.max(width, depth) * 0.56, 0.018, 8, MODEL_DETAIL_LEVEL.conduitSegments),
+      conduitMaterial
+    );
+    ring.position.y = topY;
+    ring.rotation.x = Math.PI / 2.05;
+    ring.rotation.z = index * 0.08;
+    group.add(ring);
+
+    for (let spoke = 0; spoke < 4; spoke += 1) {
+      const angle = (spoke / 4) * Math.PI * 2 + index * 0.1;
+      const cable = new Mesh(
+        new CylinderGeometry(0.018, 0.018, Math.max(width, depth) * 0.84, 18),
+        darkMaterial
+      );
+      cable.position.set(Math.cos(angle) * width * 0.08, topY, Math.sin(angle) * depth * 0.08);
+      cable.rotation.z = Math.PI / 2;
+      cable.rotation.y = angle;
+      cable.castShadow = true;
+      group.add(cable);
+    }
+
+    return group;
+  }
+
+  function createLayeredHologramFrame(width, height, accent) {
+    const group = new Group();
+    const frameWidth = Math.max(3.35, width * 1.42);
+    const frameHeight = Math.min(1.32, Math.max(1.02, height * 0.22));
+    const materialA = new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.62 });
+    const materialB = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.44 });
+
+    for (let layer = 0; layer < 3; layer += 1) {
+      const inset = layer * 0.12;
+      const z = -0.045 - layer * 0.035;
+      const material = layer % 2 ? materialB : materialA;
+      const top = new Mesh(new BoxGeometry(frameWidth - inset, 0.035, 0.035), material);
+      const bottom = new Mesh(new BoxGeometry(frameWidth - inset, 0.035, 0.035), material);
+      const left = new Mesh(new BoxGeometry(0.035, frameHeight - inset * 0.35, 0.035), material);
+      const right = new Mesh(new BoxGeometry(0.035, frameHeight - inset * 0.35, 0.035), material);
+      top.position.set(0, frameHeight / 2 - inset * 0.18, z);
+      bottom.position.set(0, -frameHeight / 2 + inset * 0.18, z);
+      left.position.set(-frameWidth / 2 + inset * 0.5, 0, z);
+      right.position.set(frameWidth / 2 - inset * 0.5, 0, z);
+      group.add(top, bottom, left, right);
+    }
+
+    return group;
+  }
+
+  function createEntryPortal(width, depth, height, accent, index) {
+    const group = new Group();
+    const material = new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.72 });
+    const shadowMaterial = new MeshStandardMaterial({
+      color: 0x061018,
+      roughness: 0.48,
+      metalness: 0.58,
+      emissive: accent,
+      emissiveIntensity: 0.2,
+    });
+    const portalHeight = Math.min(1.45, height * 0.32);
+    const portalWidth = width * 0.54;
+    const z = depth / 2 + 0.16;
+
+    const left = new Mesh(new BoxGeometry(0.055, portalHeight, 0.055), material);
+    const right = new Mesh(new BoxGeometry(0.055, portalHeight, 0.055), material);
+    const top = new Mesh(new BoxGeometry(portalWidth, 0.055, 0.055), material);
+    const threshold = new Mesh(new BoxGeometry(portalWidth * 1.18, 0.08, 0.32), shadowMaterial);
+    left.position.set(-portalWidth / 2, portalHeight / 2 + 0.18, z);
+    right.position.set(portalWidth / 2, portalHeight / 2 + 0.18, z);
+    top.position.set(0, portalHeight + 0.18, z);
+    threshold.position.set(0, 0.2, z + 0.08);
+    threshold.rotation.y = (index % 2 ? -1 : 1) * 0.035;
+    threshold.castShadow = true;
+    group.add(left, right, top, threshold);
+
+    return group;
+  }
+
+  function createNeonWindowBands(width, depth, height, accent, index) {
+    const group = new Group();
+    const windowMaterial = new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.72 });
+    const sideMaterial = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.48 });
+    const bandCount = 4 + (index % 3);
+
+    for (let band = 0; band < bandCount; band += 1) {
+      const y = 0.82 + band * (height / (bandCount + 0.8));
+      const front = new Mesh(new BoxGeometry(width * 0.72, 0.055, 0.035), windowMaterial);
+      front.position.set(0, y, depth / 2 + 0.04);
+      group.add(front);
+
+      const side = new Mesh(new BoxGeometry(0.035, 0.05, depth * 0.58), sideMaterial);
+      side.position.set(-width / 2 - 0.035, y + 0.08, 0);
+      group.add(side);
+    }
+
+    return group;
+  }
+
+  function createPostTube(height, accent, index) {
+    const group = new Group();
+    const tube = new Mesh(
+      new CylinderGeometry(0.23, 0.27, height * 0.82, 24),
+      new MeshStandardMaterial({
+        color: 0x07131c,
+        roughness: 0.38,
+        metalness: 0.48,
+        emissive: accent,
+        emissiveIntensity: 0.45,
+      })
+    );
+    tube.position.y = height * 0.46;
+    tube.castShadow = true;
+    group.add(tube);
+
+    const cap = new Mesh(
+      new ConeGeometry(0.34, 0.48, 24),
+      new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.88 })
+    );
+    cap.position.y = height * 0.91;
+    cap.castShadow = true;
+    group.add(cap);
+
+    const flag = new Mesh(
+      new BoxGeometry(0.08, 0.56, 0.72),
+      new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.62 })
+    );
+    flag.position.set(0, height * 0.67, 0.46);
+    flag.rotation.y = index % 2 ? 0.1 : -0.1;
+    flag.castShadow = true;
+    group.add(flag);
+
+    return group;
+  }
+
+  function createBrassOrbit(width, depth, height) {
+    const group = new Group();
+    const orbitMaterial = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.78 });
+    const orbit = new Mesh(new TorusGeometry(Math.max(width, depth) * 0.72, 0.035, 8, 64), orbitMaterial);
+    orbit.rotation.x = Math.PI / 2.45;
+    orbit.rotation.z = Math.PI / 9;
+    group.add(orbit);
+
+    const node = new Mesh(
+      new SphereGeometry(0.09, 12, 8),
+      new MeshBasicMaterial({ color: 0xff2bd6, transparent: true, opacity: 0.95 })
+    );
+    node.position.set(width * 0.58, height * 0.04, depth * 0.26);
+    group.add(node);
+    return group;
+  }
+
+  function createFloatingFragments(count, color, accent) {
+    const group = new Group();
+    const paper = new MeshBasicMaterial({ color, transparent: true, opacity: 0.36, side: DoubleSide });
+    const stamp = new MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.68, side: DoubleSide });
+    for (let index = 0; index < count; index += 1) {
+      const fragment = new Mesh(
+        new BoxGeometry(0.52, 0.025, 0.34),
+        index % 4 === 0 ? stamp : paper
+      );
+      const angle = (index / count) * Math.PI * 2;
+      fragment.position.set(Math.cos(angle) * (1.1 + index * 0.035), 0.25 + index * 0.11, Math.sin(angle) * 0.72);
+      fragment.rotation.set(0.35 + index * 0.09, angle, 0.18 - index * 0.025);
+      fragment.castShadow = true;
+      group.add(fragment);
+    }
+    return group;
+  }
+
+  function createArchiveBeacon(title) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1024;
+    canvas.height = 384;
+    const context = canvas.getContext('2d');
+    context.scale(2, 2);
+    context.fillStyle = 'rgba(6, 16, 24, 0.86)';
+    context.fillRect(0, 0, 512, 192);
+    context.strokeStyle = '#3df8ff';
+    context.lineWidth = 10;
+    context.strokeRect(10, 10, 492, 172);
+    context.strokeStyle = '#ff2bd6';
+    context.lineWidth = 3;
+    context.beginPath();
+    context.moveTo(32, 34);
+    context.lineTo(480, 34);
+    context.stroke();
+    context.fillStyle = '#e9fbff';
+    context.font = '800 42px system-ui, -apple-system, sans-serif';
+    context.fillText(title, 34, 84);
+    context.fillStyle = '#b8ff2c';
+    context.font = '800 24px ui-monospace, monospace';
+    context.fillText('DATA DISTRICT', 34, 132);
+
+    const texture = new CanvasTexture(canvas);
+    texture.colorSpace = SRGBColorSpace;
+    texture.anisotropy = 4;
+    const sprite = new Sprite(new SpriteMaterial({ map: texture, transparent: true }));
+    sprite.scale.set(4.3, 1.6, 1);
+    return sprite;
+  }
+
+  function createHologramBillboard(title, index, accent) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1024;
+    canvas.height = 320;
+    const context = canvas.getContext('2d');
+    context.scale(2, 2);
+    context.fillStyle = 'rgba(4, 13, 22, 0.82)';
+    context.fillRect(0, 0, 512, 160);
+    context.strokeStyle = '#3df8ff';
+    context.lineWidth = 8;
+    context.strokeRect(8, 8, 496, 144);
+    context.strokeStyle = '#ff2bd6';
+    context.lineWidth = 3;
+    context.beginPath();
+    context.moveTo(28, 58);
+    context.lineTo(484, 58);
+    context.stroke();
+    context.fillStyle = '#061018';
+    context.fillRect(28, 22, 148, 30);
+    context.fillStyle = '#b8ff2c';
+    context.font = '800 18px ui-monospace, monospace';
+    context.fillText(`ARTICLE #${String(index + 1).padStart(2, '0')}`, 40, 44);
+    context.fillStyle = `#${accent.toString(16).padStart(6, '0')}`;
+    context.fillRect(424, 22, 42, 22);
+    context.fillStyle = '#e9fbff';
+    context.font = '750 32px system-ui, -apple-system, sans-serif';
+    context.textBaseline = 'middle';
+
+    const lines = wrapText(context, title, 440).slice(0, 2);
+    lines.forEach((line, index) => {
+      context.fillText(line, 36, 88 + index * 36);
+    });
+
+    const texture = new CanvasTexture(canvas);
+    texture.colorSpace = SRGBColorSpace;
+    texture.anisotropy = 4;
+    const material = new SpriteMaterial({ map: texture, transparent: true, opacity: 0.92 });
+    const sprite = new Sprite(material);
+    sprite.scale.set(3.25, 1.02, 1);
+    return sprite;
+  }
+
+  function createSign(title, index) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 160;
+    const context = canvas.getContext('2d');
+    context.fillStyle = '#fff6df';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.strokeStyle = '#2d3640';
+    context.lineWidth = 12;
+    context.strokeRect(6, 6, canvas.width - 12, canvas.height - 12);
+    context.fillStyle = '#ff4d4d';
+    context.fillRect(28, 24, 132, 28);
+    context.fillStyle = '#fff6df';
+    context.font = '800 18px ui-monospace, monospace';
+    context.fillText(`ARTICLE #${String(index + 1).padStart(2, '0')}`, 40, 44);
+    context.strokeStyle = '#c49a4a';
+    context.lineWidth = 3;
+    context.beginPath();
+    context.moveTo(180, 34);
+    context.lineTo(466, 34);
+    context.stroke();
+    context.fillStyle = '#222222';
+    context.font = '750 34px system-ui, -apple-system, sans-serif';
+    context.textBaseline = 'middle';
+
+    const lines = wrapText(context, title, 440).slice(0, 2);
+    lines.forEach((line, index) => {
+      context.fillText(line, 36, 80 + index * 40);
+    });
+
+    const texture = new CanvasTexture(canvas);
+    texture.colorSpace = SRGBColorSpace;
+    const material = new SpriteMaterial({ map: texture, transparent: true });
+    const sprite = new Sprite(material);
+    sprite.scale.set(3.2, 1, 1);
+    return sprite;
+  }
+
+  function wrapText(context, text, maxWidth) {
+    const characters = Array.from(text);
+    const lines = [];
+    let line = '';
+
+    for (const character of characters) {
+      const testLine = line + character;
+      if (context.measureText(testLine).width > maxWidth && line) {
+        lines.push(line);
+        line = character;
+      } else {
+        line = testLine;
+      }
+    }
+
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function createPlayer() {
+    const group = new Group();
+    const suitMaterial = new MeshStandardMaterial({
+      color: 0x171321,
+      roughness: 0.34,
+      metalness: 0.46,
+      emissive: 0xff2bd6,
+      emissiveIntensity: 0.18,
+    });
+    const helmetMaterial = new MeshStandardMaterial({
+      color: 0xff4d4d,
+      roughness: 0.32,
+      metalness: 0.38,
+      emissive: 0xff2bd6,
+      emissiveIntensity: 0.22,
+    });
+    const visorMaterial = new MeshBasicMaterial({ color: 0x3df8ff, transparent: true, opacity: 0.9 });
+    const backpackMaterial = new MeshStandardMaterial({
+      color: 0x07131c,
+      roughness: 0.38,
+      metalness: 0.54,
+      emissive: 0x3df8ff,
+      emissiveIntensity: 0.16,
+    });
+
+    const body = new Mesh(new CylinderGeometry(0.32, 0.42, 0.9, 48, 2), suitMaterial);
+    body.position.y = 0.64;
+    body.castShadow = true;
+    group.add(body);
+
+    const chestLight = new Mesh(new BoxGeometry(0.34, 0.05, 0.045), visorMaterial);
+    chestLight.position.set(0, 0.83, 0.34);
+    group.add(chestLight);
+
+    const head = new Mesh(new SphereGeometry(0.34, 48, 32), helmetMaterial);
+    head.position.y = 1.25;
+    head.castShadow = true;
+    group.add(head);
+
+    const visor = new Mesh(new BoxGeometry(0.46, 0.11, 0.045), visorMaterial);
+    visor.position.set(0, 1.28, 0.31);
+    group.add(visor);
+
+    const backpack = new Mesh(new BoxGeometry(0.42, 0.64, 0.18, 2, 2, 1), backpackMaterial);
+    backpack.position.set(0, 0.76, -0.36);
+    backpack.castShadow = true;
+    group.add(backpack);
+
+    const halo = new Mesh(
+      new TorusGeometry(0.42, 0.018, 10, 64),
+      new MeshBasicMaterial({ color: 0xb8ff2c, transparent: true, opacity: 0.62 })
+    );
+    halo.position.y = 1.27;
+    halo.rotation.x = Math.PI / 2;
+    group.add(halo);
+
+    const limbMaterial = new MeshStandardMaterial({
+      color: 0x2b1832,
+      roughness: 0.42,
+      metalness: 0.36,
+      emissive: 0x3df8ff,
+      emissiveIntensity: 0.08,
+    });
+    for (const side of [-1, 1]) {
+      const arm = new Mesh(new CylinderGeometry(0.055, 0.07, 0.54, 24, 2), limbMaterial);
+      arm.position.set(side * 0.42, 0.72, 0.02);
+      arm.rotation.z = side * 0.32;
+      arm.castShadow = true;
+      group.add(arm);
+
+      const leg = new Mesh(new CylinderGeometry(0.075, 0.095, 0.46, 24, 2), limbMaterial);
+      leg.position.set(side * 0.16, 0.24, 0.02);
+      leg.castShadow = true;
+      group.add(leg);
+    }
+
+    return group;
+  }
+
+  function setBuildingActive(building, active) {
+    building.material.emissiveIntensity = active ? 0.38 : 0;
+    building.marker.material.opacity = active ? 0.92 : 0;
+  }
+
+  function updateStatus(building) {
+    if (
+      !(statusPanel instanceof HTMLElement) ||
+      !(statusTitle instanceof HTMLElement) ||
+      !(statusMeta instanceof HTMLElement) ||
+      !(statusTags instanceof HTMLElement)
+    ) {
+      return;
+    }
+
+    statusTitle.textContent = building.post.title;
+    statusMeta.textContent = `${building.post.date} / ${building.post.language}`;
+    statusTags.replaceChildren(
+      ...building.post.tags.map((tag) => {
+        const span = document.createElement('span');
+        span.textContent = tag;
+        return span;
+      })
+    );
+    statusPanel.hidden = false;
+  }
+
+  function hideStatus() {
+    if (statusPanel instanceof HTMLElement) statusPanel.hidden = true;
+  }
+</script>
+
+<style>
+  .blog-world,
+  .reader-panel {
+    --paper: #e9fbff;
+    --ink: #061018;
+    --post-red: #ff2bd6;
+    --corridor-blue: #3df8ff;
+    --brass: #b8ff2c;
+    --shadow: #09131f;
+    --moss: #071820;
+  }
+
+  .blog-world {
+    position: relative;
+    width: 100vw;
+    height: min(860px, calc(100vh - 4rem));
+    min-height: 640px;
+    margin: -0.5rem calc(50% - 50vw) 0;
+    overflow: hidden;
+    color: var(--paper);
+    background: #061018;
+    border-block: 1px solid rgba(61, 248, 255, 0.2);
+  }
+
+  .blog-world__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+  }
+
+  .blog-world:not(.blog-world--ready) .blog-world__canvas,
+  .blog-world:not(.blog-world--ready) .blog-world__shade,
+  .blog-world:not(.blog-world--ready) .world-status,
+  .blog-world:not(.blog-world--ready) .world-controls {
+    display: none;
+  }
+
+  .blog-world--ready .world-fallback {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .blog-world--ready .world-fallback:focus-within {
+    top: 1rem;
+    left: 1rem;
+    width: min(32rem, calc(100vw - 2rem));
+    height: auto;
+    padding: 1rem;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    box-shadow: 0 1rem 2rem rgba(34, 34, 34, 0.25);
+  }
+
+  .blog-world__shade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(180deg, rgba(233, 251, 255, 0.035) 0 1px, transparent 1px 5px),
+      linear-gradient(180deg, rgba(6, 16, 24, 0.02), transparent 30%, rgba(6, 16, 24, 0.76)),
+      linear-gradient(90deg, rgba(61, 248, 255, 0.06), transparent 18%, transparent 82%, rgba(255, 43, 214, 0.08)),
+      linear-gradient(125deg, rgba(255, 43, 214, 0.16), transparent 28%, transparent 68%, rgba(61, 248, 255, 0.14));
+  }
+
+  .world-brand,
+  .world-status,
+  .world-controls {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .world-brand {
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 4vw, 3rem);
+    width: min(18rem, calc(100vw - 2rem));
+    padding: 0.7rem 0.85rem 0.82rem;
+    color: var(--paper);
+    background:
+      linear-gradient(90deg, rgba(61, 248, 255, 0.18), transparent 54%),
+      rgba(4, 13, 22, 0.54);
+    border: 1px solid rgba(61, 248, 255, 0.22);
+    clip-path: polygon(0 0, calc(100% - 0.7rem) 0, 100% 0.7rem, 100% 100%, 0.7rem 100%, 0 calc(100% - 0.7rem));
+    mix-blend-mode: screen;
+    text-shadow: 0 2px 18px rgba(61, 248, 255, 0.22);
+    backdrop-filter: blur(8px);
+  }
+
+  .world-brand p,
+  .world-status__meta,
+  .reader-panel__header p {
+    margin: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .world-brand h2 {
+    margin: 0.1rem 0 0;
+    font-size: clamp(1.45rem, 3.6vw, 2.9rem);
+    line-height: 0.94;
+    text-transform: uppercase;
+  }
+
+  .world-brand a {
+    display: inline-flex;
+    margin-top: 0.55rem;
+    color: var(--paper);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid var(--corridor-blue);
+    text-shadow: 0 0 0.65rem rgba(61, 248, 255, 0.42);
+  }
+
+  .world-status {
+    right: clamp(1rem, 4vw, 3rem);
+    bottom: clamp(8.5rem, 15vw, 10.5rem);
+    width: min(23rem, calc(100vw - 2rem));
+    padding: 0.9rem 0.95rem 1rem;
+    color: var(--paper);
+    background:
+      linear-gradient(90deg, rgba(61, 248, 255, 0.2), transparent 42%),
+      rgba(4, 13, 22, 0.78);
+    border: 1px solid rgba(61, 248, 255, 0.42);
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 0.9rem) 0, 100% 0.9rem, 100% 100%, 0.9rem 100%, 0 calc(100% - 0.9rem));
+    box-shadow:
+      0 1.4rem 3rem rgba(0, 0, 0, 0.4),
+      0 0 1.2rem rgba(61, 248, 255, 0.18);
+    backdrop-filter: blur(12px);
+  }
+
+  .world-status[hidden] {
+    display: none;
+  }
+
+  .world-status h3 {
+    margin: 0.25rem 0 0.75rem;
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    line-height: 1.2;
+  }
+
+  .world-status__meta {
+    color: var(--brass);
+  }
+
+  .world-status__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .world-status__tags span {
+    padding: 0.12rem 0.48rem;
+    color: var(--corridor-blue);
+    background: rgba(61, 248, 255, 0.08);
+    border: 1px solid rgba(61, 248, 255, 0.22);
+    border-radius: 0;
+    font-size: 0.74rem;
+    font-weight: 700;
+  }
+
+  .world-status button {
+    width: 100%;
+    min-height: 2.7rem;
+    color: #061018;
+    background: var(--corridor-blue);
+    border: 0;
+    border-radius: 0;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(61, 248, 255, 0.34);
+  }
+
+  .world-controls {
+    bottom: clamp(1rem, 4vw, 2.5rem);
+    left: clamp(1rem, 4vw, 3rem);
+    right: clamp(1rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(8.5rem, 12rem) minmax(0, 1fr) minmax(5.5rem, 8rem);
+    align-items: end;
+    gap: 1rem;
+    pointer-events: none;
+  }
+
+  .world-controls__help {
+    grid-column: 1 / 4;
+    justify-self: center;
+    margin: 0;
+    padding: 0.35rem 0.55rem;
+    color: var(--paper);
+    background: rgba(34, 34, 34, 0.48);
+    border: 1px solid rgba(247, 241, 228, 0.28);
+    border-radius: 999px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.62rem;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+  }
+
+  .world-controls__pad {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(2.5rem, 1fr));
+    grid-template-areas:
+      ". up ."
+      "left down right";
+    gap: 0.45rem;
+    width: clamp(8.5rem, 18vw, 11rem);
+    padding: 0.55rem;
+    background:
+      linear-gradient(145deg, rgba(247, 241, 228, 0.12), transparent),
+      rgba(13, 22, 28, 0.78);
+    border: 1px solid rgba(61, 248, 255, 0.42);
+    border-radius: 0;
+    clip-path: polygon(0.7rem 0, 100% 0, 100% calc(100% - 0.7rem), calc(100% - 0.7rem) 100%, 0 100%, 0 0.7rem);
+    box-shadow:
+      0 1rem 2.2rem rgba(0, 0, 0, 0.34),
+      inset 0 0 1rem rgba(61, 248, 255, 0.1);
+    pointer-events: auto;
+    backdrop-filter: blur(8px);
+  }
+
+  .world-controls button {
+    display: grid;
+    place-items: center;
+    color: var(--paper);
+    background: rgba(34, 34, 34, 0.76);
+    border: 1px solid rgba(61, 248, 255, 0.36);
+    font-weight: 900;
+    cursor: pointer;
+    touch-action: none;
+    backdrop-filter: blur(5px);
+  }
+
+  .world-controls__pad button {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 0;
+    font-size: 1.2rem;
+    box-shadow:
+      inset 0 0.18rem 0.28rem rgba(255, 255, 255, 0.08),
+      0 0.35rem 0 rgba(0, 0, 0, 0.26);
+  }
+
+  .world-controls__enter {
+    grid-column: 3;
+    justify-self: end;
+    width: clamp(5.5rem, 11vw, 7.5rem);
+    aspect-ratio: 1;
+    color: #222222;
+    background:
+      radial-gradient(circle at 35% 28%, rgba(247, 241, 228, 0.7), transparent 28%),
+      #ff2bd6;
+    border-color: rgba(247, 241, 228, 0.44);
+    border-radius: 0;
+    clip-path: polygon(50% 0, 100% 18%, 100% 82%, 50% 100%, 0 82%, 0 18%);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+    letter-spacing: 0.06em;
+    box-shadow:
+      inset 0 -0.5rem 0 rgba(34, 34, 34, 0.18),
+      0 1rem 2.3rem rgba(255, 43, 214, 0.34);
+    pointer-events: auto;
+  }
+
+  .world-controls__pad [data-move='forward'] {
+    grid-area: up;
+  }
+
+  .world-controls__pad [data-move='left'] {
+    grid-area: left;
+  }
+
+  .world-controls__pad [data-move='back'] {
+    grid-area: down;
+  }
+
+  .world-controls__pad [data-move='right'] {
+    grid-area: right;
+  }
+
+  .world-fallback {
+    position: relative;
+    z-index: 3;
+    max-width: 44rem;
+    margin: 6rem auto;
+    padding: 1rem;
+    color: var(--ink);
+    background: var(--paper);
+  }
+
+  .reader-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  .reader-panel[hidden] {
+    display: none;
+  }
+
+  .reader-panel__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 34, 34, 0.66);
+    backdrop-filter: blur(3px);
+  }
+
+  .reader-panel__frame {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    width: min(1120px, 100%);
+    height: min(820px, 100%);
+    overflow: hidden;
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid var(--shadow);
+    border-radius: 8px;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.42);
+  }
+
+  .reader-panel__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    background:
+      linear-gradient(90deg, rgba(255, 77, 77, 0.12), transparent),
+      #fffaf0;
+    border-bottom: 1px solid rgba(45, 54, 64, 0.22);
+  }
+
+  .reader-panel__header p {
+    grid-column: 1 / -1;
+    color: var(--post-red);
+  }
+
+  .reader-panel__header h2 {
+    margin: 0;
+    overflow: hidden;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .reader-panel__header a,
+  .reader-panel__header button {
+    display: inline-grid;
+    place-items: center;
+    min-height: 2.1rem;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid rgba(45, 54, 64, 0.22);
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .reader-panel__header a {
+    padding: 0 0.7rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  .reader-panel__header button {
+    width: 2.1rem;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .reader-panel iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #fff;
+  }
+
+  :global(html.reader-open),
+  :global(html.reader-open body) {
+    overflow: hidden;
+  }
+
+  @media (max-width: 720px) {
+    .blog-world {
+      height: calc(100vh - 4rem);
+      min-height: 560px;
+    }
+
+    .world-brand {
+      top: 7.75rem;
+      left: 1rem;
+      width: min(18rem, calc(100vw - 2rem));
+    }
+
+    .world-brand h2 {
+      font-size: clamp(1.35rem, 7vw, 2.4rem);
+    }
+
+    .world-status {
+      position: fixed;
+      right: 0.85rem;
+      bottom: 8.7rem;
+      left: 0.85rem;
+      width: auto;
+    }
+
+    .world-controls {
+      position: fixed;
+      left: 1rem;
+      right: 1rem;
+      bottom: calc(1rem + env(safe-area-inset-bottom));
+      grid-template-columns: minmax(8.5rem, 10.5rem) minmax(0, 1fr) minmax(5.5rem, 6.75rem);
+      gap: 0.75rem;
+    }
+
+    .world-controls__help {
+      display: none;
+    }
+
+    .world-controls__pad {
+      width: min(42vw, 10rem);
+      padding: 0.45rem;
+      gap: 0.35rem;
+    }
+
+    .world-controls__enter {
+      width: min(28vw, 6.4rem);
+    }
+
+    .reader-panel__frame {
+      height: 100%;
+      border-radius: 5px;
+    }
+
+    .reader-panel__header {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .reader-panel__header a {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blog-world__shade {
+      background: linear-gradient(180deg, rgba(34, 34, 34, 0.12), transparent 42%);
+    }
+  }
+</style>

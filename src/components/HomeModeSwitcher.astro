@@ -1,0 +1,327 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BlogWorld from './BlogWorld.astro';
+import LanguageFilter from './LanguageFilter.astro';
+import PostCard from './PostCard.astro';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+const recentPosts = posts.slice(0, 20);
+const jaCount = posts.filter((p) => p.data.language === 'ja').length;
+const enCount = posts.filter((p) => p.data.language === 'en').length;
+---
+
+<div class="home-mode-switcher" data-home-mode-switcher>
+  <div class="home-mode-toggle" data-home-mode-toggle role="group" aria-label="表示モードを切り替え">
+    <span class="home-mode-toggle__label">MODE</span>
+    <div class="home-mode-toggle__actions">
+      <button type="button" data-home-mode-button="world" aria-pressed="false">CITY</button>
+      <button type="button" data-home-mode-button="blog" aria-pressed="true">BLOG</button>
+    </div>
+  </div>
+
+  <div class="home-world-shell" data-home-mode-panel="world" data-pagefind-ignore hidden>
+    <BlogWorld posts={posts} />
+  </div>
+
+  <section class="home-blog-shell" data-home-mode-panel="blog" aria-labelledby="home-blog-title">
+    <p class="home-blog-kicker">MAKE THE WORLD FUN AGAIN</p>
+    <h2 id="home-blog-title">Recent Posts</h2>
+    <LanguageFilter jCount={jaCount} enCount={enCount} totalCount={posts.length} />
+    <ul class="post-list">
+      {recentPosts.map((post) => (
+        <PostCard
+          title={post.data.title}
+          date={post.data.date}
+          slug={post.id}
+          tags={post.data.tags}
+          language={post.data.language}
+        />
+      ))}
+    </ul>
+    {posts.length > 20 && (
+      <p><a href="/blog/">View all posts</a></p>
+    )}
+  </section>
+</div>
+
+<script>
+  const root = document.querySelector('[data-home-mode-switcher]');
+  const toggle = document.querySelector('[data-home-mode-toggle]');
+  const headerSlot = document.querySelector('[data-home-mode-header-slot]');
+  const originalToggleParent = toggle?.parentElement;
+  const originalToggleNext = toggle?.nextSibling;
+  const buttons = document.querySelectorAll('[data-home-mode-button]');
+  const panels = document.querySelectorAll('[data-home-mode-panel]');
+
+  if (root instanceof HTMLElement) {
+    root.classList.add('home-mode-switcher--ready');
+    setMode('world');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const mode = button.getAttribute('data-home-mode-button') === 'blog' ? 'blog' : 'world';
+        setMode(mode);
+      });
+    });
+  }
+
+  function setMode(mode) {
+    document.documentElement.dataset.homeMode = mode;
+    placeModeToggle(mode);
+
+    buttons.forEach((button) => {
+      const isActive = button.getAttribute('data-home-mode-button') === mode;
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+
+    panels.forEach((panel) => {
+      if (panel instanceof HTMLElement) {
+        panel.hidden = panel.getAttribute('data-home-mode-panel') !== mode;
+      }
+    });
+
+    window.dispatchEvent(new CustomEvent('home-mode-change', { detail: { mode } }));
+
+    if (mode === 'world') {
+      window.dispatchEvent(new Event('resize'));
+    }
+  }
+
+  function placeModeToggle(mode) {
+    if (!(toggle instanceof HTMLElement)) return;
+
+    if (mode === 'blog' && headerSlot instanceof HTMLElement) {
+      headerSlot.append(toggle);
+      toggle.classList.add('home-mode-toggle--in-header');
+      return;
+    }
+
+    if (originalToggleParent instanceof HTMLElement) {
+      originalToggleParent.insertBefore(toggle, originalToggleNext);
+    }
+    toggle.classList.remove('home-mode-toggle--in-header');
+  }
+</script>
+
+<style>
+  .home-mode-switcher {
+    position: relative;
+    --mode-cyan: #3df8ff;
+    --mode-magenta: #ff2bd6;
+    --mode-lime: #b8ff2c;
+    --mode-panel: rgba(4, 13, 22, 0.82);
+  }
+
+  .home-mode-toggle {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    margin: 0 0 1rem auto;
+    position: sticky;
+    top: 0.75rem;
+    z-index: 50;
+    width: min(12rem, 100%);
+    padding: 0.4rem;
+    color: var(--text);
+    background:
+      linear-gradient(90deg, var(--mode-cyan), var(--mode-magenta)) top / 100% 2px no-repeat,
+      color-mix(in srgb, var(--bg) 88%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 0.65rem) 0, 100% 0.65rem, 100% 100%, 0.65rem 100%, 0 calc(100% - 0.65rem));
+    box-shadow: 0 0.6rem 1.6rem rgba(34, 34, 34, 0.14);
+    backdrop-filter: blur(10px);
+  }
+
+  .home-mode-switcher--ready .home-mode-toggle {
+    display: flex;
+  }
+
+  .home-mode-toggle__label {
+    display: block;
+    color: var(--text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.64rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+  }
+
+  .home-mode-toggle__actions {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .home-mode-toggle button {
+    flex: 1 1 0;
+    min-height: 2.05rem;
+    padding: 0.35rem 0.5rem;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  .home-mode-toggle button[aria-pressed='true'] {
+    color: #061018;
+    background: var(--mode-cyan);
+  }
+
+  .home-mode-toggle--in-header {
+    display: flex;
+    position: static;
+    top: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.45rem;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.24rem 0.28rem 0.24rem 0.55rem;
+    color: var(--text);
+    background:
+      linear-gradient(90deg, var(--mode-cyan), var(--mode-magenta)) top / 100% 2px no-repeat,
+      color-mix(in srgb, var(--bg) 88%, transparent);
+    box-shadow: none;
+  }
+
+  .home-mode-toggle--in-header .home-mode-toggle__label {
+    color: var(--text-muted);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .home-mode-toggle--in-header .home-mode-toggle__actions {
+    gap: 0.18rem;
+  }
+
+  .home-mode-toggle--in-header button {
+    min-height: 1.72rem;
+    padding: 0.22rem 0.42rem;
+    font-size: 0.68rem;
+  }
+
+  .home-world-shell[hidden],
+  .home-blog-shell[hidden] {
+    display: none;
+  }
+
+  .home-blog-kicker {
+    margin: 0 0 0.75rem;
+    color: var(--text-muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .home-blog-shell h2 {
+    margin-top: 0;
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world'] body) {
+    max-width: none;
+    padding: 0;
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world'] .site-header),
+  :global(html[data-home-mode-page='true'][data-home-mode='world'] .site-footer) {
+    display: none;
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world'] .skip-link) {
+    left: 1rem;
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world'] main#content) {
+    width: 100%;
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-mode-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    margin: 0;
+    color: var(--mode-cyan);
+    background:
+      linear-gradient(90deg, var(--mode-cyan), var(--mode-magenta)) top / 100% 2px no-repeat,
+      var(--mode-panel);
+    border-color: rgba(61, 248, 255, 0.38);
+    box-shadow:
+      0 0 1.4rem rgba(61, 248, 255, 0.16),
+      0 0.8rem 1.7rem rgba(0, 0, 0, 0.32);
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-mode-toggle__label {
+    color: var(--mode-lime);
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-mode-toggle button {
+    color: rgba(247, 241, 228, 0.9);
+    background: rgba(61, 248, 255, 0.08);
+    border-color: rgba(61, 248, 255, 0.26);
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-mode-toggle button[aria-pressed='true'] {
+    color: #061018;
+    background: var(--mode-cyan);
+    box-shadow: 0 0 0.9rem rgba(61, 248, 255, 0.44);
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-mode-toggle button[data-home-mode-button='world'] {
+    border-color: rgba(61, 248, 255, 0.48);
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-mode-toggle button[data-home-mode-button='blog'] {
+    color: rgba(247, 241, 228, 0.92);
+    background: rgba(255, 43, 214, 0.16);
+    border-color: rgba(255, 43, 214, 0.42);
+    box-shadow: none;
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-mode-toggle button[data-home-mode-button='blog'][aria-pressed='true'] {
+    color: #061018;
+    background: var(--mode-magenta);
+    box-shadow: 0 0 0.9rem rgba(255, 43, 214, 0.44);
+  }
+
+  :global(html[data-home-mode-page='true'][data-home-mode='world']) .home-world-shell :global(.blog-world) {
+    height: 100vh;
+    min-height: 100vh;
+    margin-top: 0;
+    border-block: 0;
+  }
+
+  @media (max-width: 720px) {
+    .home-mode-toggle {
+      right: 0.75rem;
+      width: min(11rem, calc(100vw - 1.5rem));
+      max-width: calc(100vw - 1.5rem);
+    }
+
+    .home-mode-toggle button {
+      padding-inline: 0.55rem;
+      font-size: 0.82rem;
+    }
+
+    .home-mode-toggle--in-header {
+      width: auto;
+      max-width: 100%;
+    }
+
+    .home-mode-toggle--in-header button {
+      padding: 0.22rem 0.42rem;
+      font-size: 0.68rem;
+    }
+  }
+</style>

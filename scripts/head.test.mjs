@@ -33,3 +33,24 @@ test('Layout can exclude a whole page from Pagefind', async () => {
   assert.match(source, /pagefindIgnore\?:\s*boolean/);
   assert.match(source, /data-pagefind-ignore=\{pagefindIgnore\s*\?\s*'all'\s*:\s*undefined\}/);
 });
+
+test('Layout can hide shared header and footer for immersive pages', async () => {
+  const source = await readFile(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
+
+  assert.match(source, /hideSiteChrome\?:\s*boolean/);
+  assert.match(source, /hideSiteChrome\s*=\s*false/);
+  assert.match(source, /\{!hideSiteChrome && <Header \/>\}/);
+  assert.match(source, /\{!hideSiteChrome && <Footer \/>\}/);
+});
+
+test('Layout can initialize homepage mode switching before render', async () => {
+  const source = await readFile(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
+
+  assert.match(source, /homeModeSwitch\?:\s*boolean/);
+  assert.match(source, /homeModeSwitch\s*=\s*false/);
+  assert.match(source, /data-home-mode-page=\{homeModeSwitch\s*\?\s*'true'\s*:\s*undefined\}/);
+  assert.match(source, /hasAttribute\('data-home-mode-page'\)/);
+  assert.match(source, /var mode = 'world'/);
+  assert.doesNotMatch(source, /barabara-home-mode/);
+  assert.match(source, /document\.documentElement\.dataset\.homeMode = mode/);
+});

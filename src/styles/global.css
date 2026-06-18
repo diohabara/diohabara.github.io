@@ -314,6 +314,15 @@ a:focus:not(:focus-visible) {
   margin-left: auto;
 }
 
+.site-nav__home-mode-slot {
+  display: none;
+  align-items: center;
+}
+
+.site-nav__home-mode-slot:not(:empty) {
+  display: flex;
+}
+
 /* Footer */
 .site-footer {
   margin-top: 3em;
