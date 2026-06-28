@@ -11,6 +11,15 @@ test('Head includes Hatena Bookmark no-comment directive', async () => {
   );
 });
 
+test('Head declares the Hatena page owner', async () => {
+  const source = await readFile(new URL('../src/components/Head.astro', import.meta.url), 'utf8');
+
+  assert.match(
+    source,
+    /<link\s+rel="author"\s+href="https:\/\/www\.hatena\.ne\.jp\/sakenomemasen\/"\s*\/?>/,
+  );
+});
+
 test('Head can mark a page as noindex', async () => {
   const source = await readFile(new URL('../src/components/Head.astro', import.meta.url), 'utf8');
 
